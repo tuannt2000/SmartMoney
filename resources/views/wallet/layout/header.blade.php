@@ -16,7 +16,16 @@
 
         <!--    Nav menu   -->
         <div class="_3C1k">
-            
+            <div class="_1e_t">
+                <nav>
+                    <ul class="ZfY8">
+                        <li><a href="wallet/transactions" class="_3WuR _1gOp selected"><span>Giao dịch</span></a></li>
+                        <li><a href="" class="_3WuR _1gOp "><span>Tổng quan</span></a></li>
+                        <li><a href="" class="_3WuR _1gOp "><span>Ngân sách</span></a></li>
+                        <li><a href="" class="_3WuR _1gOp "><span>Cài đặt ví</span></a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         <!--    End Nav menu -->
 
@@ -28,7 +37,7 @@
                         <div>
                             <div class="UhKW">
                                 <div class="_1Gbf">
-                                    <img class="imgAvt" src="src/img/{{Auth::user()->img}}" alt=""/>
+                                    <img class="imgAvt" src="src/img/unnamed.png" alt="">
                                 </div>
                                 <div class="_2jFV _1sxG">
                                     <div>

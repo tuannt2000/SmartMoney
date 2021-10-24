@@ -17,6 +17,7 @@ const input = document.getElementsByTagName('input');
 const day = $('.day');
 const month = $('.month');
 const year = $('.year');
+const select = document.getElementsByTagName('select');
 
 //  SideBarLeft
 selected.forEach(function(value,index){
@@ -82,27 +83,20 @@ for(var i = 0; i < input.length;i++){
     }
 }
 
-
-//  ngày tháng năm
-let string = "<option disabled selected>Chọn năm</option>";
-for(var j = 1990; j < 2020 ; j++){
-    string += '<option value="'+j+'">'+j+'</option>';
+for(var i = 0; i < select.length;i++){
+    const value = select.item(i);
+    value.oninput = function(){
+        $('._3SdL._2_oj').disabled = false;
+    }
 }
 
-year.innerHTML = string;
+//  ngày tháng năm
 let yearVal;
 year.onchange = function(){
     yearVal = parseInt(this.value);
-    month.disabled = false;
-    let monthop = "";
-    for(j = 1; j <= 12 ; j++){
-        monthop += '<option value="'+j+'">'+j+'</option>';
-    }    
-    month.innerHTML = monthop;
 }
 
 month.onchange = function(){
-    day.disabled = false;
     let dayop = "";
     let dateVal;
     switch(parseInt(this.value)){

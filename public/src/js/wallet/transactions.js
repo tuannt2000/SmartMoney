@@ -67,6 +67,7 @@ _2pOY.onclick = function () {
     }
 }
 
+
 // Theo số tiền
 const rc_slider = $('.rc-slider');
 const rc_slider_track = $('.rc-slider-track.rc-slider-track-1');
@@ -74,9 +75,7 @@ const rc_slider_handle1 = $('.rc-slider-handle.rc-slider-handle-1');
 const rc_slider_handle2 = $('.rc-slider-handle.rc-slider-handle-2');
 const _261b = $('._261b');
 const _3RqA = $('._3RqA');
-
 const _261bGia = _261b.innerText;
-
 
 rc_slider.addEventListener('click', function (e) {
     // Get the target
@@ -100,17 +99,31 @@ rc_slider.addEventListener('click', function (e) {
     _261b.innerText = thaydoi;
 });
 
-
 //  scroll
 const UzPn = $('.UzPn._10vh');
 document.onscroll = function(){
-    if(window.scrollY > 235){
+    if(window.scrollY > 60){
         UzPn.classList.add('zpcn');
     }else{
         UzPn.classList.remove('zpcn');
     }
 }
 
-
-
+// giao dich
+const giaodich = $$('._2k7K');
+const _3fS2 = $$('._3fS2._1Izi');
+giaodich.forEach(function(value,index){
+    value.onclick = function(){
+        value.querySelector('._17Fo._2Tq6').classList.toggle('_3FsX');
+        if($$('._17Fo._2Tq6._3FsX').length > 0){
+            _3fS2.forEach(function(value1){
+                value1.classList.add('_3dgm');
+            })
+        }else{
+            _3fS2.forEach(function(value1){
+                value1.classList.remove('_3dgm');
+            })
+        }
+    }
+})
 

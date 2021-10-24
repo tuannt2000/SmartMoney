@@ -12,26 +12,34 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'auth'],function(){
+    Route::get('login','App\Http\Controllers\userController@getdangnhap');
 
-Route::get('auth/login','App\Http\Controllers\userController@getdangnhap');
-
-Route::post('auth/login','App\Http\Controllers\userController@postdangnhap');
-
-Route::get('auth/signup','App\Http\Controllers\userController@getdangky');
-
-Route::post('auth/signup','App\Http\Controllers\userController@postdangky');
-
-Route::get('auth/forgot-password','App\Http\Controllers\userController@getForgotPassword');
-
-Route::post('auth/forgot-password','App\Http\Controllers\userController@postForgotPassword');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
+    Route::post('login','App\Http\Controllers\userController@postdangnhap');
+    
+    Route::get('signup','App\Http\Controllers\userController@getdangky');
+    
+    Route::post('signup','App\Http\Controllers\userController@postdangky');
+    
+    Route::get('forgot-password','App\Http\Controllers\userController@getForgotPassword');
+    
+    Route::post('forgot-password','App\Http\Controllers\userController@postForgotPassword');
 });
 
-Route::get('/settings/account', function () {
-    return view('settings.account');
+Route::group(['prefix'=>'wallet'],function(){
+    Route::get('transactions', function () {
+        return view('wallet.transactions');
+    });
 });
+
+Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
+
+Route::group(['prefix'=>'settings'],function(){
+    Route::get('account','App\Http\Controllers\settingsController@getAccount');
+    
+    Route::post('account/{id}','App\Http\Controllers\settingsController@postAccount');
+});
+
 
 Route::get('/settings/support', function () {
     return view('settings.support');

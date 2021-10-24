@@ -12,11 +12,9 @@
 </head>
 
 <body>
-    @if (Auth::check())
     <!-- Page Content -->
         @yield('content')
     <!-- end Page Content -->
-    @endif
     @yield('script')
 
 </body>

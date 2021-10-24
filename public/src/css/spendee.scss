@@ -1,3 +1,4 @@
+@import 'wallet/transactions';
 @import 'auth/login';
 @import 'settings/account';
 @import 'settings/support';
@@ -483,6 +484,91 @@ nav,ul,ol{
                 flex-direction: row;
                 flex-wrap: wrap;
 
+                ._3fS2._1GHs{
+                    padding: 0.5rem;
+                    
+                    div{
+                        .egUi.addInverse._3SdL._2_oj._1mpn._3dgm {
+                            background-color: #12c48b;
+                            color: #fff;
+                            box-shadow: 0 4px 4px 0 rgb(17 195 139 / 20%);
+                            width: auto;
+                            padding: 0 0.8em;
+                            text-align: center;
+                            position: relative;
+                            display: block;
+                            height: 34px;
+                            border-radius: 4px;
+                            text-decoration: none;
+                            cursor: pointer;
+                            outline: none;
+                            font-size: 14px;
+                            font-weight: 600;
+                            border: none;
+                            overflow: hidden;
+                            line-height: 34px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            &:hover{
+                                box-shadow: 0 5px 6px 0 rgb(17 195 139 / 32%);
+                            }
+
+                            ._2nf9{
+                                display: inline-block;
+                                position: relative;
+                                top: -1px;
+
+                                svg{
+                                    path{
+                                        fill: #fff;
+                                    }
+                                }
+                            }
+
+                            .A4xM{
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                ._3fS2._1Izi._3dgm{
+                    display: block;
+                }
+
+                ._3fS2._1Izi{
+                    display: none;
+                    flex-grow: 0 !important;
+                    flex: 0 0 auto;
+                    flex-basis: 0;
+                    max-width: 100%;
+                
+                    div{
+                        ._3rfO.TFIa {
+                            animation: TFIa 0.8s;
+                            display: flex;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                            white-space: nowrap;
+                            text-decoration: none;
+                            height: 36px;
+                            background: white;
+                            float: right;
+                            padding: 0 0.8rem;
+                            font-size: 14px;
+                            cursor: pointer;
+                            border-radius: 4px;
+                            color: #7b93a4;
+
+                            &:hover{
+                                color: #12c48b;
+                            }
+                        }
+                    }
+                }
+
                 ._3fS2{
                     padding: 0.5rem;
                     flex: 0 0 auto;
@@ -492,18 +578,78 @@ nav,ul,ol{
 
                     form{
                         .body{
+                            position: relative;
+                            display: flex;
+                            z-index: 1;
+                            transition: z-index .35s step-end;
+
+                            ._6Szy._2pOY{
+                                margin-right: 0.7rem;
+                                width: 36px;
+                                height: 36px;
+                                flex-shrink: 0;
+                                display: flex;
+                                background: white;
+                                border-radius: 4px;
+                                align-items:center;
+                                justify-content: center;
+                                cursor: pointer;
+                            }
+
                             .Kevi{
-                                input{
-                                    width: 100%;
+                                display: flex;
+                                flex-grow: 1;
+
+                                .A3jv{
                                     height: 36px;
-                                    font-size: 14px;
+                                    border: none;
                                     background: white;
-                                    border: 0;
-                                    color: #324c5b;
                                     border-radius: 4px;
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 14px;
+                                    transition: color .2s ease-in-out;
                                     outline: none;
-                                    text-align: center;
+                                    flex-grow: 1;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    color: #324c5b;
+                                    padding: 0;
+
+                                    .GK__{
+                                        padding: 0 9px 0 0;
+                                        display: flex;
+                                        position: relative;
+                                        flex-grow: 1;
+                                        align-items: center;
+                                        justify-content: flex-end;
+
+                                        .Olv6{
+                                            position: absolute;
+                                            left: 9px;
+                                            right: 32px;
+                                            top: 0;
+                                            bottom: 0;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            text-align: left;
+                                        }
+                                    }
                                 }
+                            }
+
+                            ._6Szy._2sWB{
+                                margin-left: 0.7rem;
+                                width: 36px;
+                                height: 36px;
+                                flex-shrink: 0;
+                                display: flex;
+                                background: white;
+                                border-radius: 4px;
+                                align-items:center;
+                                justify-content: center;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -515,6 +661,24 @@ nav,ul,ol{
                 }
             }
         }
+    }
+}
+
+.UzPn._10vh.zpcn{
+    z-index: 9;
+    background: #f4f7fa;
+    
+    &::after {
+        z-index: 10;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        height: 10px;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(
+        180deg, rgba(48, 82, 120, .12), rgba(48, 82, 120, .0));
     }
 }
 
@@ -685,6 +849,12 @@ nav,ul,ol{
                                                                     font-weight: 700;
                                                                     font-size: 13px;
                                                                     line-height: 31px;
+
+                                                                    img{
+                                                                        width: 28px;
+                                                                        height: 28px;
+                                                                        margin-bottom: 5px;
+                                                                    }
                                                                 }
                                                             }
                                                         }

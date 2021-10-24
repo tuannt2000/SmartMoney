@@ -26,7 +26,23 @@
                                                 <div class="_1S3-">
                                                     <div class="_3AQP">
                                                         <div>
-                                                            <form action="" enctype="multipart/form-data">
+                                                            <form action="settings/account/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
+                                                                {{csrf_field()}}
+
+                                                                @if(count($errors) > 0)
+                                                                    <div class="alert alert-danger">
+                                                                        @foreach ($errors->all() as $err)
+                                                                            {{$err}}
+                                                                            <br>
+                                                                        @endforeach
+                                                                    </div>
+                                                                @endif
+
+                                                                @if (session('thongbao'))
+                                                                    <div class="alert alert-success">
+                                                                        {{session('thongbao')}}
+                                                                    </div>
+                                                                @endif
                                                                 <fieldset class="_33IL">
                                                                     <legend class="wqjZ">Thiết lập tài khoản</legend>
                                                                     <div class="oTaE">
@@ -38,12 +54,12 @@
                                                                                        <div class="_3CNs">
                                                                                             <div class="_1vBK">
                                                                                                 <div class="_2IY9">
-                                                                                                    <img class="img" src="src/img/unnamed.png" alt="">
+                                                                                                    <img class="img" src="src/img/{{Auth::user()->img}}" alt="">
                                                                                                 </div>
                                                                                                 <div class="ZU-i">
                                                                                                     <span>Kéo ảnh vào đây</span>
                                                                                                 </div>
-                                                                                                <input class="inputimg" accept="image/*" name="hinh" type="file">
+                                                                                                <input class="inputimg" accept="image/*" name="img" type="file">
                                                                                             </div>
                                                                                        </div> 
                                                                                     </div>
@@ -73,7 +89,7 @@
                                                                                     </div>
                                                                                     <div class="_3Iet IhHS">
                                                                                         <div class="_2ieP">
-                                                                                            <input class="firstname" type="text" id="firstname" placeholder="Tên" name="firstname">
+                                                                                            <input class="firstname" value="{{Auth::user()->firstname}}" type="text" id="firstname" placeholder="Tên" name="firstname">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -85,7 +101,7 @@
                                                                                     </div>
                                                                                     <div class="_3Iet IhHS">
                                                                                         <div class="_2ieP">
-                                                                                            <input class="lastname" type="text" id="lastname" placeholder="Họ" name="lastname">
+                                                                                            <input class="lastname" value="{{Auth::user()->lastname}}" type="text" id="lastname" placeholder="Họ" name="lastname">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -104,9 +120,18 @@
                                                                                         <div class="_2ieP">
                                                                                             <div class="Select-control">
                                                                                                 <select name="gender">
+                                                                                                    @if (Auth::user()->gender != NULL)
+                                                                                                    <option value="nam" @if (Auth::user()->gender == 'nam')
+                                                                                                        selected
+                                                                                                    @endif>Nam</option>
+                                                                                                    <option value="nữ" @if (Auth::user()->gender == 'nữ')
+                                                                                                        selected
+                                                                                                    @endif>Nữ</option>
+                                                                                                    @else
                                                                                                     <option value="" disabled selected>Giới Tính</option>
                                                                                                     <option value="nam">Nam</option>
                                                                                                     <option value="nữ">Nữ</option>
+                                                                                                    @endif
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
@@ -128,8 +153,21 @@
                                                                                                     <div class="iLEV IhHS">
                                                                                                         <div class="_3Iet IhHS">
                                                                                                             <div class="_2ieP">
-                                                                                                                <select disabled class="day" name="day" id="day">
-                                                                                                                    <option value="">Chọn ngày</option>
+                                                                                                                <select class="day" name="day" id="day">
+                                                                                                                    @if (Auth::user()->birthday != NULL)
+                                                                                                                        @for ($i = 1; $i <= 30; $i++)
+                                                                                                                            @if (explode("-", Auth::user()->birthday)[2] == $i)
+                                                                                                                            <option value="{{$i}}" selected>{{$i}}</option> 
+                                                                                                                            @else
+                                                                                                                            <option value="{{$i}}">{{$i}}</option>
+                                                                                                                            @endif                                                                                                                 
+                                                                                                                        @endfor
+                                                                                                                    @else
+                                                                                                                        <option value="" disabled selected>Chọn ngày</option>
+                                                                                                                        @for ($i = 1; $i <= 30; $i++)
+                                                                                                                        <option value="{{$i}}">{{$i}}</option>
+                                                                                                                        @endfor
+                                                                                                                    @endif
                                                                                                                 </select>
                                                                                                             </div>
                                                                                                         </div>
@@ -139,8 +177,21 @@
                                                                                                     <div class="iLEV IhHS">
                                                                                                         <div class="_3Iet IhHS">
                                                                                                             <div class="_2ieP">
-                                                                                                                <select disabled class="month" name="month" id="month">
-                                                                                                                   <option value="">Chọn tháng</option>
+                                                                                                                <select class="month" name="month" id="month">
+                                                                                                                    @if (Auth::user()->birthday != NULL)
+                                                                                                                        @for ($i = 1; $i <= 12; $i++)
+                                                                                                                            @if (explode("-", Auth::user()->birthday)[1] == $i)
+                                                                                                                            <option value="{{$i}}" selected>{{$i}}</option> 
+                                                                                                                            @else
+                                                                                                                            <option value="{{$i}}">{{$i}}</option>
+                                                                                                                            @endif                                                                                                                 
+                                                                                                                        @endfor
+                                                                                                                    @else
+                                                                                                                        <option value="" disabled selected>Chọn tháng</option>
+                                                                                                                        @for ($i = 1; $i <= 12; $i++)
+                                                                                                                        <option value="{{$i}}">{{$i}}</option>
+                                                                                                                        @endfor
+                                                                                                                    @endif
                                                                                                                 </select>
                                                                                                             </div>
                                                                                                         </div>
@@ -151,7 +202,20 @@
                                                                                                         <div class="_3Iet IhHS">
                                                                                                             <div class="_2ieP">
                                                                                                                 <select class="year" name="year" id="year">
-
+                                                                                                                    @if (Auth::user()->birthday != NULL)
+                                                                                                                        @for ($i = 1990; $i <= 2020; $i++)
+                                                                                                                            @if (explode("-", Auth::user()->birthday)[0] == $i)
+                                                                                                                            <option value="{{$i}}" selected>{{$i}}</option> 
+                                                                                                                            @else
+                                                                                                                            <option value="{{$i}}">{{$i}}</option>
+                                                                                                                            @endif                                                                                                                 
+                                                                                                                        @endfor
+                                                                                                                    @else
+                                                                                                                        <option value="" disabled selected>Chọn năm</option>
+                                                                                                                        @for ($i = 1990; $i <= 2020; $i++)
+                                                                                                                        <option value="{{$i}}">{{$i}}</option>
+                                                                                                                        @endfor
+                                                                                                                    @endif
                                                                                                                 </select>
                                                                                                             </div>
                                                                                                         </div>
@@ -171,7 +235,7 @@
                                                                                     </div>
                                                                                     <div class="_3Iet IhHS">
                                                                                         <div class="_2ieP">
-                                                                                            <input class="email" type="email" name="email" placeholder="Địa chỉ e-mail" id="email" value="tuan.nh201612@gmail.com">
+                                                                                            <input class="email" type="email" name="email" placeholder="Địa chỉ e-mail" id="email" value="{{Auth::user()->email}}">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
