@@ -32,7 +32,9 @@ class settingsController extends Controller
                 $Hinh = Str::random(4)."_".$name;
             }
             $file->move("src/img/",$Hinh);
-            // unlink("src/img/".$user->img);
+            if($user->img != 'unnamed.png'){
+                unlink("src/img/".$user->img);
+            }
             $user->img = $Hinh;
         }
 

@@ -17,7 +17,7 @@ body{
     font-size: 16px;
     font-weight: normal;
     line-height: 1.4;  
-    background: #f4f7fa;
+    background-color: #f4f7fa !important;
     margin: 0;
 }
 
@@ -1037,6 +1037,125 @@ nav,ul,ol{
         justify-content: center;
         padding: 3rem 0;
         color: #7b93a4;
+    }
+
+    .oTaE{
+        width: 100%;
+
+        .LB4I{
+            display: flex;
+            flex: 0 1 auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            ._3fS2.o-cw._2oRk{
+                opacity: 1;
+                pointer-events: all;
+                display: initial;
+                flex-basis: 50%;
+                max-width: 50%;
+
+                ._3wsj._3QBC{
+                    position: relative;
+                    width: 100%;
+                    padding: 15px;
+                    background-color: white;
+                    border-radius: 8px;
+                    font-size: 12px;
+                    line-height: normal;
+
+                    .oTaE{
+                        width: 100%;
+
+                        .LB4I{
+                            display: flex;
+                            flex: 0 1 auto;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+
+                            ._3fS2.o-cw._22vv._1V5z._37kk{
+                                opacity: 1;
+                                pointer-events: all;
+                                display: initial;
+                                flex-basis: 58.33333333%;
+                                max-width: 58.33333333%;    
+
+                                ._1aWI{
+                                    margin: 0;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                }
+
+                                ._3zGV{
+                                    color: #bbcdd8;
+                                    font-size: 12px;
+                                }
+                            }
+
+                            ._3fS2.o-cw._22vv._19wA._1KKs{
+                                opacity: 1;
+                                pointer-events: all;
+                                display: initial;
+                                flex-basis: 41.66666667%;
+                                max-width: 41.66666667%;   
+                                
+                                ._2YRc._29hs{
+                                    display: table;
+                                    table-layout: fixed;
+                                    width: 100%;
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style-type: none;
+                                    background-color: white;
+                                    border: 1px solid transparent;
+                                    border-radius: 4px;
+                                    border-color: #e5ebee;
+
+                                    ._3nff._29hs{
+                                        display: table-cell;
+
+                                        &:last-child{
+                                            border-color: #e5ebee;
+                                            border-right: 1px solid transparent;
+                                        }
+
+                                        ._3xlp {
+                                            width: 100%;
+                                            padding-left: 5px;
+                                            padding-right: 5px;
+                                            border: none;
+                                            text-align: center;
+                                            font-size: 14px;
+                                            line-height: 32px;
+                                            font-weight: 600;
+                                            cursor: pointer;
+                                            color: #7b93a4;
+                                            transition: color .2s ease-in-o;
+                                            padding: 0;
+                                            outline: none;
+
+                                            &:disabled{
+                                                color: #e5ebee;
+                                                cursor: default;
+                                            }
+                                        }
+
+                                        ._3xlp.selected {
+                                            color: #12c48b;
+                                        }
+                                    }
+                                }
+                            }
+
+                            ._3fS2.o-cw2{
+                                max-width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
