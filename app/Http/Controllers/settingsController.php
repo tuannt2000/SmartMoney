@@ -47,4 +47,10 @@ class settingsController extends Controller
 
         return redirect('settings/account')->with('thongbao',"Cập nhập thành công");
     }
+
+    public function deleteAccount(Request $request,$id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect('auth/login');
+    }
 }

@@ -6,7 +6,7 @@
                     <a href="settings/account"class="_3WuR _1gOp"><span>Tài khoản</span></a>
                 </li>
                 <li>
-                    <a href="settings/account"class="_3WuR _1gOp"><span>Tất cả các danh mục</span></a>
+                    <a href="settings/all-categories"class="_3WuR _1gOp"><span>Tất cả các danh mục</span></a>
                 </li>
                 <li>
                     <a href="settings/account"class="_3WuR _1gOp"><span>Các TK ngân hàng được kết nối</span></a>

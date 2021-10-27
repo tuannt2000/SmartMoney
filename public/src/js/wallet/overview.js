@@ -1,27 +1,19 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-
 // header
 const _3C1k = $('._3C1k');
 const selected = _3C1k.querySelectorAll('._3WuR._1gOp');
 selected.forEach(function(value,index){
-    if(index == 0){
+    if(index == 1){
         value.classList.add('selected');
     }
 })
 
 
-// Chỉnh sửa giao dich
-const _1BwG = $$('._1BwG._1tO1');
-let _2k7K;
-let _2XTe3;
-let jcQj;
-let check1 = false;
-
 //   Su li account
 const account = $('.dropdownWrap');
-const _2XTe = account.querySelector('._2XTe');
+const _2XTe = $('._2XTe');
 const uZrZ = $('.uZrZ');
 const _1zUK = $('._1zUK');
 const _1WaF = $('._1WaF');
@@ -45,30 +37,6 @@ document.onclick = function(e){
             _1WaF.classList.add('_1z7D');
             check = true;
         }
-    }
-
-    if(check1){
-        const egUi = jcQj.querySelector('.egUi.B8bm');      // nút đóng
-        const _3SdL = jcQj.querySelector('._3SdL._3qcS');   // nút hủy
-        if(_2XTe3 == e.target || egUi.contains(e.target) || _3SdL.contains(e.target)){
-            _2XTe3.classList.remove('_2Gxn');
-            jcQj.classList.remove('_1Mlv');
-            check1 = false;
-        }
-    }else{
-        _1BwG.forEach(function(value){
-            _2k7K = value.querySelector('._2k7K');
-    
-            if(_2k7K.contains(e.target)){
-                
-            }else if(value.contains(e.target)){
-                value.querySelector('._2XTe').classList.add('_2Gxn');
-                jcQj = value.querySelector('.jcQj');
-                jcQj.classList.add('_1Mlv');
-                _2XTe3 = value.querySelector('._2XTe._2Gxn');
-                check1 = true;     
-            }          
-        })
     }
 }
 
@@ -110,6 +78,7 @@ _2pOY.onclick = function () {
 }
 
 
+
 // Theo số tiền
 const rc_slider = $('.rc-slider');
 const rc_slider_track = $('.rc-slider-track.rc-slider-track-1');
@@ -117,6 +86,7 @@ const rc_slider_handle1 = $('.rc-slider-handle.rc-slider-handle-1');
 const rc_slider_handle2 = $('.rc-slider-handle.rc-slider-handle-2');
 const _261b = $('._261b');
 const _3RqA = $('._3RqA');
+
 const _261bGia = _261b.innerText;
 
 rc_slider.addEventListener('click', function (e) {
@@ -141,30 +111,13 @@ rc_slider.addEventListener('click', function (e) {
     _261b.innerText = thaydoi;
 });
 
+
 //  scroll
 const UzPn = $('.UzPn._10vh');
 document.onscroll = function(){
-    if(window.scrollY > 60){
+    if(window.scrollY > 235){
         UzPn.classList.add('zpcn');
     }else{
         UzPn.classList.remove('zpcn');
     }
 }
-
-// giao dich
-const giaodich = $$('._2k7K');
-const _3fS2 = $$('._3fS2._1Izi');
-giaodich.forEach(function(value,index){
-    value.onclick = function(){
-        value.querySelector('._17Fo._2Tq6').classList.toggle('_3FsX');
-        if($$('._17Fo._2Tq6._3FsX').length > 0){
-            _3fS2.forEach(function(value1){
-                value1.classList.add('_3dgm');
-            })
-        }else{
-            _3fS2.forEach(function(value1){
-                value1.classList.remove('_3dgm');
-            })
-        }
-    }
-})
