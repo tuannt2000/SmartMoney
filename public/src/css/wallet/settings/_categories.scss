@@ -1,9 +1,27 @@
 ._33IL._3TLW{
     div{
+        ._2XTe{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0;
+            background: rgba(0, 0, 0, .6);
+            z-index: 800;
+            width: 100vw;
+        }
+
+        ._2XTe._2Gxn{
+            opacity: .6;
+            pointer-events: all;
+            transition: opacity .3s;
+        }
+
         ._33BO{
             position: relative;
             z-index: 1;
-            transition: z-index .35s step-end;
 
             ._3PIU._3RzU{
                 margin: 0 -15px;
@@ -65,13 +83,17 @@
                                                 width: 100%;
                                                 border-radius: 4px;
                                                 align-items: stretch;
-                                                border: 1px solid transparent;
-                                                background-color: #fff;
-                                                border-color: #e5ebee;
+                                                background-color: #fff;                                               
                                                 color: #324c5b;
         
                                                 &:hover{
-                                                    border-color: #bbcdd8;
+                                                    ._2ieP{
+                                                        div{
+                                                            ._10jr{
+                                                                border-color: #bbcdd8;
+                                                            }
+                                                        }
+                                                    }
                                                 }
         
                                                 ._2ieP{
@@ -82,9 +104,12 @@
         
                                                     div{
                                                         width: 100%;
+                                                        position: relative;
 
                                                         ._10jr{
                                                             position: relative;
+                                                            border: 1px solid transparent;
+                                                            border-color: #e5ebee;
 
                                                             &:hover{
                                                                 ._1BZ3{
@@ -124,6 +149,8 @@
 
                                                                         svg{
                                                                             fill: white;
+                                                                            width: 16px;
+                                                                            height: 16px;
                                                                         }
                                                                     }
                                                                 }
@@ -148,6 +175,60 @@
                                                                         transform: rotate(
                                                                             -45deg);
                                                                         transition: all .2s ease-in-out;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            ._1BZ3.open{
+                                                                ._24dr{
+                                                                    ._1lxA{
+                                                                        transform: rotate(135deg);
+                                                                        border-color: #324c5b;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .Select-menu-outer-wrapper{
+                                                            position: absolute;
+                                                            top: 41px;
+                                                            left: 0;
+                                                            width: 300%;
+                                                            height: auto;
+                                                            max-height: 300px;
+                                                            overflow: auto;
+                                                            border: 1px solid #bbcdd8;
+                                                            border-radius: 4px;
+                                                            background-color: white;
+                                                            padding: 15px;
+                                                            display: none; 
+                                                            grid-template-columns: auto auto auto;
+                                                            grid-row-gap: 20px;
+
+                                                            ._2s9x{
+                                                                padding: 0;
+                                                                background: none;
+                                                                border: none;
+                                                                flex-basis: 33.33%;
+                                                                display: flex;
+                                                                justify-content: center;
+
+                                                                span{
+                                                                    display: block;
+                                                                    height: 40px;
+                                                                    width: 40px;
+                                                                    border-radius: 100%;
+                                                                    padding: 0;
+                                                                    border: none;
+                                                                    position: relative;
+
+                                                                    svg{
+                                                                        position: absolute;
+                                                                        top: 14%;
+                                                                        left: 18%;
+                                                                        fill: white;
+                                                                        width: 25px;
+                                                                        height: 25px;
                                                                     }
                                                                 }
                                                             }
@@ -273,6 +354,7 @@
                                             align-items: stretch;
                                             width: 100%;
                                             flex-grow: 1;
+                                            position: relative;
 
                                             .Select-control{
                                                 border-radius: 4px;
@@ -340,6 +422,7 @@
                                                     border-radius: 4px;
 
                                                     .Select-arrow{
+                                                        transition: all 0.2s ease-in-out;
                                                         position: relative;
                                                         display: block;
                                                         height: 8px;
@@ -353,13 +436,70 @@
                                                     }
                                                 }
                                             }
+
+                                            .Select-control.open{
+                                                .Select-arrow-zone{
+                                                    .Select-arrow{
+                                                        transform: rotate(135deg);
+                                                        border-color: #324c5b;
+                                                    }
+                                                }
+                                            }
+
+                                            .Select-menu-outer-wrapper{
+                                                position: absolute;
+                                                top: 41px;
+                                                height: auto;
+                                                left: 0;
+                                                right: 0;
+                                                border: 1px solid #bbcdd8;
+                                                border-radius: 4px;
+                                                background-color: white;
+                                                display: none;
+                                               
+                                                .Select-value{
+                                                    color: #324c5b;
+                                                    height: 34px;
+                                                    line-height: 38px;
+                                                    padding-left: 10px;
+                                                    padding-right: 10px;
+                                                    max-width: 100%;
+                                                    overflow: hidden;
+                                                    text-overflow: ellipsis;
+                                                    white-space: nowrap;
+                                                    font-size: 14px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    cursor: default;
+
+                                                    &:hover{
+                                                        background-color: #bbcdd8;
+                                                    }
+
+                                                    .Select-value-label{
+                                                        color: #324c5b;
+                                                        line-height: 38px;
+                                                        max-width: 100%;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                        white-space: nowrap;
+                                                        font-size: 14px;
+                                                        display: flex;
+                                                        align-items: center;
+                                                    }
+
+                                                    .Select-value-label.selected{
+                                                        font-weight: 600;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
 
-                            ._3fS2.o-cw._1B3o._259J{
-                                opacity: 1;
+                            ._3fS2.o-cw._1B3o1{
+                                opacity: 0;
                                 pointer-events: all;
                                 display: initial;
                                 flex-basis: 25%;
@@ -394,10 +534,18 @@
                                     }
                                 }
                             }
+
+                            ._3fS2.o-cw._1B3o1._259J{
+                                opacity: 1;
+                            }
                         }
                     }
                 }
             }
+        }
+
+        ._33BO._1j3Q{
+            z-index: 950;
         }
     }
 }

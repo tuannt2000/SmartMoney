@@ -114,8 +114,9 @@ rc_slider.addEventListener('click', function (e) {
 
 //  scroll
 const UzPn = $('.UzPn._10vh');
+const Top = UzPn.offsetTop;
 document.onscroll = function(){
-    if(window.scrollY > 235){
+    if(window.scrollY > Top){
         UzPn.classList.add('zpcn');
     }else{
         UzPn.classList.remove('zpcn');

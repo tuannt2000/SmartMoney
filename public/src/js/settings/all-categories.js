@@ -11,6 +11,94 @@ selected.forEach(function(value,index){
     }
 })
 
+//  tạo category 
+const _33IL = $('._33IL._3TLW');
+const _2_oj = _33IL.querySelector('._3SdL._2_oj');
+const _3Iet = _33IL.querySelectorAll('._3Iet.IhHS');
+const _2XTe1 = _33IL.querySelector('._2XTe');
+const _3PIU = _33IL.querySelector('._3PIU');
+const _33BO = _33IL.querySelector('._33BO');
+const _3fS2 = _33IL.querySelector('._3fS2.o-cw._1B3o1');
+let open,bieutuong;
+let Select_menu;
+let check1 = false;
+let count1 = false,count2 = false,count3=false;
+
+function addCategory(){
+    if(count1 && count2 && count3){
+        _2_oj.disabled = false;
+    }else{
+        _2_oj.disabled = true;
+    }
+}
+
+_3Iet.forEach(function(item,index){
+    if(index == 0){
+        bieutuong = item.querySelector('._3-9b._2_Bp');
+    }
+    item.onclick = function(e){
+        _2XTe1.classList.add('_2Gxn');
+        _33BO.classList.add('_1j3Q');
+        _3fS2.classList.add('_259J');
+        check1 = true;
+        if(open){
+            open.classList.remove('open');
+            Select_menu.style.display = 'none';
+        }
+        if(index == 0 || index == 1){
+            open = item.querySelector('._1BZ3');
+            if(open.contains(e.target)){
+                open.classList.add('open');
+                Select_menu = item.querySelector('.Select-menu-outer-wrapper');
+                Select_menu.style.display = 'grid';
+                Select_menu.querySelectorAll('._2s9x').forEach(function(item1){
+                    item1.onclick = function(){
+                        if(index == 0){
+                            open.querySelector('svg').innerHTML = item1.querySelector('svg').innerHTML;
+                            count1 = true;
+                            addCategory();
+                        }else{
+                            open.querySelector('svg path').style.fill = item1.querySelector('span').style.backgroundColor;
+                            bieutuong.style.backgroundColor = item1.querySelector('span').style.backgroundColor;
+                            count2 = true;
+                            addCategory();
+                        }
+                        Select_menu.style.display = 'none';
+                    }
+                });
+            }
+        }else if(index == 2){
+            open =  item.querySelector('input');
+            Select_menu = item.querySelector('.rong');
+            open.oninput = function(){
+                open.classList.add('open');
+                if(item.querySelector('input').value != ''){
+                    count3 = true;
+                    addCategory();
+                }else{
+                    count3 = false;
+                    addCategory();
+                }
+            }
+        }else if(index == 3){
+            open = item.querySelector('.Select-control');
+            if(open.contains(e.target)){
+                open.classList.add('open');
+                Select_menu = item.querySelector('.Select-menu-outer-wrapper');
+                Select_menu.style.display = 'block';
+                Select_menu.querySelectorAll('.Select-value').forEach(function(item1){
+                    item1.onclick = function(){
+                        Select_menu.querySelector('.Select-value-label.selected').classList.remove('selected');
+                        item.querySelector('.Select-control .Select-value-label span').innerText = item1.querySelector('.Select-value-label span').innerText;
+                        item1.querySelector('.Select-value-label').classList.add('selected');
+                        Select_menu.style.display = 'none';
+                    }
+                });
+            }
+        }
+    }
+})
+
 
 //   Su li account
 const account = $('.dropdownWrap');
@@ -37,6 +125,22 @@ document.onclick = function(e){
             _1zUK.classList.add('_1z7D');
             _1WaF.classList.add('_1z7D');
             check = true;
+        }
+    }
+
+    if(check1){
+        if(!_3PIU.contains(e.target)){
+            _2XTe1.classList.remove('_2Gxn');
+            _33BO.classList.remove('_1j3Q');
+            _3fS2.classList.remove('_259J');
+            if(open){
+                open.classList.remove('open');
+            }
+            Select_menu.style.display = 'none';
+            check1 = false;
+        }
+        if(!open.classList.contains('open')){
+            Select_menu.style.display = 'none';
         }
     }
 }
