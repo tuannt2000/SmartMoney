@@ -1652,6 +1652,11 @@
   line-height: 36px;
   transition: color 0.2s ease-in-out;
 }
+._1BN0 .oTaE .LB4I ._3fS2.o-cw._287O._1Ary ._1S3- ._3AQP div form ._33IL .oTaE .LB4I ._3fS2.o-cw._1ubS .iLEV ._3Iet.IhHS ._2ieP input[type=number]::-webkit-inner-spin-button,
+._1BN0 .oTaE .LB4I ._3fS2.o-cw._287O._1Ary ._1S3- ._3AQP div form ._33IL .oTaE .LB4I ._3fS2.o-cw._1ubS .iLEV ._3Iet.IhHS ._2ieP input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 ._1BN0 .oTaE .LB4I ._3fS2.o-cw._287O._1Ary ._1S3- ._3AQP div form div .LB4I {
   margin: 0px -0.5rem;
   display: flex;
