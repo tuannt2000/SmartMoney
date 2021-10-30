@@ -35,6 +35,10 @@ Route::group(['prefix'=>'wallet'],function(){
         return view('wallet.overview');
     });
 
+    Route::get('budgets', function () {
+        return view('wallet.budgetsDetail');
+    });
+
     Route::group(['prefix'=>'settings'],function(){
         Route::get('general', function () {
             return view('wallet.settings.general');
@@ -47,6 +51,10 @@ Route::group(['prefix'=>'wallet'],function(){
 });
 
 Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
+
+Route::get('budgets', function () {
+    return view('budgetsDetail');
+});
 
 Route::group(['prefix'=>'settings'],function(){
     Route::get('account','App\Http\Controllers\settingsController@getAccount');

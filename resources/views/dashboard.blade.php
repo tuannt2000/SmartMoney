@@ -21,8 +21,8 @@
                         <div class="_1e_t">
                             <nav>
                                 <ul class="ZfY8">
-                                    <li><a href="dashboard" class="_3WuR _1gOp selected"><span>Bảng điều khiển</span></a></li>
-                                    <li><a href="" class="_3WuR _1gOp "><span>Ngân sách</span></a></li>
+                                    <li><a href="dashboard" class="_3WuR _1gOp"><span>Bảng điều khiển</span></a></li>
+                                    <li><a href="budgets" class="_3WuR _1gOp "><span>Ngân sách</span></a></li>
                                 </ul>
                             </nav>
                         </div>
