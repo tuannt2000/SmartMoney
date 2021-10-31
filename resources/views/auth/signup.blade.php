@@ -23,7 +23,7 @@
                                 <h1>
                                     <span>
                                         <strong>Đăng ký</strong>
-                                        vào Spendee
+                                        vào SmartMoney
                                     </span>
                                 </h1>
                                 <p>
@@ -89,7 +89,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="_3fS2o-cw">
-                                                    <button type="submit" disabled class="_3SdL _2_oj ">Đăng ký Spendee</button>
+                                                    <button type="submit" disabled class="_3SdL _2_oj ">Đăng ký SmartMoney</button>
                                                 </div>
                                             </div>
                                         </div>

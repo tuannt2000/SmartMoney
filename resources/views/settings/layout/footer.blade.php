@@ -5,7 +5,7 @@
     <span> · </span>
     <span><button class="_1gOp _3zVS _2D45 ">Điều khoản sử dụng</button></span>
     <span> · </span>
-    <span><button class="_1gOp _3zVS _2D45 ">Pre-contractual Terms</button></span>
+    <span><button class="_1gOp _3zVS _2D45 ">Điều kiện hợp đồng</button></span>
     <span> · </span>
-    <span><button class="_1gOp _3zVS _2D45 ">Spendee © 2021</button></span>
+    <span><button class="_1gOp _3zVS _2D45 ">Smart Money © 2021</button></span>
 </div>

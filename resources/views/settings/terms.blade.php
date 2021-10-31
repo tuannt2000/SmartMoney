@@ -35,7 +35,7 @@
                                                                     <button class="_1gOp _1myF ">Chính sách bảo mật</button>
                                                                 </span>
                                                                 <span>
-                                                                    <button class="_1gOp _1myF ">Pre-contractual Terms</button>
+                                                                    <button class="_1gOp _1myF ">Thời hạn hợp đồng</button>
                                                                 </span>
                                                                 <span>
                                                                     <button class="_1gOp _1myF ">Chính sách cookie</button>
@@ -60,7 +60,7 @@
                                                                             </label>
                                                                         </div>
                                                                     </div>
-                                                                    <p class="_8nx6">Theo Điều khoản Sử dụng và Chính sách Bảo mật của Spendee, tôi đồng ý với việc Spendee có thể xử lý các dữ liệu cá nhân của tôi cho mục đích tiếp thị nhằm cung cấp cho tôi những nội dung quảng cáo và ưu đãi sản phẩm có liên quan hơn.</p>
+                                                                    <p class="_8nx6">Theo Điều khoản Sử dụng và Chính sách Bảo mật của Smart Money, tôi đồng ý với việc Smart Money có thể xử lý các dữ liệu cá nhân của tôi cho mục đích tiếp thị nhằm cung cấp cho tôi những nội dung quảng cáo và ưu đãi sản phẩm có liên quan hơn.</p>
                                                                 </div>
                                                                 <div>
                                                                     <div class="LB4I">

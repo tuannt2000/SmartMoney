@@ -1,6 +1,6 @@
 <div class="G1IE">
     <span>
-        By using Spendee you agree with Spendee’s 
+        Với việc sử dụng Smart Money là bạn đã đồng ý với
         <span>
             <a class="_1gOp _3zVS ">Điều khoản sử dụng</a>
         </span>
@@ -8,9 +8,9 @@
         <span>
             <a class="_1gOp _3zVS ">Chính sách bảo mật</a>
         </span>
-        and 
+        và 
         <span>
-            <a class="_1gOp _3zVS ">Pre-contractual Terms</a>
+            <a class="_1gOp _3zVS ">Thời hạn hợp đồng</a>
         </span>
     </span>
 </div>
