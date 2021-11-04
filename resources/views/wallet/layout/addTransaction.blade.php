@@ -10,6 +10,12 @@
                             </span>
                             <span class="A4xM">Thêm giao dịch</span>
                         </button>
+                        <button type="button" class="egUi closeSecondary _3SdL _3zVS _1mpn _3dgm ">
+                            <span class="_2nf9">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill-rule="evenodd" d="M6.764 6.414l4.36-4.36L9.947.875l-4.36 4.36-4.36-4.36-1.18 1.179 4.361 4.36-4.36 4.36 1.178 1.18 4.36-4.361 4.361 4.36 1.179-1.178-4.36-4.36z"></path></svg>
+                            </span>
+                            <span class="A4xM">Đóng</span>
+                        </button>
                     </div>
                 </div>
                 <div class="_3fS2 _1Izi" style="padding: 0.5rem;">
@@ -44,6 +50,205 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div>
+                <div class="_2Rgf _1TEN">
+                    <div class="_31E1">
+                        <div class="_207I _1TEN">
+                            <form action="">
+                                <div class="_3wsj  _2ndI">
+                                    <div class="_28Yu">
+                                        <button type="button" class="egUi B8bm ">
+                                            <span class="_2nf9">
+                                                <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="import-step-1" transform="translate(-1252.000000, -166.000000)" fill="currentColor"><g id="import-dialog" transform="translate(420.000000, 158.000000)"><g transform="translate(824.000000, 0.000000)"><path d="M13,13 L8.00684547,13 C7.44994876,13 7,13.4477153 7,14 C7,14.5561352 7.45078007,15 8.00684547,15 L13,15 L13,19.9931545 C13,20.5500512 13.4477153,21 14,21 C14.5561352,21 15,20.5492199 15,19.9931545 L15,15 L19.9931545,15 C20.5500512,15 21,14.5522847 21,14 C21,13.4438648 20.5492199,13 19.9931545,13 L15,13 L15,8.00684547 C15,7.44994876 14.5522847,7 14,7 C13.4438648,7 13,7.45078007 13,8.00684547 L13,13 Z" id="Combined-Shape" transform="translate(14.000000, 14.000000) rotate(45.000000) translate(-14.000000, -14.000000) "></path></g></g></g></g></svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="oTaE _3kSa">
+                                        <div class="_1m7C">
+                                            <div class="_2UE8 disable">
+                                                <div class="LB4I _2s9S" style="margin: 0px -0.25rem;">
+                                                    <div class="_3fS2 o-cw _3KvC _2NH_ _5CwE _3BCe" style="padding: 0.25rem;">
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="category" class="_1Baa inline IhHS">Danh mục </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <div class="Select-control">
+                                                                        <span class="Select-multi-value-wrapper" id="react-select-ControlSelectFilterundefined--value">
+                                                                            <div class="Select-value">
+                                                                                <span class="Select-value-label" id="react-select-ControlSelectFilterundefined--value-item">
+                                                                                    <span class="I7xv" style="margin-left: -3px;">
+                                                                                        <span class="_3-9b _2_Bp" style="background-color: rgb(18, 196, 139);">
+                                                                                            <svg width="24" height="24" style="fill : white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></g></svg>
+                                                                                        </span>
+                                                                                        <span class="-ESZ">
+                                                                                            <span class="_1BDz">
+                                                                                                <span class="KKUC">Chọn danh mục...</span>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="Select-input">
+                                                                                <input role="combobox" class="Select-input" value="">
+                                                                            </div>
+                                                                        </span>
+                                                                        <span class="Select-arrow-zone">
+                                                                            <span class="Select-arrow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 o-cw _3KvC _2NH_ _5CwE _1z0x" style="padding: 0.25rem;">
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="datetime" class="_1Baa inline IhHS">Ngày </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <div class="_5BHc">
+                                                                        <input class="_3cbb" type="date" value="2021-11-04">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 _229f _1B3o _1EEp" style="padding: 0.25rem;">
+                                                        <div class="iLEV">
+                                                            <div class="BVod">
+                                                                <label for="note" class="_1Baa inline">Ghi chú (tùy chọn)</label>
+                                                            </div>
+                                                            <div class="_3Iet">
+                                                                <div class="_2ieP">
+                                                                    <input class="_1mYU" id="note" name="note" placeholder="Viết ghi chú hoặc #gắn thẻ" type="text" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 o-cw _3KvC _2NH_ _5CwE _1Vyl" style="padding: 0.25rem;">
+                                                        <div class="iLEV">
+                                                            <div class="BVod">
+                                                                <label for="labels" class="_1Baa inline">Label (tùy chọn)</label>
+                                                            </div>
+                                                            <div class="_3Iet">
+                                                                <div class="_2ieP">
+                                                                    <div class="Select-control">
+                                                                        <span class="Select-multi-value-wrapper" id="react-select-ControlSelectFilterundefined--value">
+                                                                            <div class="Select-placeholder">Select labels...</div>
+                                                                            <div class="Select-input">
+                                                                                <input role="combobox" class="Select-input" value="">
+                                                                            </div>
+                                                                        </span>
+                                                                        <span class="Select-arrow-zone">
+                                                                            <span class="Select-arrow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 _1vnx _2P_R _2NH_ _5CwE _1INF" style="padding: 0.25rem;">
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="price" class="_1Baa inline IhHS">Số lượng </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <input class="_1mYU required iDbf hpDw" id="price" name="price" placeholder="-0.00" type="number" step="0.01" inputmode="decimal" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 _2pKn _3uFw _2NH_ _1Vxc _2u5k" style="padding: 0.25rem;">
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="foreignCurrency" class="_1Baa inline IhHS">Đơn vị tiền tệ </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <div class="Select-control">
+                                                                        <span class="Select-multi-value-wrapper" id="react-select-ControlCurrencyundefined--value">
+                                                                            <div class="Select-value">
+                                                                                <span class="Select-value-label" id="react-select-ControlCurrencyundefined--value-item">VND</span>
+                                                                            </div>
+                                                                            <div class="Select-input">
+                                                                                <input class="Select-input" value="">
+                                                                            </div>
+                                                                        </span>
+                                                                        <span class="Select-arrow-zone">
+                                                                            <span class="Select-arrow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 _2xmy" style="padding: 0.25rem;"></div>
+                                                    <div class="_3fS2 _2Ufo" style="padding: 0.25rem;">
+                                                        <div class="_3oQS">
+                                                            <div class="_2186" style="position: relative;">
+                                                                <div class="_1GEx">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"></path></svg>
+                                                                </div>
+                                                                <input accept="image/*" type="file" style="position: absolute; inset: 0px; opacity: 1e-05;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 o-cw _2P_R _1gp8 _5CwE" style="padding: 0.25rem;">
+                                                        <div class="iLEV">
+                                                            <div class="BVod">
+                                                                <label for="repeat" class="_1Baa inline">Lặp lại (tùy chọn)</label>
+                                                            </div>
+                                                            <div class="_3Iet">
+                                                                <div class="_2ieP">
+                                                                    <div class="Select-control">
+                                                                        <span class="Select-multi-value-wrapper" id="react-select-ControlSelectselect--value">
+                                                                            <div class="Select-value">
+                                                                                <span class="Select-value-label">
+                                                                                    <span>Không bao giờ</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </span>
+                                                                        <span class="Select-arrow-zone">
+                                                                            <span class="Select-arrow"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_3fS2 o-cw _2P_R _229f _5CwE" style="padding: 0.25rem;">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="LB4I _1Nfn JBC3" style="margin: 0px -0.25rem;">
+                                            <div class="_3fS2 _2xmy" style="padding: 0.25rem;">
+                                                <div class="_28E_">
+                                                    <label class="mgcW">
+                                                        <input id="keepAdding" name="keepAdding" type="checkbox" value="false">
+                                                        <span class="_1yjd">
+                                                            <span class="_3Go8"></span>
+                                                        </span>Hãy tiếp tục thêm nhiều giao dịch nữa
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="_3fS2 o-cw _2eVd _229f _5CwE _9tQt" style="padding: 0.25rem;">
+                                                <button type="submit" disabled="" class="_3SdL _2_oj vMKQ ">Thêm giao dịch</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="_2XTe"></div>
             </div>
         </div>
     </div>
