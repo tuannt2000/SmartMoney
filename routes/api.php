@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
+use App\Models\UserCategory;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +17,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/user', function (){
+    return User::all();
+});
+
+Route::get('/user/{id}', function ($id){
+    return User::find($id);
+});
+
+Route::post('/user', function (Request $request){
+    return User::create($request->all());
+});
+
+Route::get('/category', function (){
+    return UserCategory::all();
 });

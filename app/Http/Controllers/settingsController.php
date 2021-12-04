@@ -38,11 +38,22 @@ class settingsController extends Controller
             $user->img = $Hinh;
         }
 
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
-        $user->gender = $request->gender;
-        $user->birthday = $request->year.'-'.$request->month.'-'.$request->day;
+        if(isset($request->firstname)){
+            $user->firstname = $request->firstname;
+        }
+        if(isset($request->lastname)){
+            $user->lastname = $request->lastname;
+        }
+        if(isset($request->email)){
+            $user->email = $request->email;
+        }
+        if(isset($request->gender)){
+            $user->gender = $request->gender;
+        }
+        if(isset($request->year) && isset($request->month) && isset($request->day)){
+            $user->birthday = $request->year.'-'.$request->month.'-'.$request->day;
+        }
+       
         $user->save();
 
         return redirect('settings/account')->with('thongbao',"Cập nhập thành công");

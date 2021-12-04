@@ -50,8 +50,6 @@ document.onclick = function(e){
     }
 }
 
-//  Tài khoản
-
 
 
 // Xóa ảnh

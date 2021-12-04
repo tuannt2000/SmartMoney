@@ -1,6 +1,6 @@
 .UzPn._10vh {
   transition: z-index 0.35s step-start;
-  z-index: 11;
+  z-index: 10;
 }
 .UzPn._10vh ._2AsN .oTaE .LB4I.panel ._3fS2._1GHs div .egUi.closeSecondary._3SdL._3zVS._1mpn._3dgm {
   background-color: #324c5b;
@@ -3687,10 +3687,11 @@ form ._33IL div .LB4I ._3fS2._3qCx ._3SdL._2_oj:disabled {
   justify-content: center;
   color: white;
 }
+._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div ._10jr ._1BZ3 ._2s9x ._3-9b._2_Bp img {
+  width: 100%;
+}
 ._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div ._10jr ._1BZ3 ._2s9x ._3-9b._2_Bp svg {
   fill: white;
-  width: 16px;
-  height: 16px;
 }
 ._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div ._10jr ._1BZ3 ._24dr {
   cursor: pointer;
@@ -3749,13 +3750,8 @@ form ._33IL div .LB4I ._3fS2._3qCx ._3SdL._2_oj:disabled {
   border: none;
   position: relative;
 }
-._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div .Select-menu-outer-wrapper ._2s9x span svg {
-  position: absolute;
-  top: 14%;
-  left: 18%;
-  fill: white;
-  width: 25px;
-  height: 25px;
+._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div .Select-menu-outer-wrapper ._2s9x span img {
+  width: 100%;
 }
 ._33IL._3TLW div ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1Nti {
   opacity: 1;
@@ -4546,6 +4542,9 @@ form ._33IL div .LB4I ._3fS2._3qCx ._3SdL._2_oj:disabled {
   width: 16px;
   height: 16px;
 }
+._33IL div div .jcQj ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div ._10jr ._1BZ3 ._2s9x ._3-9b._2_Bp img {
+  width: 100%;
+}
 ._33IL div div .jcQj ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div ._10jr ._1BZ3 ._24dr {
   cursor: pointer;
   display: flex;
@@ -4603,13 +4602,8 @@ form ._33IL div .LB4I ._3fS2._3qCx ._3SdL._2_oj:disabled {
   border: none;
   position: relative;
 }
-._33IL div div .jcQj ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div .Select-menu-outer-wrapper ._2s9x span svg {
-  position: absolute;
-  top: 14%;
-  left: 18%;
-  fill: white;
-  width: 25px;
-  height: 25px;
+._33IL div div .jcQj ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1B3o .LB4I ._3fS2._1ubS .iLEV.IhHS ._3Iet.IhHS ._2ieP div .Select-menu-outer-wrapper ._2s9x span img {
+  width: 100%;
 }
 ._33IL div div .jcQj ._33BO ._3PIU._3RzU form .oTaE .LB4I._2N9Y ._3fS2.o-cw._1Nti {
   opacity: 1;
@@ -5386,7 +5380,7 @@ nav, ul, ol {
 }
 
 .UzPn._10vh.zpcn {
-  z-index: 11;
+  z-index: 10;
   background: #f4f7fa;
 }
 .UzPn._10vh.zpcn::after {

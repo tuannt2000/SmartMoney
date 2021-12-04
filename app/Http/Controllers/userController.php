@@ -41,7 +41,7 @@ class userController extends Controller
         $user = new User;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->quyen = 0;
+        $user->quyen = "user";
         $user->save();
 
         return redirect()->back()->with('thongbao',"Đăng ký thành công")->withInput();

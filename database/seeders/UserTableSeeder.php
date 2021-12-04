@@ -19,12 +19,23 @@ class UserTableSeeder extends Seeder
 	        	[
 	        		'firstname' => 'User',
                     'lastname' => $i,
-	            	'email' => 'user_'.$i.'@mymail.com',
-                    'quyen'=> 0,
+	            	'email' => 'user_'.$i.'@gmail.com',
+                    'quyen'=> 'user',
 	            	'password' => bcrypt('123456'),
 	            	'created_at' => new \DateTime(),
 	        	]
         	);
         }
+
+        \DB::table('users')->insert(
+            [
+                'firstname' => 'Nguyễn Hữu',
+                'lastname' => "Tuấn",
+                'email' => 'tuan.nh20184221@gmail.com',
+                'quyen'=> 'admin',
+                'password' => bcrypt('123456'),
+                'created_at' => new \DateTime(),
+            ]
+        );
     }
 }

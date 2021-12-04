@@ -379,17 +379,6 @@ document.onclick = function(e){
             check2 = false;
         }
     }
-
-    if(check3){
-        if(!_2ZwS.contains(e.target) || egUi.contains(e.target) || huy.contains(e.target)){
-            ReactModal__Overlay.classList.remove('ReactModal__Overlay--after-open');
-            check3 = false;
-        }
-    }else{
-        if(xoa.contains(e.target)){
-            check3 = true;
-        }
-    }
 }
 
 //  xóa, hợp nhất, Thêm

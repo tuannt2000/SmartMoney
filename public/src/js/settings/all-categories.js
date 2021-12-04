@@ -52,7 +52,7 @@ _3Iet.forEach(function(item,index){
                 Select_menu.querySelectorAll('._2s9x').forEach(function(item1){
                     item1.onclick = function(){
                         if(index == 0){
-                            open.querySelector('svg').innerHTML = item1.querySelector('svg').innerHTML;
+                            open.querySelector('span').innerHTML = item1.querySelector('span').innerHTML;
                             count1 = true;
                             addCategory();
                         }else{
@@ -367,17 +367,6 @@ document.onclick = function(e){
             _2XTe2.classList.remove('_2Gxn');
             tat.classList.remove('_2Xou');
             check2 = false;
-        }
-    }
-
-    if(check3){
-        if(!_2ZwS.contains(e.target) || egUi.contains(e.target) || huy.contains(e.target)){
-            ReactModal__Overlay.classList.remove('ReactModal__Overlay--after-open');
-            check3 = false;
-        }
-    }else{
-        if(xoa.contains(e.target)){
-            check3 = true;
         }
     }
 }

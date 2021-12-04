@@ -71,8 +71,6 @@ Route::group(['prefix'=>'settings'],function(){
         return view('settings.terms');
     });
 
-    Route::get('all-categories', function () {
-        return view('settings.all-categories');
-    });
+    Route::get('all-categories','App\Http\Controllers\categoryController@getCategories');
 });
 

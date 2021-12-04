@@ -147,10 +147,12 @@
                                                                         justify-content: center;
                                                                         color: white;
 
+                                                                        img{
+                                                                            width: 100%;
+                                                                        }
+
                                                                         svg{
-                                                                            fill: white;
-                                                                            width: 16px;
-                                                                            height: 16px;
+                                                                            fill : white;
                                                                         }
                                                                     }
                                                                 }
@@ -222,13 +224,8 @@
                                                                     border: none;
                                                                     position: relative;
 
-                                                                    svg{
-                                                                        position: absolute;
-                                                                        top: 14%;
-                                                                        left: 18%;
-                                                                        fill: white;
-                                                                        width: 25px;
-                                                                        height: 25px;
+                                                                    img{
+                                                                        width: 100%;
                                                                     }
                                                                 }
                                                             }
@@ -1163,6 +1160,10 @@
                                                                                     width: 16px;
                                                                                     height: 16px;
                                                                                 }
+
+                                                                                img{
+                                                                                    width: 100%;
+                                                                                }
                                                                             }
                                                                         }
         
@@ -1233,13 +1234,8 @@
                                                                             border: none;
                                                                             position: relative;
         
-                                                                            svg{
-                                                                                position: absolute;
-                                                                                top: 14%;
-                                                                                left: 18%;
-                                                                                fill: white;
-                                                                                width: 25px;
-                                                                                height: 25px;
+                                                                            img{
+                                                                                width: 100%;
                                                                             }
                                                                         }
                                                                     }
