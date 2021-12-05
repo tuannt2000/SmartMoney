@@ -53,11 +53,13 @@ _3Iet.forEach(function(item,index){
                     item1.onclick = function(){
                         if(index == 0){
                             open.querySelector('span').innerHTML = item1.querySelector('span').innerHTML;
+                            item.querySelector('.icon').value = open.querySelector('span img').src;
                             count1 = true;
                             addCategory();
                         }else{
                             open.querySelector('svg path').style.fill = item1.querySelector('span').style.backgroundColor;
                             bieutuong1.style.backgroundColor = item1.querySelector('span').style.backgroundColor;
+                            item.querySelector('.color').value = bieutuong1.style.backgroundColor;
                             count2 = true;
                             addCategory();
                         }
@@ -88,6 +90,7 @@ _3Iet.forEach(function(item,index){
                     item1.onclick = function(){
                         Select_menu.querySelector('.Select-value-label.selected').classList.remove('selected');
                         item.querySelector('.Select-control .Select-value-label span').innerText = item1.querySelector('.Select-value-label span').innerText;
+                        item.querySelector('.type').value = item.querySelector('.Select-control .Select-value-label span').innerText;
                         item1.querySelector('.Select-value-label').classList.add('selected');
                         Select_menu.style.display = 'none';
                     }
@@ -122,6 +125,9 @@ jcQj1.forEach(function(value){
             img.innerHTML = value.querySelector('._3fS2._qSI._1Vxc ._3-9b._1Oob').innerHTML;
             img.style.backgroundColor = value.querySelector('._3fS2._qSI._1Vxc ._3-9b._1Oob').style.backgroundColor;
             ReactModal__Overlay.querySelector('strong').innerText = value.querySelector('.KKUC').innerText;
+            ReactModal__Overlay.querySelector('.delete span').innerText = value.querySelector('.KKUC').innerText;
+            ReactModal__Overlay.querySelector('.id').value = value.querySelector('.id').value;
+            check3 = true;
         }
 
         // sửa category
@@ -132,7 +138,8 @@ jcQj1.forEach(function(value){
             tat.classList.add('_2Xou');
             _3Iet1 = value.querySelectorAll('._33BO ._3Iet.IhHS');
             check2 = true;
-            let count4 = false;
+            _3Iet1[1].querySelector('._10jr svg path').style.fill = _3Iet1[0].querySelector('._10jr span').style.backgroundColor;
+            _3Iet1[2].querySelector('._1mYU.required').value =  value.querySelector('._3fS2._25CJ._2i70 .KKUC').innerText;
 
             _3Iet1.forEach(function(item,index){
                 if(index == 0){
@@ -153,19 +160,13 @@ jcQj1.forEach(function(value){
                                 item1.onclick = function(){
                                     if(index == 0){
                                         open.querySelector('._3-9b._2_Bp').innerHTML = item1.querySelector('span').innerHTML;
-                                        if(count4){
-                                            value.querySelector('._3SdL._2_oj').disabled = false;
-                                        }else{
-                                            value.querySelector('._3SdL._2_oj').disabled = true;
-                                        }
+                                        item.querySelector('.icon').value = open.querySelector('._3-9b._2_Bp img').src;
+                                        value.querySelector('._3SdL._2_oj').disabled = false;
                                     }else{
                                         open.querySelector('svg path').style.fill = item1.querySelector('span').style.backgroundColor;
                                         bieutuong2.style.backgroundColor = item1.querySelector('span').style.backgroundColor;
-                                        if(count4){
-                                            value.querySelector('._3SdL._2_oj').disabled = false;
-                                        }else{
-                                            value.querySelector('._3SdL._2_oj').disabled = true;
-                                        }
+                                        item.querySelector('.color').value = item1.querySelector('span').style.backgroundColor;
+                                        value.querySelector('._3SdL._2_oj').disabled = false;
                                     }
                                     Select_menu.style.display = 'none';
                                 }
@@ -177,19 +178,9 @@ jcQj1.forEach(function(value){
                         open.oninput = function(){
                             open.classList.add('open');
                             if(item.querySelector('input').value != ''){
-                                count4 = true;
-                                if(count4){
-                                    value.querySelector('._3SdL._2_oj').disabled = false;
-                                }else{
-                                    value.querySelector('._3SdL._2_oj').disabled = true;
-                                }
+                                value.querySelector('._3SdL._2_oj').disabled = false;
                             }else{
-                                count4 = false;
-                                if(count4){
-                                    value.querySelector('._3SdL._2_oj').disabled = false;
-                                }else{
-                                    value.querySelector('._3SdL._2_oj').disabled = true;
-                                }
+                                value.querySelector('._3SdL._2_oj').disabled = true;
                             }
                         }
                     }
@@ -228,6 +219,9 @@ jcQj2.forEach(function(value){
             img.innerHTML = value.querySelector('._3fS2._qSI._1Vxc ._3-9b._1Oob').innerHTML;
             img.style.backgroundColor = value.querySelector('._3fS2._qSI._1Vxc ._3-9b._1Oob').style.backgroundColor;
             ReactModal__Overlay.querySelector('strong').innerText = value.querySelector('.KKUC').innerText;
+            ReactModal__Overlay.querySelector('.delete span').innerText = value.querySelector('.KKUC').innerText;
+            ReactModal__Overlay.querySelector('.id').value = value.querySelector('.id').value;
+            check3 = true;
         }
 
         // sửa category
@@ -238,7 +232,8 @@ jcQj2.forEach(function(value){
             tat.classList.add('_2Xou');
             _3Iet1 = value.querySelectorAll('._33BO ._3Iet.IhHS');
             check2 = true;
-            let count4 = false;
+            _3Iet1[1].querySelector('._10jr svg path').style.fill = _3Iet1[0].querySelector('._10jr span').style.backgroundColor;
+            _3Iet1[2].querySelector('._1mYU.required').value =  value.querySelector('._3fS2._25CJ._2i70 .KKUC').innerText;
 
             _3Iet1.forEach(function(item,index){
                 if(index == 0){
@@ -259,19 +254,13 @@ jcQj2.forEach(function(value){
                                 item1.onclick = function(){
                                     if(index == 0){
                                         open.querySelector('._3-9b._2_Bp').innerHTML = item1.querySelector('span').innerHTML;
-                                        if(count4){
-                                            value.querySelector('._3SdL._2_oj').disabled = false;
-                                        }else{
-                                            value.querySelector('._3SdL._2_oj').disabled = true;
-                                        }
+                                        item.querySelector('.icon').value = open.querySelector('._3-9b._2_Bp img').src;
+                                        value.querySelector('._3SdL._2_oj').disabled = false;
                                     }else{
                                         open.querySelector('svg path').style.fill = item1.querySelector('span').style.backgroundColor;
                                         bieutuong2.style.backgroundColor = item1.querySelector('span').style.backgroundColor;
-                                        if(count4){
-                                            value.querySelector('._3SdL._2_oj').disabled = false;
-                                        }else{
-                                            value.querySelector('._3SdL._2_oj').disabled = true;
-                                        }
+                                        item.querySelector('.color').value = item1.querySelector('span').style.backgroundColor;
+                                        value.querySelector('._3SdL._2_oj').disabled = false;
                                     }
                                     Select_menu.style.display = 'none';
                                 }
@@ -283,19 +272,9 @@ jcQj2.forEach(function(value){
                         open.oninput = function(){
                             open.classList.add('open');
                             if(item.querySelector('input').value != ''){
-                                count4 = true;
-                                if(count4){
-                                    value.querySelector('._3SdL._2_oj').disabled = false;
-                                }else{
-                                    value.querySelector('._3SdL._2_oj').disabled = true;
-                                }
+                                value.querySelector('._3SdL._2_oj').disabled = false;
                             }else{
-                                count4 = false;
-                                if(count4){
-                                    value.querySelector('._3SdL._2_oj').disabled = false;
-                                }else{
-                                    value.querySelector('._3SdL._2_oj').disabled = true;
-                                }
+                                value.querySelector('._3SdL._2_oj').disabled = true;
                             }
                         }
                     }
@@ -367,6 +346,12 @@ document.onclick = function(e){
             _2XTe2.classList.remove('_2Gxn');
             tat.classList.remove('_2Xou');
             check2 = false;
+        }
+    }
+
+    if(check3){
+        if(egUi.contains(e.target)  || huy.contains(e.target)){
+            ReactModal__Overlay.classList.remove('ReactModal__Overlay--after-open');
         }
     }
 }

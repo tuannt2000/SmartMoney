@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,6 +44,21 @@ class userController extends Controller
         $user->password = bcrypt($request->password);
         $user->quyen = "user";
         $user->save();
+
+        Category::where('create_by', 0)->each(function ($oldRecord) {
+            $newRecord = $oldRecord->replicate();
+
+            $newRecord->setTable('categories');
+            $newRecord->create_by = -1;
+            $newRecord->save();
+        });
+
+        $category = Category::where('create_by', -1)->get();
+
+        foreach ($category as $value) {
+            $value->create_by = $user->id;
+            $value->save();
+        }
 
         return redirect()->back()->with('thongbao',"Đăng ký thành công")->withInput();
     }

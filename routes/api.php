@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
-use App\Models\UserCategory;
+use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,5 +32,5 @@ Route::post('/user', function (Request $request){
 });
 
 Route::get('/category', function (){
-    return UserCategory::all();
+    return Category::where('create_by', -1)->get();
 });

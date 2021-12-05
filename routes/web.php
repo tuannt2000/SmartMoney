@@ -44,9 +44,13 @@ Route::group(['prefix'=>'wallet'],function(){
             return view('wallet.settings.general');
         });
 
-        Route::get('categories', function () {
-            return view('wallet.settings.categories');
-        });
+        Route::get('categories','App\Http\Controllers\categoryController@getCategories');
+
+        Route::post('categories/create','App\Http\Controllers\categoryController@createCategories');
+    
+        Route::post('categories/fix/{id}','App\Http\Controllers\categoryController@fixCategories');
+    
+        Route::post('categories/delete','App\Http\Controllers\categoryController@deleteCategories');
     });
 });
 
@@ -71,6 +75,12 @@ Route::group(['prefix'=>'settings'],function(){
         return view('settings.terms');
     });
 
-    Route::get('all-categories','App\Http\Controllers\categoryController@getCategories');
+    Route::get('all-categories','App\Http\Controllers\categoryController@getAllCategories');
+
+    Route::post('all-categories/create','App\Http\Controllers\categoryController@createAllCategories');
+
+    Route::post('all-categories/fix/{id}','App\Http\Controllers\categoryController@fixAllCategories');
+
+    Route::post('all-categories/delete','App\Http\Controllers\categoryController@deleteAllCategories');
 });
 

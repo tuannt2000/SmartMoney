@@ -28,6 +28,20 @@
                                             <div class="_1S3-">
                                                 <div class="_3AQP">
                                                     <div>
+                                                        @if(count($errors) > 0)
+                                                            <div class="alert alert-danger">
+                                                                @foreach ($errors->all() as $err)
+                                                                    {{$err}}
+                                                                    <br>
+                                                                @endforeach
+                                                            </div>
+                                                        @endif
+
+                                                        @if (session('thongbao'))
+                                                            <div class="alert alert-success">
+                                                                {{session('thongbao')}}
+                                                            </div>
+                                                        @endif
                                                         <fieldset class="_33IL _3TLW">
                                                             <legend class="wqjZ">
                                                                 <span class="_3RzU">Tạo một danh mục mới</span>
@@ -36,7 +50,8 @@
                                                                 <div class="_2XTe"></div>
                                                                 <div class="_33BO">
                                                                     <div class="_3PIU _3RzU">
-                                                                        <form action="">
+                                                                        <form action="settings/all-categories/create" method="post">
+                                                                            {{csrf_field()}}
                                                                             <div class="oTaE">
                                                                                 <div class="LB4I _2N9Y" style="margin: 0px -0.25rem;">
                                                                                     <div class="_3fS2 o-cw _1B3o" style="padding: 0rem 0.25rem 0.5rem;">
@@ -70,6 +85,7 @@
                                                                                                                         </button>
                                                                                                                     @endforeach
                                                                                                                 </div>
+                                                                                                                <input class="icon" type="hidden" name="icon" value=""/>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     </div>
@@ -88,7 +104,7 @@
                                                                                                                         <button type="button" class="_2s9x">
                                                                                                                             <span style="color: rgb(123, 147, 164);">
                                                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;"><path fill="#7b93a4" fill-rule="evenodd" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
-                                                                                                                            </span>
+                                                                                                                            </span>                                                         
                                                                                                                         </button>
                                                                                                                         <span class="_24dr">
                                                                                                                             <span class="_1lxA"></span>
@@ -98,12 +114,13 @@
                                                                                                                 <div class="Select-menu-outer-wrapper">
                                                                                                                     @foreach ($userColor as $value)
                                                                                                                         <button type="button" class="_2s9x">
-                                                                                                                            <span style="{{$value->color}}">
+                                                                                                                            <span style="background-color : {{$value->color}}">
                                                                                                                             
-                                                                                                                            </span>
+                                                                                                                            </span>    
                                                                                                                         </button>
                                                                                                                     @endforeach
                                                                                                                 </div>
+                                                                                                                <input class="color" type="hidden" name="color" value=""/>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     </div>
@@ -118,7 +135,7 @@
                                                                                             </div>
                                                                                             <div class="_3Iet IhHS">
                                                                                                 <div class="_2ieP">
-                                                                                                    <input class="_1mYU required" id="name" name="name" placeholder="Tên danh mục mới" type="text" value="">
+                                                                                                    <input class="_1mYU required" id="name" name="title" placeholder="Tên danh mục mới" type="text" value="">
                                                                                                 </div>
                                                                                                 <div class="rong">
 
@@ -157,7 +174,7 @@
                                                                                                             </span>
                                                                                                         </div>
                                                                                                     </div>
-                                                                                                    <input type="hidden">
+                                                                                                    <input type="hidden" name="type" class="type" value="Chi phí">
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -209,7 +226,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="_3fS2 _qSI _1Vxc" style="padding: 0.5rem;">
-                                                                                        <span class="_3-9b _1Oob" style="{{$value->color}}">
+                                                                                        <span class="_3-9b _1Oob" style="background-color : {{$value->color}}">
                                                                                             <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                         </span>
                                                                                     </div>
@@ -250,7 +267,9 @@
                                                                         </div>
                                                                         <div class="_33BO">
                                                                             <div class="_3PIU _3RzU">
-                                                                                <form action="">
+                                                                                <form action="settings/all-categories/fix/{{$value->id}}" method="post">
+                                                                                {{csrf_field()}}
+                                                                                    <input type="hidden" name="id" class="id" value="{{$value->id}}">
                                                                                     <div class="oTaE">
                                                                                         <div class="LB4I _2N9Y" style="margin: 0px -0.25rem;">
                                                                                             <div class="_3fS2 o-cw _1B3o" style="padding: 0rem 0.25rem 0.5rem;">
@@ -266,8 +285,8 @@
                                                                                                                         <div class="_10jr">
                                                                                                                             <div class="_1BZ3">
                                                                                                                                 <button type="button" class="_2s9x">
-                                                                                                                                    <span class="_3-9b _2_Bp" style="background-color: rgb(24, 178, 114);">
-                                                                                                                                        <img alt="Gifts" src="https://api.spendee.com/categories/cat_26.svg">
+                                                                                                                                    <span class="_3-9b _2_Bp" style="background-color: {{$value->color}}">
+                                                                                                                                        <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                                                                     </span>
                                                                                                                                 </button>
                                                                                                                                 <span class="_24dr">
@@ -276,14 +295,15 @@
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                         <div class="Select-menu-outer-wrapper">
-                                                                                                                            @foreach ($userCategory as $value )
+                                                                                                                            @foreach ($userCategory as $value1 )
                                                                                                                                 <button type="button" class="_2s9x">
                                                                                                                                     <span style="background-color: rgb(123, 147, 164);">
-                                                                                                                                        <img alt="" src="{{$value->icon}}">    
+                                                                                                                                        <img alt="" src="{{$value1->icon}}">    
                                                                                                                                     </span>
                                                                                                                                 </button>
                                                                                                                             @endforeach
                                                                                                                         </div>
+                                                                                                                        <input type="hidden" class="icon" name="icon" value="{{$value->icon}}" />
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
@@ -301,7 +321,7 @@
                                                                                                                             <div class="_1BZ3">
                                                                                                                                 <button type="button" class="_2s9x">
                                                                                                                                     <span style="color: rgb(123, 147, 164);">
-                                                                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;"><path fill="rgb(24, 178, 114)" fill-rule="evenodd" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
+                                                                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;"><path fill-rule="evenodd" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
                                                                                                                                     </span>
                                                                                                                                 </button>
                                                                                                                                 <span class="_24dr">
@@ -310,14 +330,15 @@
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                         <div class="Select-menu-outer-wrapper">
-                                                                                                                            @foreach ($userColor as $value)
+                                                                                                                            @foreach ($userColor as $value1)
                                                                                                                                 <button type="button" class="_2s9x">
-                                                                                                                                    <span style="{{$value->color}}">
+                                                                                                                                    <span style="background-color : {{$value1->color}}">
                                                                                                                                     
                                                                                                                                     </span>
                                                                                                                                 </button>
                                                                                                                             @endforeach
                                                                                                                         </div>
+                                                                                                                        <input type="hidden" class="color" name="color" value="{{$value->color}}">
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
@@ -332,7 +353,7 @@
                                                                                                     </div>
                                                                                                     <div class="_3Iet IhHS">
                                                                                                         <div class="_2ieP">
-                                                                                                            <input class="_1mYU required" id="name" name="name" placeholder="Tên danh mục mới" type="text" value="">
+                                                                                                            <input class="_1mYU required" id="name" name="title" placeholder="Tên danh mục mới" type="text" value="">
                                                                                                         </div>
                                                                                                         <div class="rong">
         
@@ -371,7 +392,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="_3fS2 _qSI _1Vxc" style="padding: 0.5rem;">
-                                                                                            <span class="_3-9b _1Oob" style="{{$value->color}}">
+                                                                                            <span class="_3-9b _1Oob" style="background-color : {{$value->color}}">
                                                                                                 <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                             </span>
                                                                                         </div>
@@ -412,7 +433,9 @@
                                                                             </div>
                                                                             <div class="_33BO">
                                                                                 <div class="_3PIU _3RzU">
-                                                                                    <form action="">
+                                                                                    <form action="settings/all-categories/fix/{{$value->id}}" method="post">
+                                                                                        {{csrf_field()}}
+                                                                                        <input type="hidden" class="id" name="id" value="{{$value->id}}">
                                                                                         <div class="oTaE">
                                                                                             <div class="LB4I _2N9Y" style="margin: 0px -0.25rem;">
                                                                                                 <div class="_3fS2 o-cw _1B3o" style="padding: 0rem 0.25rem 0.5rem;">
@@ -428,8 +451,8 @@
                                                                                                                             <div class="_10jr">
                                                                                                                                 <div class="_1BZ3">
                                                                                                                                     <button type="button" class="_2s9x">
-                                                                                                                                        <span class="_3-9b _2_Bp" style="background-color: rgb(24, 178, 114);">
-                                                                                                                                            <img alt="Gifts" src="https://api.spendee.com/categories/cat_26.svg">
+                                                                                                                                        <span class="_3-9b _2_Bp" style="background-color: {{$value->color}};">
+                                                                                                                                            <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                                                                         </span>
                                                                                                                                     </button>
                                                                                                                                     <span class="_24dr">
@@ -438,14 +461,15 @@
                                                                                                                                 </div>
                                                                                                                             </div>
                                                                                                                             <div class="Select-menu-outer-wrapper">
-                                                                                                                                @foreach ($userCategory as $value )
+                                                                                                                                @foreach ($userCategory as $value1 )
                                                                                                                                     <button type="button" class="_2s9x">
                                                                                                                                         <span style="background-color: rgb(123, 147, 164);">
-                                                                                                                                            <img alt="" src="{{$value->icon}}">    
+                                                                                                                                            <img alt="" src="{{$value1->icon}}">    
                                                                                                                                         </span>
                                                                                                                                     </button>
                                                                                                                                 @endforeach
                                                                                                                             </div>
+                                                                                                                            <input type="hidden" class="icon" name="icon" value="{{$value->icon}}" />
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                 </div>
@@ -463,7 +487,7 @@
                                                                                                                                 <div class="_1BZ3">
                                                                                                                                     <button type="button" class="_2s9x">
                                                                                                                                         <span style="color: rgb(123, 147, 164);">
-                                                                                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;"><path fill="rgb(24, 178, 114)" fill-rule="evenodd" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
+                                                                                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="display: block;"><path fill-rule="evenodd" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
                                                                                                                                         </span>
                                                                                                                                     </button>
                                                                                                                                     <span class="_24dr">
@@ -472,14 +496,15 @@
                                                                                                                                 </div>
                                                                                                                             </div>
                                                                                                                             <div class="Select-menu-outer-wrapper">
-                                                                                                                                @foreach ($userColor as $value)
+                                                                                                                                @foreach ($userColor as $value1)
                                                                                                                                     <button type="button" class="_2s9x">
-                                                                                                                                        <span style="{{$value->color}}">
+                                                                                                                                        <span style="background-color : {{$value1->color}}">
                                                                                                                                         
                                                                                                                                         </span>
                                                                                                                                     </button>
                                                                                                                                 @endforeach
                                                                                                                             </div>
+                                                                                                                            <input type="hidden" name="color" class="color" value="{{$value->color}}" />
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                 </div>
@@ -494,7 +519,7 @@
                                                                                                         </div>
                                                                                                         <div class="_3Iet IhHS">
                                                                                                             <div class="_2ieP">
-                                                                                                                <input class="_1mYU required" id="name" name="name" placeholder="Tên danh mục mới" type="text" value="">
+                                                                                                                <input class="_1mYU required" id="name" name="title" placeholder="Tên danh mục mới" type="text" value="">
                                                                                                             </div>
                                                                                                             <div class="rong">
             
@@ -540,7 +565,9 @@
         <div class="ReactModal__Overlay">
             <div class="ReactModal__Content ReactModal__Content--after-open _2RxW" style="z-index: 1000;">
                 <div class="_3EUw">
-                    <form action="">
+                    <form action="settings/all-categories/delete" method="post">
+                        {{csrf_field()}}
+                        <input type="hidden" name="id" class="id" value="">
                         <article class="_2ZwS ">
                             <div class="_13pY">
                                 <div class="_36Dk">
@@ -562,10 +589,10 @@
                                         </span>
                                     </span>
                                 </div>
-                                <h1 class="">Xóa Danh mục Loan</h1>
+                                <h1 class="delete">Xóa Danh mục <span>Loan</span></h1>
                                 <div class="j4fJ">
                                     <p>
-                                        <span>Bằng việc xóa danh mục <strong>Loan</strong>, <strong>all of its 1 transactions</strong> trong toàn bộ ví của bạn sẽ bị xóa. Nếu bạn muốn di chuyển chúng sang danh mục khác, hãy chọn một danh mục!</span>
+                                        <span>Bằng việc xóa danh mục <strong>Loan</strong>, <strong>tất cả các giao dịch</strong> trong toàn bộ ví của bạn sẽ bị xóa. Nếu bạn muốn di chuyển chúng sang danh mục khác, hãy chọn một danh mục!</span>
                                     </p>
                                 </div>
                             </div>
