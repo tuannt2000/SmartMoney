@@ -62,9 +62,9 @@
                                                                     @if ($value->initial_balance == 0)
                                                                         {{$value->initial_balance}}
                                                                     @elseif ($value->initial_balance > 0)
-                                                                        + {{$value->initial_balance}}
+                                                                        + {{$value->initial_balance}} VND
                                                                     @else
-                                                                        - {{$value->initial_balance}}
+                                                                        {{$value->initial_balance}} VND
                                                                     @endif
                                                                 </span>
                                                             </header>
@@ -87,7 +87,9 @@
                                                     </div>
                                                 @endif
                                                 <script>
-                                                    setTimeout(function(){ document.querySelector('.canhbao').innerHTML = ''; }, 2000);
+                                                    setTimeout(function(){ if(document.querySelector('.canhbao') != null){
+                                                        document.querySelector('.canhbao').innerHTML = '';
+                                                    } }, 2000);
                                                 </script>
                                                 <div class="_3_OS _1q5Q">
                                                     <button class="_3SdL _13Jl jsip ">Thêm Ví mới</button>

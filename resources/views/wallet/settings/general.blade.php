@@ -48,7 +48,9 @@
                                                         @endif
 
                                                         <script>
-                                                            setTimeout(function(){ document.querySelector('.thongbao').innerHTML = ''; }, 2000);
+                                                            setTimeout(function(){ if(document.querySelector('.thongbao') != null){
+                                                                document.querySelector('.thongbao').innerHTML = '';
+                                                            } }, 2000);
                                                         </script>
                                                         <form action="wallet/{{$wallet->id}}/settings/general/fix" method="post">
                                                             {{csrf_field()}}
