@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\UserCategory;
 use App\Models\UserColor;
+use App\Models\Wallet;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -64,15 +65,16 @@ class categoryController extends Controller
         return redirect('settings/all-categories')->with('thongbao',"Xóa thành công");
     }
 
-    public function getCategories(){
+    public function getCategories($id){
+        $wallet = Wallet::find($id);
         $income = Category::where('type','income')->where('create_by', Auth::user()->id)->get();
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
         $userCategory = UserCategory::all();
         $userColor = UserColor::all();
-        return view('wallet.settings.categories',['income'=>$income,'outcome'=>$outcome,'userCategory'=>$userCategory,'userColor'=>$userColor]);
+        return view('wallet.settings.categories',['wallet'=>$wallet,'income'=>$income,'outcome'=>$outcome,'userCategory'=>$userCategory,'userColor'=>$userColor]);
     }
 
-    public function createCategories(Request $request){
+    public function createCategories(Request $request,$id){
         $this->validate($request,
             [
                 'title' => 'unique:categories',
@@ -96,11 +98,11 @@ class categoryController extends Controller
 
         $category->save();
 
-        return redirect('wallet/settings/categories')->with('thongbao',"Tạo thành công");
+        return redirect('wallet/'.$id.'/settings/categories')->with('thongbao',"Tạo thành công");
     }
 
-    public function fixCategories(Request $request,$id){
-        $category = Category::find($id);
+    public function fixCategories(Request $request,$id,$idCategory){
+        $category = Category::find($idCategory);
 
         $category->icon = $request->icon;
         $category->title = $request->title;
@@ -108,14 +110,14 @@ class categoryController extends Controller
 
         $category->save();
 
-        return redirect('wallet/settings/categories')->with('thongbao',"Sửa thành công");
+        return redirect('wallet/'.$id.'/settings/categories')->with('thongbao',"Sửa thành công");
     }
 
-    public function deleteCategories(Request $request){
+    public function deleteCategories(Request $request,$id){
         $category = Category::find($request->id);
 
         $category->delete();
 
-        return redirect('wallet/settings/categories')->with('thongbao',"Xóa thành công");
+        return redirect('wallet/'.$id.'/settings/categories')->with('thongbao',"Xóa thành công");
     }
 }

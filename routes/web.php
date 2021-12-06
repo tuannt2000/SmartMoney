@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Wallet;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,35 +26,36 @@ Route::group(['prefix'=>'auth'],function(){
     Route::post('forgot-password','App\Http\Controllers\userController@postForgotPassword');
 });
 
-Route::group(['prefix'=>'wallet'],function(){
-    Route::get('transactions', function () {
-        return view('wallet.transactions');
+Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
+
+Route::group(['prefix'=>'wallet/{id}'],function(){
+    Route::get('transactions', function ($id) {
+        $wallet = Wallet::find($id);
+        return view('wallet.transactions',['wallet'=>$wallet]);
     });
 
-    Route::get('overview', function () {
-        return view('wallet.overview');
+    Route::get('overview', function ($id) {
+        $wallet = Wallet::find($id);
+        return view('wallet.overview',['wallet'=>$wallet]);
     });
 
-    Route::get('budgets', function () {
-        return view('wallet.budgetsDetail');
+    Route::get('budgets', function ($id) {
+        $wallet = Wallet::find($id);
+        return view('wallet.budgetsDetail',['wallet'=>$wallet]);
     });
 
     Route::group(['prefix'=>'settings'],function(){
-        Route::get('general', function () {
-            return view('wallet.settings.general');
-        });
+        Route::get('general','App\Http\Controllers\walletController@generalWallets');
 
         Route::get('categories','App\Http\Controllers\categoryController@getCategories');
 
         Route::post('categories/create','App\Http\Controllers\categoryController@createCategories');
     
-        Route::post('categories/fix/{id}','App\Http\Controllers\categoryController@fixCategories');
+        Route::post('categories/fix/{idCategory}','App\Http\Controllers\categoryController@fixCategories');
     
         Route::post('categories/delete','App\Http\Controllers\categoryController@deleteCategories');
     });
 });
-
-Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
 
 Route::get('budgets', function () {
     return view('budgetsDetail');

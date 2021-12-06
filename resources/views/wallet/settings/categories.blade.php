@@ -50,7 +50,7 @@
                                                                 <div class="_2XTe"></div>
                                                                 <div class="_33BO">
                                                                     <div class="_3PIU _3RzU">
-                                                                        <form action="wallet/settings/categories/create" method="post">
+                                                                        <form action="wallet/{{$wallet->id}}/settings/categories/create" method="post">
                                                                             {{csrf_field()}}
                                                                             <div class="oTaE">
                                                                                 <div class="LB4I _2N9Y" style="margin: 0px -0.25rem;">
@@ -241,7 +241,7 @@
                                                                                             </div>
                                                                                             <div class="_2eNp">
                                                                                                 <span class="_2bvF">
-                                                                                                    <span>{{$value->totalTransaction}} giao dịch</span>
+                                                                                                    <span>0 giao dịch</span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </div>
@@ -267,7 +267,7 @@
                                                                         </div>
                                                                         <div class="_33BO">
                                                                             <div class="_3PIU _3RzU">
-                                                                                <form action="wallet/settings/categories/fix/{{$value->id}}" method="post">
+                                                                                <form action="wallet/{{$wallet->id}}/settings/categories/fix/{{$value->id}}" method="post">
                                                                                 {{csrf_field()}}
                                                                                     <input type="hidden" name="id" class="id" value="{{$value->id}}">
                                                                                     <div class="oTaE">
@@ -407,7 +407,7 @@
                                                                                                 </div>
                                                                                                 <div class="_2eNp">
                                                                                                     <span class="_2bvF">
-                                                                                                        <span>{{$value->totalTransaction}} giao dịch</span>
+                                                                                                        <span>0 giao dịch</span>
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>
@@ -433,7 +433,7 @@
                                                                             </div>
                                                                             <div class="_33BO">
                                                                                 <div class="_3PIU _3RzU">
-                                                                                    <form action="wallet/settings/categories/fix/{{$value->id}}" method="post">
+                                                                                    <form action="wallet/{{$wallet->id}}/settings/categories/fix/{{$value->id}}" method="post">
                                                                                         {{csrf_field()}}
                                                                                         <input type="hidden" class="id" name="id" value="{{$value->id}}">
                                                                                         <div class="oTaE">
@@ -565,7 +565,7 @@
         <div class="ReactModal__Overlay">
             <div class="ReactModal__Content ReactModal__Content--after-open _2RxW" style="z-index: 1000;">
                 <div class="_3EUw">
-                <form action="wallet/settings/categories/delete" method="post">
+                <form action="wallet/{{$wallet->id}}/settings/categories/delete" method="post">
                         {{csrf_field()}}
                         <input type="hidden" name="id" class="id" value="">
                         <article class="_2ZwS ">

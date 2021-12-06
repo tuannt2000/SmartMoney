@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,6 +60,12 @@ class userController extends Controller
             $value->create_by = $user->id;
             $value->save();
         }
+
+        $wallet = new Wallet;
+        $wallet->name = "Ví tiền mặt";
+        $wallet->user_id = $user->id;
+        $wallet->save();
+
 
         return redirect()->back()->with('thongbao',"Đăng ký thành công")->withInput();
     }

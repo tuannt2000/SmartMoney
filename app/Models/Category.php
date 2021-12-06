@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
 
     protected $table = "categories";
+
+    // public function wallet_categories(){
+    //     return $this->hasMany('App\Models\WalletCategory');
+    // }
 }

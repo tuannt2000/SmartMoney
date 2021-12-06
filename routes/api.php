@@ -32,5 +32,6 @@ Route::post('/user', function (Request $request){
 });
 
 Route::get('/category', function (){
-    return Category::where('create_by', -1)->get();
+    $category = Category::where('type','income')->where('create_by',6)->get();
+   
 });

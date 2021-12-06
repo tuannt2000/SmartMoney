@@ -40,7 +40,7 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
-                                                                                        <input class="firstname" type="text" id="wallet_name" placeholder="Tên Ví" name="wallet_name">
+                                                                                        <input class="firstname" type="text" id="wallet_name" placeholder="Tên Ví" name="wallet_name" value="{{$wallet->name}}">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -55,7 +55,7 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
-                                                                                        <input class="balance" type="number" name="balance" placeholder="Số tiền" id="balance" >
+                                                                                        <input class="balance" type="number" name="balance" placeholder="Số tiền" id="balance" value="{{$wallet->initial_balance}}">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -67,7 +67,7 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
-                                                                                        <input class="currency" type="text" disabled placeholder="VND"  id ="currency" name="currency">
+                                                                                        <input class="currency" type="text" disabled placeholder="{{$wallet->currency}}"  id ="currency" name="currency">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -83,38 +83,39 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <fieldset class="_33IL">
-                                                                <legend class="wqjZ">Ví thành viên</legend>
-                                                                <div>
-                                                                    <div class="_2XTe" style="right: 0px;"></div>
-                                                                    <div class="_33BO">
-                                                                        <div class="_3bjT">
-                                                                            <form action="">
-                                                                                <div class="oTaE">
-                                                                                    <div class="LB4I _3je1" style="margin: 0px -0.5rem;">
-                                                                                        <div class="_3fS2 o-cw _1ubS" style="padding: 0rem 0.5rem 0.5rem;">
-                                                                                            <div class="iLEV IhHS">
-                                                                                                <div class="BVod">
-                                                                                                    <label for="email" class="_1Baa inline IhHS">Thêm thành viên mới </label>
-                                                                                                </div>
-                                                                                                <div class="_3Iet IhHS">
-                                                                                                    <div class="_2ieP">
-                                                                                                        <input class="_1mYU required" id="email" name="email" placeholder="Địa chỉ email của người được mời" type="email" value="">
-                                                                                                    </div>
+                                                        </form>
+
+                                                        <fieldset class="_33IL">
+                                                            <legend class="wqjZ">Ví thành viên</legend>
+                                                            <div>
+                                                                <div class="_2XTe" style="right: 0px;"></div>
+                                                                <div class="_33BO">
+                                                                    <div class="_3bjT">
+                                                                        <form action="">
+                                                                            <div class="oTaE">
+                                                                                <div class="LB4I _3je1" style="margin: 0px -0.5rem;">
+                                                                                    <div class="_3fS2 o-cw _1ubS" style="padding: 0rem 0.5rem 0.5rem;">
+                                                                                        <div class="iLEV IhHS">
+                                                                                            <div class="BVod">
+                                                                                                <label for="email" class="_1Baa inline IhHS">Thêm thành viên mới </label>
+                                                                                            </div>
+                                                                                            <div class="_3Iet IhHS">
+                                                                                                <div class="_2ieP">
+                                                                                                    <input class="_1mYU required" id="email" name="email" placeholder="Địa chỉ email của người được mời" type="email" value="">
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                        <div class="_3fS2 o-cw _1ubS _3xLW" style="padding: 0rem 0.5rem 0.5rem;">
-                                                                                            <button type="submit" disabled="" class="_3SdL _2_oj ">Gửi lời mời</button>
-                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="_3fS2 o-cw _1ubS _3xLW" style="padding: 0rem 0.5rem 0.5rem;">
+                                                                                        <button type="submit" disabled="" class="_3SdL _2_oj ">Gửi lời mời</button>
                                                                                     </div>
                                                                                 </div>
-                                                                            </form>
-                                                                        </div>
+                                                                            </div>
+                                                                        </form>
                                                                     </div>
                                                                 </div>
-                                                            </fieldset>
-                                                        </form>
+                                                            </div>
+                                                        </fieldset>
                                                     </div>
                                                     <div>
                                                         <hr>

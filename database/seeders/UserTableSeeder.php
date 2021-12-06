@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
             [
                 'firstname' => 'Nguyễn Hữu',
                 'lastname' => "Tuấn",
-                'email' => 'tuan.nh20184221@gmail.com',
+                'email' => 'tuan.nh184221@sis.hust.edu.vn',
                 'quyen'=> 'admin',
                 'password' => bcrypt('123456'),
                 'created_at' => new \DateTime(),

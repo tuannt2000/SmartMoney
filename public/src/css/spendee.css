@@ -4822,6 +4822,35 @@ form ._33IL div .LB4I ._3fS2._3qCx ._3SdL._2_oj:disabled {
   color: #7b93a4;
 }
 
+._3Iet.IhHS {
+  border: 1px solid transparent;
+  border-color: #e5ebee;
+  color: #324c5b;
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  align-items: stretch;
+  background-color: #fff;
+  border-radius: 4px;
+}
+._3Iet.IhHS ._2ieP {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  flex-grow: 1;
+}
+._3Iet.IhHS ._2ieP input {
+  width: 100%;
+  padding: 0 8px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  height: 36px;
+  outline: none;
+  line-height: 36px;
+  transition: color 0.2s ease-in-out;
+}
+
 * {
   box-sizing: border-box;
 }

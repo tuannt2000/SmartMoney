@@ -3,10 +3,10 @@
         <nav>
             <ul class="LWqP">
                 <li>
-                    <a href="wallet/settings/general" class="_3WuR _1gOp "><span>Cài đặt chính</span></a>
+                    <a href="wallet/{{$wallet->id}}/settings/general" class="_3WuR _1gOp "><span>Cài đặt chính</span></a>
                 </li>
                 <li>
-                    <a href="wallet/settings/categories" class="_3WuR _1gOp"><span>Cài đặt danh mục</span></a>
+                    <a href="wallet/{{$wallet->id}}/settings/categories" class="_3WuR _1gOp"><span>Cài đặt danh mục</span></a>
                 </li>
             </ul>
         </nav>

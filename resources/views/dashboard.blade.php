@@ -44,24 +44,36 @@
                                 <h2>Ví</h2>
                                 <div class="oTaE">
                                     <div class="LB4I">
-                                        <div class="_3fS2 o-cw _1ubS _1B3o">
-                                            <a href="wallet/transactions" class="_18y1 ">
-                                                <div>
-                                                    <article class="_9VMU grid">
-                                                        <span class="_2jD1">
-                                                            <span class="_47tA">
-                                                                <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 20"><path fill="#99704A" fill-rule="evenodd" d="M0 19V4h20.998A.996.996 0 0 1 22 5v14a1 1 0 0 1-1.002 1H1.002A.996.996 0 0 1 0 19zM18 .998V3H0C0 1.5 1.3-.003 3 0h13.998A.998.998 0 0 1 18 .999zM18 10c-1.101 0-2 .897-2 2 0 1.104.899 2 2 2 1.1 0 2-.896 2-2 0-1.103-.9-2-2-2zm0 3a1 1 0 1 1-.001-2.001A1 1 0 0 1 18 13z"></path></svg>
+                                        @if (count($wallet) > 0)
+                                            @foreach ($wallet as $value)
+                                            <div class="_3fS2 o-cw _1ubS _1B3o">
+                                                <a href="wallet/{{$value->id}}/transactions" class="_18y1 ">
+                                                    <div>
+                                                        <article class="_9VMU grid">
+                                                            <span class="_2jD1">
+                                                                <span class="_47tA">
+                                                                    <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 20"><path fill="#99704A" fill-rule="evenodd" d="M0 19V4h20.998A.996.996 0 0 1 22 5v14a1 1 0 0 1-1.002 1H1.002A.996.996 0 0 1 0 19zM18 .998V3H0C0 1.5 1.3-.003 3 0h13.998A.998.998 0 0 1 18 .999zM18 10c-1.101 0-2 .897-2 2 0 1.104.899 2 2 2 1.1 0 2-.896 2-2 0-1.103-.9-2-2-2zm0 3a1 1 0 1 1-.001-2.001A1 1 0 0 1 18 13z"></path></svg>
+                                                                </span>
                                                             </span>
-                                                        </span>
-                                                        <header class="_2G4T">
-                                                            <span class="_3_HJ"><span class="_1dxB">Ví tiền mặt</span></span>
-                                                            <span class="kpLm">Tiền mặt</span>
-                                                            <span class="_22t9 _1j4d">+10,000,000.00 VND</span>
-                                                        </header>
-                                                    </article>
-                                                </div>
-                                            </a>
-                                        </div>
+                                                            <header class="_2G4T">
+                                                                <span class="_3_HJ"><span class="_1dxB">{{$value->name}}</span></span>
+                                                                <span class="kpLm">Tiền mặt</span>
+                                                                <span class="_22t9 _1j4d">
+                                                                    @if ($value->initial_balance == 0)
+                                                                        {{$value->initial_balance}}
+                                                                    @elseif ($value->initial_balance > 0)
+                                                                        + {{$value->initial_balance}}
+                                                                    @else
+                                                                        - {{$value->initial_balance}}
+                                                                    @endif
+                                                                </span>
+                                                            </header>
+                                                        </article>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            @endforeach
+                                        @endif
                                         <div class="_3fS2 o-cw _1ubS _1B3o">
                                             <div class="jcQj">
                                                 <div class="_3_OS _1q5Q">

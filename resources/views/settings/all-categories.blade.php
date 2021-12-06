@@ -241,7 +241,7 @@
                                                                                             </div>
                                                                                             <div class="_2eNp">
                                                                                                 <span class="_2bvF">
-                                                                                                    <span>{{$value->totalTransaction}} giao dịch</span>
+                                                                                                    <span>0 giao dịch</span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </div>
@@ -407,7 +407,7 @@
                                                                                                 </div>
                                                                                                 <div class="_2eNp">
                                                                                                     <span class="_2bvF">
-                                                                                                        <span>{{$value->totalTransaction}} giao dịch</span>
+                                                                                                        <span>0 giao dịch</span>
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>

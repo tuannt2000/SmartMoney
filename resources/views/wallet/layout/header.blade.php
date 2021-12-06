@@ -9,10 +9,10 @@
             <div class="_1e_t">
                 <nav>
                     <ul class="ZfY8">
-                        <li><a href="wallet/transactions" class="_3WuR _1gOp"><span>Giao dịch</span></a></li>
-                        <li><a href="wallet/overview" class="_3WuR _1gOp"><span>Tổng quan</span></a></li>
-                        <li><a href="wallet/budgets" class="_3WuR _1gOp "><span>Ngân sách</span></a></li>
-                        <li><a href="wallet/settings/general" class="_3WuR _1gOp "><span>Cài đặt ví</span></a></li>
+                        <li><a href="wallet/{{$wallet->id}}/transactions" class="_3WuR _1gOp"><span>Giao dịch</span></a></li>
+                        <li><a href="wallet/{{$wallet->id}}/overview" class="_3WuR _1gOp"><span>Tổng quan</span></a></li>
+                        <li><a href="wallet/{{$wallet->id}}/budgets" class="_3WuR _1gOp "><span>Ngân sách</span></a></li>
+                        <li><a href="wallet/{{$wallet->id}}/settings/general" class="_3WuR _1gOp "><span>Cài đặt ví</span></a></li>
                     </ul>
                 </nav>
             </div>
