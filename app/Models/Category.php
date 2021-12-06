@@ -11,7 +11,7 @@ class Category extends Model
 
     protected $table = "categories";
 
-    // public function wallet_categories(){
-    //     return $this->hasMany('App\Models\WalletCategory');
-    // }
+    public function transaction(){
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

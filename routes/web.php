@@ -28,6 +28,8 @@ Route::group(['prefix'=>'auth'],function(){
 
 Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
 
+Route::post('dashboard/createWallet/{id}','App\Http\Controllers\dashboardController@createWallet');
+
 Route::group(['prefix'=>'wallet/{id}'],function(){
     Route::get('transactions', function ($id) {
         $wallet = Wallet::find($id);
@@ -46,6 +48,10 @@ Route::group(['prefix'=>'wallet/{id}'],function(){
 
     Route::group(['prefix'=>'settings'],function(){
         Route::get('general','App\Http\Controllers\walletController@generalWallets');
+
+        Route::post('general/fix','App\Http\Controllers\walletController@fixWallets');
+
+        Route::post('general/delete','App\Http\Controllers\walletController@deleteWallets');
 
         Route::get('categories','App\Http\Controllers\categoryController@getCategories');
 

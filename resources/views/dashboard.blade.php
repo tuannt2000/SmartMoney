@@ -76,10 +76,67 @@
                                         @endif
                                         <div class="_3fS2 o-cw _1ubS _1B3o">
                                             <div class="jcQj">
+                                                @if(count($errors) > 0)
+                                                    <div class="canhbao">
+                                                        <div class="alert alert-danger">
+                                                            @foreach ($errors->all() as $err)
+                                                                {{$err}}
+                                                                <br>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <script>
+                                                    setTimeout(function(){ document.querySelector('.canhbao').innerHTML = ''; }, 2000);
+                                                </script>
                                                 <div class="_3_OS _1q5Q">
                                                     <button class="_3SdL _13Jl jsip ">Thêm Ví mới</button>
-                                                    <button class="_3SdL _13Jl jsip ">Xóa ví</button>
-                                                </div>                                              
+                                                    <button class="_3SdL _13Jl jsip ">Kết nối TK Ngân hàng</button>
+                                                </div>  
+                                                <div class="_1KCh">
+                                                    <form action="dashboard/createWallet/{{Auth::user()->id}}" method="post">
+                                                        {{csrf_field()}}
+                                                        
+                                                        <h1>Tạo Ví mới</h1>
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="name" class="_1Baa inline IhHS">Tên ví </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <input class="_1mYU required" id="name" name="name" placeholder="Nhập tên ví của bạn" type="text" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="iLEV IhHS">
+                                                            <div class="BVod">
+                                                                <label for="currency" class="_1Baa inline IhHS">Đơn vị tiền tệ </label>
+                                                            </div>
+                                                            <div class="_3Iet IhHS">
+                                                                <div class="_2ieP">
+                                                                    <div class="Select-control">
+                                                                        <span class="Select-multi-value-wrapper">
+                                                                            <div class="Select-value">
+                                                                                <span class="Select-value-label">VND</span>
+                                                                            </div>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="iLEV">
+                                                            <div class="BVod">
+                                                                <label for="initial_balance" class="_1Baa inline">Đang bắt đầu số dư (tùy chọn)</label>
+                                                            </div>
+                                                            <div class="_3Iet">
+                                                                <div class="_2ieP">
+                                                                    <input class="_1mYU" name="initial_balance" placeholder="0.00" type="number" step="0.01" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit" disabled="" class="_3SdL _2_oj oiDm ">Tạo mới</button>
+                                                    </form>
+                                                </div>                                            
                                             </div>
                                             <div class="_2XTe"></div>
                                         </div>

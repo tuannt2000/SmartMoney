@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WalletTableSeeder::class);
         $this->call(UserCategoryTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
-        // $this->call(TransactionTableSeeder::class);
+        $this->call(TransactionTableSeeder::class);
     }
 }

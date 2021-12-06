@@ -467,6 +467,248 @@ nav,ul,ol{
                                 border-radius: 8px !important;
                             }
                         }
+
+                        ._1KCh{
+                            display: none;
+                        }
+                    }
+
+                    .jcQj._2Xou{
+                        z-index: 950;
+                        transition: z-index .35s step-start;
+                        position: relative;
+
+                        ._3_OS._1q5Q{
+                            display: none;
+                        }
+
+                        ._1KCh{
+                            display: flex;
+                            flex-flow: column;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            border-radius: 5px;
+                            background-color: white;
+                            text-align: left;
+                            position: relative;
+                            z-index: 1000;
+
+                            form{
+                                width: 100%;
+                                padding: 16px;
+                            
+                                h1{
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    margin: 0;
+                                    margin-bottom: 8px;
+                                    color: #324c5b;
+                                }
+
+                                .iLEV.IhHS{
+                                    display: block;
+                                    position: relative;
+                                    margin-bottom: 10px;
+
+                                    .BVod{
+                                        display: flex;
+                                        
+                                        ._1Baa.inline.IhHS{
+                                            flex-grow: 1;
+                                            margin-bottom: 3px;
+                                            font-size: 12px;
+                                            color: #7b93a4;
+                                            user-select: none;
+                                            cursor: pointer;
+                                        }
+                                    }
+
+                                    ._3Iet.IhHS{
+                                        display: flex;
+                                        width: 100%;
+                                        border-radius: 4px;
+                                        align-items: stretch;
+                                        border: 1px solid transparent;
+                                        background-color: #fff;
+                                        border-color: #e5ebee;
+                                        color: #324c5b;
+                                        transition: all .2s ease-in-out;
+
+                                        &:hover{
+                                            border-color: #bbcdd8;
+                                        }
+
+                                        ._2ieP{
+                                            display: flex;
+                                            align-items: stretch;
+                                            width: 100%;
+                                            flex-grow: 1;
+
+                                            ._1mYU.required{
+                                                width: 100%;
+                                                padding: 0 8px;
+                                                background-color: transparent;
+                                                border: none;
+                                                font-size: 14px;
+                                                height: 36px;
+                                                outline: none;
+                                                line-height: 36px;
+                                                transition: color .2s ease-in-out;
+                                            }
+
+                                            .Select-control{
+                                                border-radius: 4px;
+                                                color: #333;
+                                                cursor: default;
+                                                display: table;
+                                                border-spacing: 0;
+                                                border-collapse: separate;
+                                                height: 36px;
+                                                outline: none;
+                                                overflow: hidden;
+                                                position: relative;
+                                                width: 100%;
+
+                                                .Select-multi-value-wrapper{
+                                                    .Select-value{
+                                                        bottom: 0;
+                                                        color: #324c5b;
+                                                        left: 0;
+                                                        line-height: 38px;
+                                                        padding-left: 10px;
+                                                        padding-right: 10px;
+                                                        position: absolute;
+                                                        right: 0;
+                                                        top: 0;
+                                                        max-width: 100%;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                        white-space: nowrap;
+                                                        font-size: 14px;
+                                                        display: flex;
+                                                        align-items: center;
+
+                                                        .Select-value-label{
+                                                            color: #324c5b;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .iLEV{
+                                    margin-bottom: 10px;
+                                    display: block;
+                                    position: relative;
+
+                                    .BVod{
+                                        display: flex;
+
+                                        ._1Baa.inline{
+                                            flex-grow: 1;
+                                            margin-bottom: 3px;
+                                            font-size: 12px;
+                                            color: #7b93a4;
+                                            user-select: none;
+                                            cursor: pointer;
+                                        }
+                                    }
+
+                                    ._3Iet{
+                                        display: flex;
+                                        width: 100%;
+                                        border-radius: 4px;
+                                        align-items: stretch;
+                                        border: 1px solid transparent;
+                                        background-color: #fff;
+                                        border-color: #e5ebee;
+                                        color: #324c5b;
+                                        transition: all .2s ease-in-out;
+
+                                        &:hover{
+                                            border-color: #bbcdd8;
+                                        }
+
+                                        ._2ieP{
+                                            display: flex;
+                                            align-items: stretch;
+                                            width: 100%;
+                                            flex-grow: 1;
+
+                                            ._1mYU{
+                                                width: 100%;
+                                                padding: 0 8px;
+                                                background-color: transparent;
+                                                border: none;
+                                                font-size: 14px;
+                                                height: 36px;
+                                                outline: none;
+                                                line-height: 36px;
+                                                transition: color .2s ease-in-out;
+                                            }
+
+                                            input[type=number]::-webkit-inner-spin-button, 
+                                            input[type=number]::-webkit-outer-spin-button { 
+                                            -webkit-appearance: none; 
+                                            margin: 0; 
+                                            }
+                                        }
+                                    }
+                                }
+
+                                ._3SdL._2_oj.oiDm {
+                                    &:disabled{
+                                        background-color: #e5ebee;
+                                        color: #7b93a4;
+                                        box-shadow: none;
+                                    }
+
+                                    background-color: #12c48b;
+                                    box-shadow: 0 5px 6px 0 rgb(17,195,139,0.32);
+                                    margin-top: 20px;
+                                    color: #fff;
+                                    transition: all .2s ease-in-out;
+                                    position: relative;
+                                    display: block;
+                                    height: 34px;
+                                    line-height: 34px;
+                                    width: 100%;
+                                    padding: 0 8px;
+                                    border-radius: 4px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    outline: none;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    border: none;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+
+                    ._2XTe{
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        pointer-events: none;
+                        opacity: 0;
+                        background: rgba(0, 0, 0, .6);
+                        z-index: 800;
+                        width: 100vw;
+                        transition: opacity .3s;
+                    }
+    
+                    ._2XTe._2Gxn{
+                        opacity: .6;
+                        pointer-events: all;
                     }
                 }
             }

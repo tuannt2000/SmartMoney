@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Transaction;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,6 +33,12 @@ Route::post('/user', function (Request $request){
 });
 
 Route::get('/category', function (){
-    $category = Category::where('type','income')->where('create_by',6)->get();
-   
+    $category = Category::where('type','outcome')->where('create_by',6)->get();
+    foreach($category as $c){
+        $transaction = $c->transaction->count();
+        echo $transaction;
+        $transaction = $c->transaction->groupBy('wallet_id')->count();
+        echo $transaction;
+        echo '<hr>';
+    }
 });

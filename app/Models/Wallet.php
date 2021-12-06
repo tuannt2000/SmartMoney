@@ -10,4 +10,8 @@ class Wallet extends Model
     use HasFactory;
 
     protected $table = "wallets";
+
+    public function transaction(){
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

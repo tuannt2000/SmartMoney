@@ -14,7 +14,12 @@ class TransactionTableSeeder extends Seeder
     public function run()
     {
         \DB::table('transactions')->insert([
-            ['date' => new \DateTime(),'created_at' => new \DateTime(),'icon' => 'https://api.spendee.com/categories/cat_27.svg','title' => 'Business','type' => 'income','color' => 'rgb(255, 162, 0)','create_by' => 0],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 1,'category_id' => 26,'created_at' => new \DateTime()],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 2,'category_id' => 30,'created_at' => new \DateTime()],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 1,'category_id' => 45,'created_at' => new \DateTime()],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 2,'category_id' => 26,'created_at' => new \DateTime()],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 1,'category_id' => 28,'created_at' => new \DateTime()],
+            ['date' => new \DateTime(),'amount' => 100000,'wallet_id' => 1,'category_id' => 26,'created_at' => new \DateTime()],
         ]);
     }
 }

@@ -10,6 +10,31 @@ selected.forEach(function(value,index){
     }
 })
 
+// them vi
+const _2ylm = $('._2ylm');
+const LB4I = _2ylm.querySelectorAll('._3fS2.o-cw._1ubS._1B3o');
+const _3fS2 = LB4I.item(LB4I.length - 1);
+const _2XTe1 = _3fS2.querySelector('._2XTe');
+const name1 = _3fS2.querySelector('#name');
+const jcQj = _3fS2.querySelector('.jcQj');
+const addWallet = _3fS2.querySelector('._3SdL._13Jl.jsip');
+
+let check1 = false;
+
+addWallet.onclick = function(){
+    jcQj.classList.add('_2Xou');
+    _2XTe1.classList.add('_2Gxn');
+    check1 = true;
+}
+
+name1.oninput = function(){
+    if(name1.value != ''){
+        _3fS2.querySelector('._1KCh ._3SdL._2_oj.oiDm').disabled = false;
+    }else{
+        _3fS2.querySelector('._1KCh ._3SdL._2_oj.oiDm').disabled = true;
+    }
+}
+
 //   Su li account
 const account = $('.dropdownWrap');
 const _2XTe = $('._2XTe');
@@ -35,6 +60,13 @@ document.onclick = function(e){
             _1zUK.classList.add('_1z7D');
             _1WaF.classList.add('_1z7D');
             check = true;
+        }
+    }
+
+    if(check1){
+        if(_2XTe1.contains(e.target)){
+            jcQj.classList.remove('_2Xou');
+            _2XTe1.classList.remove('_2Gxn');
         }
     }
 }

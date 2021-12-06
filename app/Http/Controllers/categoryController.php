@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Transaction;
 use App\Models\UserCategory;
 use App\Models\UserColor;
 use App\Models\Wallet;
@@ -38,7 +39,6 @@ class categoryController extends Controller
             $category->type = "outcome";
         }
         $category->create_by = Auth::user()->id;
-        $category->totalTransaction = 0;
 
         $category->save();
 
@@ -94,7 +94,6 @@ class categoryController extends Controller
             $category->type = "outcome";
         }
         $category->create_by = Auth::user()->id;
-        $category->totalTransaction = 0;
 
         $category->save();
 

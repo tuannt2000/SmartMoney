@@ -29,19 +29,27 @@
                                                 <div class="_3AQP">
                                                     <div>
                                                         @if(count($errors) > 0)
-                                                            <div class="alert alert-danger">
-                                                                @foreach ($errors->all() as $err)
-                                                                    {{$err}}
-                                                                    <br>
-                                                                @endforeach
+                                                            <div class="thongbao">
+                                                                <div class="alert alert-danger">
+                                                                    @foreach ($errors->all() as $err)
+                                                                        {{$err}}
+                                                                        <br>
+                                                                    @endforeach
+                                                                </div>
                                                             </div>
                                                         @endif
 
                                                         @if (session('thongbao'))
-                                                            <div class="alert alert-success">
-                                                                {{session('thongbao')}}
+                                                            <div class="thongbao">
+                                                                <div class="alert alert-success">
+                                                                    {{session('thongbao')}}
+                                                                </div>
                                                             </div>
                                                         @endif
+
+                                                        <script>
+                                                            setTimeout(function(){ document.querySelector('.thongbao').innerHTML = ''; }, 2000);
+                                                        </script>
                                                         <fieldset class="_33IL _3TLW">
                                                             <legend class="wqjZ">
                                                                 <span class="_3RzU">Tạo một danh mục mới</span>
@@ -241,7 +249,13 @@
                                                                                             </div>
                                                                                             <div class="_2eNp">
                                                                                                 <span class="_2bvF">
-                                                                                                    <span>0 giao dịch</span>
+                                                                                                    <span>
+                                                                                                        @if ($value->transaction->count() == 0)
+                                                                                                            0 giao dịch
+                                                                                                        @else
+                                                                                                            {{$value->transaction->count()}} giao dịch trong {{$value->transaction->groupBy('wallet_id')->count()}} ví
+                                                                                                        @endif
+                                                                                                    </span>
                                                                                                 </span>
                                                                                             </div>
                                                                                         </div>
@@ -407,7 +421,13 @@
                                                                                                 </div>
                                                                                                 <div class="_2eNp">
                                                                                                     <span class="_2bvF">
-                                                                                                        <span>0 giao dịch</span>
+                                                                                                        <span>
+                                                                                                            @if ($value->transaction->count() == 0)
+                                                                                                                0 giao dịch
+                                                                                                            @else
+                                                                                                                {{$value->transaction->count()}} giao dịch trong {{$value->transaction->groupBy('wallet_id')->count()}} ví
+                                                                                                            @endif
+                                                                                                        </span>
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>

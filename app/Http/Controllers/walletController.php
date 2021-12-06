@@ -11,4 +11,34 @@ class walletController extends Controller
         $wallet = Wallet::find($id);
         return view('wallet.settings.general',['wallet' => $wallet]);
     }
+
+    public function deleteWallets($id){
+        $wallet = Wallet::find($id);
+
+        $wallet->delete();
+
+        return redirect('dashboard');
+    }
+
+    public function fixWallets(Request $request,$id){
+        $this->validate($request,
+            [
+                'name' => "unique:wallets,name,$id,id",
+            ],
+            [
+                'name.unique' => 'Tên ví đã tồn tại',
+            ]
+        );
+
+        $wallet = Wallet::find($id);
+
+        $wallet->name = $request->name;
+        if($request->initial_balance != ''){
+            $wallet->initial_balance = $request->initial_balance;
+        }
+
+        $wallet->save();
+
+        return redirect('wallet/'.$id.'/settings/general')->with('thongbao',"Sửa thành công");
+    }
 }

@@ -28,7 +28,30 @@
                                             <div class="_1S3-">
                                                 <div class="_3AQP">
                                                     <div>
-                                                        <form action="" enctype="multipart/form-data">
+                                                        @if(count($errors) > 0)
+                                                            <div class="thongbao">
+                                                                <div class="alert alert-danger">
+                                                                    @foreach ($errors->all() as $err)
+                                                                        {{$err}}
+                                                                        <br>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>
+                                                        @endif
+
+                                                        @if (session('thongbao'))
+                                                            <div class="thongbao">
+                                                                <div class="alert alert-success">
+                                                                    {{session('thongbao')}}
+                                                                </div>
+                                                            </div>
+                                                        @endif
+
+                                                        <script>
+                                                            setTimeout(function(){ document.querySelector('.thongbao').innerHTML = ''; }, 2000);
+                                                        </script>
+                                                        <form action="wallet/{{$wallet->id}}/settings/general/fix" method="post">
+                                                            {{csrf_field()}}
                                                             <fieldset class="_33IL">
                                                                 <legend class="wqjZ">Thông tin chung</legend>
                                                                 <div class="oTaE">
@@ -40,7 +63,7 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
-                                                                                        <input class="firstname" type="text" id="wallet_name" placeholder="Tên Ví" name="wallet_name" value="{{$wallet->name}}">
+                                                                                        <input class="firstname" type="text" id="wallet_name" placeholder="Tên Ví" name="name" value="{{$wallet->name}}">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -55,7 +78,7 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
-                                                                                        <input class="balance" type="number" name="balance" placeholder="Số tiền" id="balance" value="{{$wallet->initial_balance}}">
+                                                                                        <input class="balance" type="number" name="initial_balance" placeholder="Số tiền" id="balance" value="{{$wallet->initial_balance}}">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -147,7 +170,8 @@
         <div class="ReactModal__Overlay">
             <div class="ReactModal__Content ReactModal__Content--after-open _2RxW" style="z-index: 1000;">
                 <div class="_3EUw">
-                    <form action="">
+                    <form action="wallet/{{$wallet->id}}/settings/general/delete" method="post">
+                        {{csrf_field()}}
                         <article class="_2ZwS ">
                             <div class="_13pY">
                                 <div class="_36Dk">

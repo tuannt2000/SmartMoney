@@ -12,4 +12,26 @@ class dashboardController extends Controller
         $wallet = Wallet::where('user_id',Auth::user()->id)->get();
         return view('dashboard',['wallet' => $wallet]);
     }
+
+    public function createWallet(Request $request,$id){
+        $this->validate($request,
+            [
+                'name' => "unique:wallets,name,$id,id",
+            ],
+            [
+                'name.unique' => 'Tên ví đã tồn tại',
+            ]
+        );
+
+        $wallet = new Wallet;
+        $wallet->name = $request->name;
+        $wallet->user_id = $id;
+        if($request->initial_balance != ''){
+            $wallet->initial_balance = $request->initial_balance;
+        }
+
+        $wallet->save();
+
+        return redirect('dashboard');
+    }
 }
