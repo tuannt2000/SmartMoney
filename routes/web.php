@@ -31,15 +31,9 @@ Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
 Route::post('dashboard/createWallet/{id}','App\Http\Controllers\dashboardController@createWallet');
 
 Route::group(['prefix'=>'wallet/{id}'],function(){
-    Route::get('transactions', function ($id) {
-        $wallet = Wallet::find($id);
-        return view('wallet.transactions',['wallet'=>$wallet]);
-    });
+    Route::get('transactions', 'App\Http\Controllers\transactionController@transactionWallets');
 
-    Route::get('overview', function ($id) {
-        $wallet = Wallet::find($id);
-        return view('wallet.overview',['wallet'=>$wallet]);
-    });
+    Route::get('overview', 'App\Http\Controllers\transactionController@overViewWallets');
 
     Route::get('budgets', function ($id) {
         $wallet = Wallet::find($id);

@@ -19,7 +19,8 @@ class CreateWalletsTable extends Migration
             $table->string("name");
             $table->decimal("initial_balance")->default('0.00');
             $table->string("currency")->default("VND");
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,6 +31,9 @@ class CreateWalletsTable extends Migration
      */
     public function down()
     {
+        Schema::table('wallets', function (Blueprint $table) {
+            $table->dropForeign('wallets_user_id_foreign');
+        });
         Schema::dropIfExists('wallets');
     }
 }

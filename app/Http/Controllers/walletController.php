@@ -21,14 +21,14 @@ class walletController extends Controller
     }
 
     public function fixWallets(Request $request,$id){
-        $this->validate($request,
-            [
-                'name' => "unique:wallets,name,$id,id",
-            ],
-            [
-                'name.unique' => 'Tên ví đã tồn tại',
-            ]
-        );
+        // $this->validate($request,
+        //     [
+        //         'name' => "unique:wallets,name,$id,id",
+        //     ],
+        //     [
+        //         'name.unique' => 'Tên ví đã tồn tại',
+        //     ]
+        // );
 
         $wallet = Wallet::find($id);
 

@@ -14,14 +14,14 @@ class dashboardController extends Controller
     }
 
     public function createWallet(Request $request,$id){
-        $this->validate($request,
-            [
-                'name' => "unique:wallets,name,$id,id",
-            ],
-            [
-                'name.unique' => 'Tên ví đã tồn tại',
-            ]
-        );
+        // $this->validate($request,
+        //     [
+        //         'name' => "unique:wallets,name,$id,id",
+        //     ],
+        //     [
+        //         'name.unique' => 'Tên ví đã tồn tại',
+        //     ]
+        // );
 
         $wallet = new Wallet;
         $wallet->name = $request->name;

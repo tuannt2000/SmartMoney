@@ -33,11 +33,14 @@ Route::post('/user', function (Request $request){
 });
 
 Route::get('/category', function (){
-    $category = Category::where('type','outcome')->where('create_by',6)->get();
+    $category = Category::where('type','income')->where('create_by',6)->get();
     foreach($category as $c){
-        $transaction = $c->transaction->count();
-        echo $transaction;
         $transaction = $c->transaction->groupBy('wallet_id')->count();
+        // foreach($transaction as $t){
+        //     echo $t;
+        //     echo '<hr>';
+        // }
+
         echo $transaction;
         echo '<hr>';
     }

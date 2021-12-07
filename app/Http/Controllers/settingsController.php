@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -62,6 +64,12 @@ class settingsController extends Controller
     public function deleteAccount(Request $request,$id){
         $user = User::find($id);
         $user->delete();
+
+        $category = Category::where('create_by',$id)->get();
+        foreach($category as $c){
+            $c->delete();
+        }
+
         return redirect('auth/login');
     }
 }

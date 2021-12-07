@@ -14,6 +14,10 @@ selected.forEach(function(value,index){
 const UzPn = $('.UzPn._10vh');
 const addInverse = UzPn.querySelector('.egUi.addInverse._3SdL._2_oj._1mpn._3dgm');
 const _2XTe1 = UzPn.querySelector('._2XTe');
+const _31E1 = UzPn.querySelector('._31E1');     //form thêm giao dịch
+const input = _31E1.querySelectorAll('._3Iet.IhHS');  //các form điền thông tin giao dịch
+
+let choose;
 let check2 = false;
 const addTranslation = {
     handleEvents: function () {
@@ -21,6 +25,15 @@ const addTranslation = {
             UzPn.classList.add('_3Eyk');
             _2XTe1.classList.add('_2Gxn');
         }
+
+        input.forEach(function(value,index){
+            value.onclick = function () {
+                if(index === 0){
+                    choose = value;
+                    value.classList.add('_2nzV');
+                }
+            }
+        });
     },
     start: function(){
         this.handleEvents();
@@ -65,6 +78,9 @@ document.onclick = function(e){
             _2XTe1.classList.remove('_2Gxn');
             UzPn.classList.remove('_3Eyk');
             check2 = false;
+        }
+        if(!choose.contains(e.target)){
+            choose.classList.remove('_2nzV');
         }
     }else{
         if(addInverse.contains(e.target)){

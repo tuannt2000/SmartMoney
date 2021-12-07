@@ -124,13 +124,20 @@
   border-color: #e5ebee;
   color: #324c5b;
 }
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS:hover {
+  border-color: #bbcdd8;
+}
 .UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP {
   display: flex;
   align-items: stretch;
   width: 100%;
   flex-grow: 1;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value {
+  width: 100%;
+  position: relative;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control {
   border-radius: 4px;
   color: #333;
   cursor: default;
@@ -143,7 +150,13 @@
   position: relative;
   width: 100%;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control:hover .Select-arrow-zone .Select-arrow {
+  border-color: #324c5b;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value {
   bottom: 0;
   color: #324c5b;
   left: 0;
@@ -161,16 +174,16 @@
   display: flex;
   align-items: center;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label {
   color: #324c5b;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv {
   display: flex;
   margin-left: -3px;
   align-items: center;
   overflow: hidden;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv ._3-9b._2_Bp {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv ._3-9b._2_Bp {
   min-width: 28px;
   min-height: 28px;
   max-height: 28px;
@@ -182,13 +195,13 @@
   justify-content: center;
   color: white;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv ._3-9b._2_Bp img {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv ._3-9b._2_Bp img {
   width: 28px;
   height: 28px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ {
   margin-left: 0.7em;
   display: flex;
   align-items: center;
@@ -196,7 +209,7 @@
   flex-direction: column;
   overflow: hidden;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ ._1BDz {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ ._1BDz {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -205,7 +218,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ ._1BDz .KKUC {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label .I7xv .-ESZ ._1BDz .KKUC {
   line-height: 1.3em;
   overflow: hidden;
   white-space: nowrap;
@@ -214,7 +227,7 @@
   vertical-align: top;
   display: inline-block;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-input {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-input {
   height: 36px;
   padding-left: 10px;
   padding-right: 10px;
@@ -224,7 +237,7 @@
   color: #333;
   cursor: default;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-multi-value-wrapper .Select-input input {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-multi-value-wrapper .Select-input input {
   width: 100%;
   max-width: 100%;
   background: none transparent;
@@ -238,7 +251,7 @@
   padding: 0;
   outline: none;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-arrow-zone {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-arrow-zone {
   cursor: pointer;
   display: table-cell;
   position: relative;
@@ -250,7 +263,7 @@
   overflow: hidden;
   border-radius: 4px;
 }
-.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select-control .Select-arrow-zone .Select-arrow {
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-control .Select-arrow-zone .Select-arrow {
   position: relative;
   display: block;
   height: 8px;
@@ -260,6 +273,109 @@
   border-right-width: 0;
   border-top-width: 0;
   transform: rotate(-45deg);
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper {
+  display: none;
+  position: absolute;
+  top: 41px;
+  left: 0;
+  width: 150%;
+  height: 370px;
+  border: 1px solid #bbcdd8;
+  border-radius: 4px;
+  background-color: white;
+  z-index: 951;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type {
+  display: none;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label {
+  padding: 5px 15px;
+  font-size: 13px;
+  background-color: #f4f7fa;
+  border-radius: 4px;
+  color: #7b93a4;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category {
+  display: none;
+  width: 100%;
+  overflow: auto;
+  height: 300px;
+  position: absolute;
+  top: 35px;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category .childcategory {
+  padding: 5px 10px;
+  align-items: center;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category .childcategory:hover {
+  background-color: #f4f7fa;
+  cursor: default;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category .childcategory ._3-9b._1Oob {
+  min-width: 34px;
+  min-height: 34px;
+  max-height: 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category .childcategory ._3-9b._1Oob img {
+  width: 34px;
+  height: 34px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper .type + label + .category .childcategory .KKUC {
+  margin-left: 8px;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type1 + label {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type1:checked + label {
+  background-color: #fb6666;
+  color: white;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type1:checked + label + .category {
+  display: block;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type2 + label {
+  position: absolute;
+  top: 5px;
+  left: 80px;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type2:checked + label {
+  background-color: #12c48b;
+  color: white;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper #type2:checked + label + .category {
+  display: block;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper a {
+  position: absolute;
+  bottom: 5px;
+  left: 25%;
+  text-decoration: none;
+  padding: 5px 20px;
+  color: #7b93a4;
+  background-color: #f4f7fa;
+  border-radius: 4px;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper a:hover {
+  background-color: #e5ebee;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS._2nzV ._2ieP .Select.has-value .Select-control .Select-arrow-zone .Select-arrow {
+  transform: rotate(135deg);
+  border-color: #324c5b;
+}
+.UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS._2nzV ._2ieP .Select.has-value .Select-menu-outer-wrapper {
+  display: block;
 }
 .UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._1z0x {
   opacity: 1;
@@ -977,6 +1093,9 @@
   pointer-events: all;
 }
 
+.UzPn._10vh._3Eyk {
+  z-index: 11;
+}
 .UzPn._10vh._3Eyk ._2AsN .oTaE .LB4I.panel ._3fS2._1GHs div {
   z-index: 950 !important;
 }
@@ -1132,6 +1251,12 @@
   align-items: center;
   justify-content: center;
   color: white;
+}
+._2AsN .LB4I ._3fS2.o-cw div .oTaE div ._1BwG._1tO1 .jcQj ._262O .XuJI .LB4I._3J0T ._3fS2.pwUH.cuNy ._3-9b._1Oob img {
+  width: 34px;
+  height: 34px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 ._2AsN .LB4I ._3fS2.o-cw div .oTaE div ._1BwG._1tO1 .jcQj ._262O .XuJI .LB4I._3J0T .LB4I.YM-8 {
   display: flex;
@@ -4893,7 +5018,6 @@ nav, ul, ol {
   padding: 0;
   background: white;
   border-bottom: solid 1px #e5ebee;
-  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, 0.3);
 }
 ._2dTk ._3KoQ .KaKx {
   display: flex;
@@ -5155,8 +5279,10 @@ nav, ul, ol {
   border-radius: 8px;
   background-color: white;
   text-align: left;
-  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, 0.8);
   transition: box-shadow 0.2s ease-in-out;
+}
+._2AsN section .oTaE .LB4I ._3fS2.o-cw._1ubS._1B3o ._18y1 div ._9VMU:hover {
+  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, 0.8);
 }
 ._2AsN section .oTaE .LB4I ._3fS2.o-cw._1ubS._1B3o ._18y1 div ._9VMU ._2jD1 {
   display: flex;
@@ -5228,7 +5354,6 @@ nav, ul, ol {
   line-height: 42px;
   background-color: #ffffff;
   color: #12c48b;
-  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, 0.8);
   transition: all 0.2s ease-in-out;
   width: 100%;
   padding: 0 8px;
@@ -5243,6 +5368,9 @@ nav, ul, ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 8px !important;
+}
+._2AsN section .oTaE .LB4I ._3fS2.o-cw._1ubS._1B3o .jcQj ._3_OS._1q5Q ._3SdL._13Jl.jsip:hover {
+  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, 0.8);
 }
 ._2AsN section .oTaE .LB4I ._3fS2.o-cw._1ubS._1B3o .jcQj ._1KCh {
   display: none;
@@ -5627,7 +5755,7 @@ nav, ul, ol {
 }
 
 .UzPn._10vh.zpcn {
-  z-index: 10;
+  z-index: 11;
   background: #f4f7fa;
 }
 .UzPn._10vh.zpcn::after {

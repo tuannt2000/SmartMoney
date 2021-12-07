@@ -75,29 +75,56 @@
                                                             </div>
                                                             <div class="_3Iet IhHS">
                                                                 <div class="_2ieP">
-                                                                    <div class="Select-control">
-                                                                        <span class="Select-multi-value-wrapper" id="react-select-ControlSelectFilterundefined--value">
-                                                                            <div class="Select-value">
-                                                                                <span class="Select-value-label" id="react-select-ControlSelectFilterundefined--value-item">
-                                                                                    <span class="I7xv" style="margin-left: -3px;">
-                                                                                        <span class="_3-9b _2_Bp" style="background-color: rgb(18, 196, 139);">
-                                                                                            <svg width="24" height="24" style="fill : white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></g></svg>
-                                                                                        </span>
-                                                                                        <span class="-ESZ">
-                                                                                            <span class="_1BDz">
-                                                                                                <span class="KKUC">Chọn danh mục...</span>
+                                                                    <div class="Select has-value">
+                                                                        <div class="Select-control">
+                                                                            <span class="Select-multi-value-wrapper" id="react-select-ControlSelectFilterundefined--value">
+                                                                                <div class="Select-value">
+                                                                                    <span class="Select-value-label" id="react-select-ControlSelectFilterundefined--value-item">
+                                                                                        <span class="I7xv" style="margin-left: -3px;">
+                                                                                            <span class="_3-9b _2_Bp" style="background-color: rgb(18, 196, 139);">
+                                                                                                <svg width="24" height="24" style="fill : white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></g></svg>
+                                                                                            </span>
+                                                                                            <span class="-ESZ">
+                                                                                                <span class="_1BDz">
+                                                                                                    <span class="KKUC">Chọn danh mục...</span>
+                                                                                                </span>
                                                                                             </span>
                                                                                         </span>
                                                                                     </span>
-                                                                                </span>
+                                                                                </div>
+                                                                                <div class="Select-input">
+                                                                                    <input role="combobox" class="Select-input" value="">
+                                                                                </div>
+                                                                            </span>
+                                                                            <span class="Select-arrow-zone">
+                                                                                <span class="Select-arrow"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="Select-menu-outer-wrapper">
+                                                                            <input type="radio" class="type" id="type1" name="type" checked="checked"> <label for="type1">Chi phí</label>
+                                                                            <div class="category">
+                                                                                @foreach ($outcome as $value)
+                                                                                <div class="childcategory">
+                                                                                    <span class="_3-9b _1Oob" style="background-color: {{$value->color}}">
+                                                                                        <img alt="{{$value->title}}" src="{{$value->icon}}">
+                                                                                    </span>
+                                                                                    <span class="KKUC">{{$value->title}}</span>
+                                                                                </div>
+                                                                                @endforeach
                                                                             </div>
-                                                                            <div class="Select-input">
-                                                                                <input role="combobox" class="Select-input" value="">
+                                                                            <input type="radio" class="type" id="type2" name="type"> <label for="type2">Thu thập</label>
+                                                                            <div class="category">
+                                                                                @foreach ($income as $value)
+                                                                                <div class="childcategory">
+                                                                                    <span class="_3-9b _1Oob" style="background-color: {{$value->color}}">
+                                                                                        <img alt="{{$value->title}}" src="{{$value->icon}}">
+                                                                                    </span>
+                                                                                    <span class="KKUC">{{$value->title}}</span>
+                                                                                </div>
+                                                                                @endforeach
                                                                             </div>
-                                                                        </span>
-                                                                        <span class="Select-arrow-zone">
-                                                                            <span class="Select-arrow"></span>
-                                                                        </span>
+                                                                            <a href="wallet/{{$wallet->id}}/settings/categories">Sửa danh mục</a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -111,7 +138,7 @@
                                                             <div class="_3Iet IhHS">
                                                                 <div class="_2ieP">
                                                                     <div class="_5BHc">
-                                                                        <input class="_3cbb" type="date" value="2021-11-04">
+                                                                        <input class="_3cbb" type="date" value="{{ date('Y-m-d') }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -124,7 +151,7 @@
                                                             </div>
                                                             <div class="_3Iet">
                                                                 <div class="_2ieP">
-                                                                    <input class="_1mYU" id="note" name="note" placeholder="Viết ghi chú hoặc #gắn thẻ" type="text" value="">
+                                                                    <input class="_1mYU" id="note" name="note" placeholder="Viết ghi chú" type="text" value="">
                                                                 </div>
                                                             </div>
                                                         </div>

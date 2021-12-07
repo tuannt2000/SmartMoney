@@ -58,15 +58,20 @@
                                                             <header class="_2G4T">
                                                                 <span class="_3_HJ"><span class="_1dxB">{{$value->name}}</span></span>
                                                                 <span class="kpLm">Tiền mặt</span>
+                                                                
+                                                                @if ($value->initial_balance == 0)
                                                                 <span class="_22t9 _1j4d">
-                                                                    @if ($value->initial_balance == 0)
-                                                                        {{$value->initial_balance}}
-                                                                    @elseif ($value->initial_balance > 0)
-                                                                        + {{$value->initial_balance}} VND
-                                                                    @else
-                                                                        {{$value->initial_balance}} VND
-                                                                    @endif
+                                                                    {{$value->initial_balance}} VND
                                                                 </span>
+                                                                @elseif ($value->initial_balance > 0)
+                                                                <span class="_22t9 _1j4d">
+                                                                    +{{$value->initial_balance}} VND
+                                                                </span>
+                                                                @else
+                                                                <span class="_22t9 _1j4d" style="color:#f14c52">
+                                                                    {{$value->initial_balance}} VND
+                                                                </span>
+                                                                @endif
                                                             </header>
                                                         </article>
                                                     </div>

@@ -23,7 +23,7 @@ selectedSb.forEach(function(value,index){
 
 // cập nhập cài đặt
 const _3AQP = $('._3AQP');
-const _3Iet = $$('._3Iet.IhHS');
+const _3Iet = $$('._3Iet.IhHS input');
 const _3SdL = $$('._3SdL._2_oj');
 const xoaVi = _3AQP.querySelector('._3WuR._1gOp ')
 const ReactModal__Overlay = $('.ReactModal__Overlay');
@@ -31,11 +31,24 @@ const _2ZwS = ReactModal__Overlay.querySelector('._2ZwS');
 const egUi = ReactModal__Overlay.querySelector('.egUi.B8bm');
 const huy = ReactModal__Overlay.querySelector('._3WuR._1gOp ');
 let check1 = false;
+let check2 = false;
 
 _3Iet.forEach(function(item,index){
     item.oninput = function(){
         if(index == 0 || index == 1){
-            _3SdL.item(0).disabled = false;
+            if(index == 0){
+                if(item.value == ''){
+                    check2 = true;
+                    _3SdL.item(0).disabled = true;
+                }else{
+                    check2 = false;
+                    _3SdL.item(0).disabled = false;
+                }
+            }else{
+                if(!check2){
+                    _3SdL.item(0).disabled = false;
+                }
+            }
         }else if(index == 3){
             _3SdL.item(1).disabled = false;
         }
