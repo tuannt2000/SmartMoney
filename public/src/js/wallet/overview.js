@@ -25,14 +25,17 @@ let check2 = false;
 let checkCategory = false;
 let dk1 = false;
 let dk2 = false;
+let dk3 = false;
 
 const type = _31E1.querySelectorAll('.type');
 type.forEach(function(value,index) {
     value.onclick = function() {
         if(index === 0) {
             input.item(2).querySelector('input').style.color = '#fb6666';
+            dk3 = false;
         }else{
             input.item(2).querySelector('input').style.color = '#12c48b';
+            dk3 = true;
         }
     }
 })
@@ -55,6 +58,9 @@ const addTranslation = {
             value.oninput = function () {
                 if(index === 2){
                     const num = value.querySelector('input')
+                    if(!dk3){
+                        num.value = -1*Math.abs(num.value);
+                    }
                     if(num.value != '' && num.value != 0){
                         dk2 = true;
     

@@ -1663,148 +1663,283 @@
                                                                         width: 100%;
                                                                         flex-grow: 1;
 
-                                                                        .Select-control{
-                                                                            border-radius: 4px;
-                                                                            color: #333;
-                                                                            cursor: default;
-                                                                            display: table;
-                                                                            border-spacing: 0;
-                                                                            border-collapse: separate;
-                                                                            height: 36px;
-                                                                            outline: none;
-                                                                            overflow: hidden;
-                                                                            position: relative;
+                                                                        .Select.has-value{
                                                                             width: 100%;
-
-                                                                            .Select-multi-value-wrapper{
-                                                                                .Select-value{
-                                                                                    bottom: 0;
-                                                                                    color: #324c5b;
-                                                                                    left: 0;
-                                                                                    line-height: 38px;
-                                                                                    padding-left: 10px;
-                                                                                    padding-right: 10px;
-                                                                                    position: absolute;
-                                                                                    right: 0;
-                                                                                    top: 0;
-                                                                                    max-width: 100%;
-                                                                                    overflow: hidden;
-                                                                                    text-overflow: ellipsis;
-                                                                                    white-space: nowrap;
-                                                                                    font-size: 14px;
-                                                                                    display: flex;
-                                                                                    align-items: center;
-
-                                                                                    .Select-value-label{
+                                                                            position: relative;
+    
+                                                                            .Select-control{
+                                                                                border-radius: 4px;
+                                                                                color: #333;
+                                                                                cursor: default;
+                                                                                display: table;
+                                                                                border-spacing: 0;
+                                                                                border-collapse: separate;
+                                                                                height: 36px;
+                                                                                outline: none;
+                                                                                overflow: hidden;
+                                                                                position: relative;
+                                                                                width: 100%;
+    
+                                                                                &:hover{
+                                                                                    box-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+    
+                                                                                    .Select-arrow-zone{
+                                                                                        .Select-arrow{
+                                                                                            border-color: #324c5b;
+                                                                                        }
+                                                                                    }
+                                                                                }
+        
+                                                                                .Select-multi-value-wrapper{
+                                                                                    .Select-value{
+                                                                                        bottom: 0;
                                                                                         color: #324c5b;
-                                                                                        
-                                                                                        .I7xv{
-                                                                                            display: flex;
-                                                                                            margin-left: -3px;
-                                                                                            align-items: center;
-                                                                                            overflow: hidden;
-
-                                                                                            ._3-9b._2_Bp{
-                                                                                                min-width: 28px;
-                                                                                                min-height: 28px;
-                                                                                                max-height: 28px;
-                                                                                                width: 28px;
-                                                                                                height: 28px;
-                                                                                                border-radius: 100%;
+                                                                                        left: 0;
+                                                                                        line-height: 38px;
+                                                                                        padding-left: 10px;
+                                                                                        padding-right: 10px;
+                                                                                        position: absolute;
+                                                                                        right: 0;
+                                                                                        top: 0;
+                                                                                        max-width: 100%;
+                                                                                        overflow: hidden;
+                                                                                        text-overflow: ellipsis;
+                                                                                        white-space: nowrap;
+                                                                                        font-size: 14px;
+                                                                                        display: flex;
+                                                                                        align-items: center;
+        
+                                                                                        .Select-value-label{
+                                                                                            color: #324c5b;
+                                                                                            
+                                                                                            .I7xv{
                                                                                                 display: flex;
+                                                                                                margin-left: -3px;
                                                                                                 align-items: center;
-                                                                                                justify-content: center;
-                                                                                                color: white;
-
-                                                                                                img{
+                                                                                                overflow: hidden;
+        
+                                                                                                ._3-9b._2_Bp{
+                                                                                                    min-width: 28px;
+                                                                                                    min-height: 28px;
+                                                                                                    max-height: 28px;
                                                                                                     width: 28px;
                                                                                                     height: 28px;
-                                                                                                    object-fit: cover;
-                                                                                                }
-                                                                                            }
-
-                                                                                            .-ESZ{
-                                                                                                margin-left: 0.7em;
-                                                                                                display: flex;
-                                                                                                align-items: center;
-                                                                                                justify-content: stretch;
-                                                                                                flex-direction: column;
-                                                                                                overflow: hidden;
-                                                                                                
-                                                                                                ._1BDz{
-                                                                                                    width: 100%;
-                                                                                                    max-width: 100%;
-                                                                                                    overflow: hidden;
-                                                                                                    color: #324c5b;
+                                                                                                    border-radius: 100%;
                                                                                                     display: flex;
-                                                                                                    align-items:center;
-                                                                                                    flex-wrap: wrap;
-
-                                                                                                    .KKUC{
-                                                                                                        line-height: 1.3em;
-                                                                                                        overflow: hidden;
-                                                                                                        white-space: nowrap;
-                                                                                                        text-overflow: ellipsis;
+                                                                                                    align-items: center;
+                                                                                                    justify-content: center;
+                                                                                                    color: white;
+        
+                                                                                                    img{
+                                                                                                        width: 28px;
+                                                                                                        height: 28px;
+                                                                                                        object-fit: cover;
+                                                                                                    }
+                                                                                                }
+        
+                                                                                                .-ESZ{
+                                                                                                    margin-left: 0.7em;
+                                                                                                    display: flex;
+                                                                                                    align-items: center;
+                                                                                                    justify-content: stretch;
+                                                                                                    flex-direction: column;
+                                                                                                    overflow: hidden;
+                                                                                                    
+                                                                                                    ._1BDz{
+                                                                                                        width: 100%;
                                                                                                         max-width: 100%;
-                                                                                                        vertical-align: top;
-                                                                                                        display: inline-block;
+                                                                                                        overflow: hidden;
+                                                                                                        color: #324c5b;
+                                                                                                        display: flex;
+                                                                                                        align-items:center;
+                                                                                                        flex-wrap: wrap;
+        
+                                                                                                        .KKUC{
+                                                                                                            line-height: 1.3em;
+                                                                                                            overflow: hidden;
+                                                                                                            white-space: nowrap;
+                                                                                                            text-overflow: ellipsis;
+                                                                                                            max-width: 100%;
+                                                                                                            vertical-align: top;
+                                                                                                            display: inline-block;
+                                                                                                        }
                                                                                                     }
                                                                                                 }
                                                                                             }
                                                                                         }
                                                                                     }
-                                                                                }
-
-                                                                                .Select-input{
-                                                                                    height: 36px;
-                                                                                    padding-left: 10px;
-                                                                                    padding-right: 10px;
-                                                                                    vertical-align: middle;
-                                                                                    border-spacing: 0;
-                                                                                    border-collapse: separate;
-                                                                                    color: #333;
-                                                                                    cursor: default;
-
-                                                                                    input{
-                                                                                        width: 100%;
-                                                                                        max-width: 100%;
-                                                                                        background: none transparent;
-                                                                                        border: 0 none;
-                                                                                        box-shadow: none;
+        
+                                                                                    .Select-input{
+                                                                                        height: 36px;
+                                                                                        padding-left: 10px;
+                                                                                        padding-right: 10px;
+                                                                                        vertical-align: middle;
+                                                                                        border-spacing: 0;
+                                                                                        border-collapse: separate;
+                                                                                        color: #333;
                                                                                         cursor: default;
-                                                                                        display: inline-block;
-                                                                                        font-family: inherit;
-                                                                                        font-size: inherit;
-                                                                                        margin: 0;
-                                                                                        padding: 0;
-                                                                                        outline: none;
+        
+                                                                                        input{
+                                                                                            width: 100%;
+                                                                                            max-width: 100%;
+                                                                                            background: none transparent;
+                                                                                            border: 0 none;
+                                                                                            box-shadow: none;
+                                                                                            cursor: default;
+                                                                                            display: inline-block;
+                                                                                            font-family: inherit;
+                                                                                            font-size: inherit;
+                                                                                            margin: 0;
+                                                                                            padding: 0;
+                                                                                            outline: none;
+                                                                                        }
+                                                                                    }
+                                                                                }
+        
+                                                                                .Select-arrow-zone{
+                                                                                    cursor: pointer;
+                                                                                    display: table-cell;
+                                                                                    position: relative;
+                                                                                    text-align: center;
+                                                                                    vertical-align: middle;
+                                                                                    width: 8px;
+                                                                                    padding: 0 11px;
+                                                                                    background-image: linear-gradient( to right, rgba(255, 255, 255, 0), white 30% );
+                                                                                    overflow: hidden;
+                                                                                    border-radius: 4px;
+        
+                                                                                    .Select-arrow{
+                                                                                        position: relative;
+                                                                                        display: block;
+                                                                                        height: 8px;
+                                                                                        width: 8px;
+                                                                                        margin-top: -2px;
+                                                                                        border: 2px solid #bbcdd8;
+                                                                                        border-right-width: 0;
+                                                                                        border-top-width: 0;
+                                                                                        transform: rotate(-45deg);
+                                                                                        transition: all .2s ease-in-out;
                                                                                     }
                                                                                 }
                                                                             }
-
-                                                                            .Select-arrow-zone{
-                                                                                cursor: pointer;
-                                                                                display: table-cell;
-                                                                                position: relative;
-                                                                                text-align: center;
-                                                                                vertical-align: middle;
-                                                                                width: 8px;
-                                                                                padding: 0 11px;
-                                                                                background-image: linear-gradient( to right, rgba(255, 255, 255, 0), white 30% );
-                                                                                overflow: hidden;
+    
+                                                                            .Select-menu-outer-wrapper{
+                                                                                display: none;
+                                                                                position: absolute;
+                                                                                top: 41px;
+                                                                                left: 0;
+                                                                                width: 150%;
+                                                                                height: 370px;
+                                                                                border: 1px solid #bbcdd8;
                                                                                 border-radius: 4px;
-
-                                                                                .Select-arrow{
-                                                                                    position: relative;
-                                                                                    display: block;
-                                                                                    height: 8px;
-                                                                                    width: 8px;
-                                                                                    margin-top: -2px;
-                                                                                    border: 2px solid #bbcdd8;
-                                                                                    border-right-width: 0;
-                                                                                    border-top-width: 0;
-                                                                                    transform: rotate(
-                                                                                        -45deg);
+                                                                                background-color: white;
+                                                                                z-index: 951;
+    
+                                                                                .type{
+                                                                                    display: none;
+    
+                                                                                    &+label{
+                                                                                        padding: 5px 15px;
+                                                                                        font-size: 13px;
+                                                                                        background-color: #f4f7fa;
+                                                                                        border-radius: 4px;
+                                                                                        color: #7b93a4;
+    
+                                                                                        &+.category{
+                                                                                            display: none;
+                                                                                            width: 100%;
+                                                                                            overflow: auto;
+                                                                                            height: 300px;
+                                                                                            position: absolute;
+                                                                                            top: 35px;
+    
+                                                                                            .childcategory{
+                                                                                                padding: 5px 10px;
+                                                                                                align-items:center;
+    
+                                                                                                &:hover{
+                                                                                                    background-color: #f4f7fa;
+                                                                                                    cursor:default;
+                                                                                                }
+    
+                                                                                                ._3-9b._1Oob{
+                                                                                                    min-width: 34px;
+                                                                                                    min-height: 34px;
+                                                                                                    max-height: 34px;
+                                                                                                    width: 34px;
+                                                                                                    height: 34px;
+                                                                                                    border-radius: 100%;
+                                                                                                    display: inline-block;
+                                                                                                    align-items: center;
+                                                                                                    justify-content: center;
+                                                                                                    color: white;
+    
+                                                                                                    img{
+                                                                                                        width: 34px;
+                                                                                                        height: 34px;
+                                                                                                        object-fit: cover;
+                                                                                                    }
+                                                                                                }
+    
+                                                                                                .KKUC{
+                                                                                                    margin-left: 8px;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+    
+                                                                                #type1{
+                                                                                    &+label{
+                                                                                        position: absolute;
+                                                                                        top: 5px;
+                                                                                        left: 5px;
+                                                                                    }
+    
+                                                                                    &:checked{
+                                                                                        &+label{
+                                                                                            background-color: #fb6666;
+                                                                                            color: white;
+    
+                                                                                            &+.category{
+                                                                                                display: block;
+                                                                                            }
+                                                                                        } 
+                                                                                    }
+                                                                                }
+    
+                                                                                #type2{
+                                                                                    &+label{
+                                                                                        position: absolute;
+                                                                                        top: 5px;
+                                                                                        left: 80px;
+                                                                                    }
+    
+                                                                                    &:checked{
+                                                                                        &+label{
+                                                                                            background-color: #12c48b;
+                                                                                            color: white;
+    
+                                                                                            &+.category{
+                                                                                                display: block;
+                                                                                            }
+                                                                                        } 
+                                                                                    }
+                                                                                }
+    
+                                                                                a{
+                                                                                    position: absolute;
+                                                                                    bottom: 5px;
+                                                                                    left: 25%;
+                                                                                    text-decoration: none;
+                                                                                    padding: 5px 20px;
+                                                                                    color: #7b93a4;
+                                                                                    background-color: #f4f7fa;
+                                                                                    border-radius: 4px;
+    
+                                                                                    &:hover{
+                                                                                        background-color: #e5ebee;
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }

@@ -127,28 +127,59 @@
                                                                                 </div>
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
+                                                                                    <div class="Select has-value">
                                                                                         <div class="Select-control">
                                                                                             <span class="Select-multi-value-wrapper" id="react-select-ControlSelectFilterundefined--value">
                                                                                                 <div class="Select-value">
                                                                                                     <span class="Select-value-label" id="react-select-ControlSelectFilterundefined--value-item">
                                                                                                         <span class="I7xv" style="margin-left: -3px;">
-                                                                                                            <span class="_3-9b _2_Bp" style="background-color: {{$transaction->category->color}};">
-                                                                                                                <img alt="{{$transaction->category->title}}" src="{{$transaction->category->icon}}">
+                                                                                                            <span class="_3-9b _2_Bp" style="background-color: {{$transaction->category->color}}">
+                                                                                                                <img src="{{$transaction->category->icon}}" alt="{{$transaction->category->title}}">
                                                                                                             </span>
-                                                                                                            <span class="-ESZ"><span class="_1BDz">
-                                                                                                            <span class="KKUC">{{$transaction->category->title}}</span>
+                                                                                                            <span class="-ESZ">
+                                                                                                                <span class="_1BDz">
+                                                                                                                    <span class="KKUC">{{$transaction->category->title}}</span>
+                                                                                                                </span>
+                                                                                                            </span>
                                                                                                         </span>
                                                                                                     </span>
-                                                                                                </span>
+                                                                                                </div>
+                                                                                                <div class="Select-input">
+                                                                                                    <input role="combobox" class="Select-input" value="">
+                                                                                                </div>
+                                                                                            </span>
+                                                                                            <span class="Select-arrow-zone">
+                                                                                                <span class="Select-arrow"></span>
                                                                                             </span>
                                                                                         </div>
-                                                                                        <div class="Select-input">
-                                                                                            <input class="Select-input" value="">
-                                                                                        </div>
-                                                                                        </span>
-                                                                                        <span class="Select-arrow-zone">
-                                                                                            <span class="Select-arrow"></span>
-                                                                                        </span>
+                                                                                        <div class="Select-menu-outer-wrapper">
+                                                                                            <input type="radio" class="type" id="type1" name="type" value="outcome" checked="checked"> <label for="type1">Chi phí</label>
+                                                                                            <div class="category">
+                                                                                                @foreach ($outcome as $value)
+                                                                                                <div class="childcategory">
+                                                                                                    <span class="_3-9b _1Oob" style="background-color: {{$value->color}}">
+                                                                                                        <img alt="{{$value->title}}" src="{{$value->icon}}">
+                                                                                                    </span>
+                                                                                                    <span class="KKUC">{{$value->title}}</span>
+                                                                                                    <span class="id_category" style="display: none">{{$value->id}}</span>
+                                                                                                </div>
+                                                                                                @endforeach
+                                                                                            </div>
+                                                                                            <input type="radio" class="type" id="type2" name="type" value="income"> <label for="type2">Thu thập</label>
+                                                                                            <div class="category">
+                                                                                                @foreach ($income as $value)
+                                                                                                <div class="childcategory">
+                                                                                                    <span class="_3-9b _1Oob" style="background-color: {{$value->color}}">
+                                                                                                        <img alt="{{$value->title}}" src="{{$value->icon}}">
+                                                                                                    </span>
+                                                                                                    <span class="KKUC">{{$value->title}}</span>
+                                                                                                    <span class="id_category" style="display: none">{{$value->id}}</span>
+                                                                                                </div>
+                                                                                                @endforeach
+                                                                                            </div>
+                                                                                            <input type="hidden" name="category_id" class="category_id" value="">
+                                                                                            <a href="wallet/{{$wallet->id}}/settings/categories">Sửa danh mục</a>
+                                                                                        </div>                                                                           
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -176,9 +207,9 @@
                                                                                 <div class="_3Iet">
                                                                                     <div class="_2ieP">
                                                                                         @if ($transaction->note == null)
-                                                                                        <input class="_1mYU" id="note" name="note" required="" placeholder="Viết ghi chú hoặc" type="text">
+                                                                                        <input class="_1mYU" id="note" name="note" placeholder="Viết ghi chú hoặc" type="text">
                                                                                         @else
-                                                                                        <input class="_1mYU" id="note" name="note" required="" placeholder="Viết ghi chú hoặc" type="text" value="{{$transaction->note}}">
+                                                                                        <input class="_1mYU" id="note" name="note" placeholder="Viết ghi chú hoặc" type="text" value="{{$transaction->note}}">
                                                                                         @endif
                                                                                     </div>
                                                                                 </div>
