@@ -16,10 +16,28 @@ const UzPn = $('.UzPn._10vh');
 const addInverse = UzPn.querySelector('.egUi.addInverse._3SdL._2_oj._1mpn._3dgm');
 const _2XTe1 = UzPn.querySelector('._2XTe');
 const _31E1 = UzPn.querySelector('._31E1');     //form thêm giao dịch
+const _3SdL = _31E1.querySelector('._3SdL._2_oj.vMKQ');
 const input = _31E1.querySelectorAll('._3Iet.IhHS');  //các form điền thông tin giao dịch
+const category = input.item(0).querySelectorAll('.childcategory');
 
+const I7xv = input.item(0).querySelector('.I7xv');
 let choose;
 let check2 = false;
+let checkCategory = false;
+let dk1 = false;
+let dk2 = false;
+
+const type = _31E1.querySelectorAll('.type');
+type.forEach(function(value,index) {
+    value.onclick = function() {
+        if(index === 0) {
+            input.item(2).querySelector('input').style.color = '#fb6666';
+        }else{
+            input.item(2).querySelector('input').style.color = '#12c48b';
+        }
+    }
+})
+
 const addTranslation = {
     handleEvents: function () {
         addInverse.onclick = function () {
@@ -29,12 +47,45 @@ const addTranslation = {
 
         input.forEach(function(value,index){
             value.onclick = function () {
+                choose = value;
                 if(index === 0){
-                    choose = value;
                     value.classList.add('_2nzV');
                 }
             }
+
+            value.oninput = function () {
+                if(index === 2){
+                    const num = value.querySelector('input')
+                    if(num.value != '' && num.value != 0){
+                        dk2 = true;
+
+                        if(dk1 && dk2) {
+                            _3SdL.disabled = false;
+                        }
+                    }else{
+                        dk2 = false;
+                        _3SdL.disabled = true;
+                    }
+                }
+            }
         });
+
+        category.forEach(function(value,index){
+            value.onclick = function () {
+                I7xv.querySelector('._3-9b._2_Bp').innerHTML = value.querySelector('._3-9b._1Oob').innerHTML;
+                I7xv.querySelector('._3-9b._2_Bp').style.backgroundColor =  value.querySelector('._3-9b._1Oob').style.backgroundColor;
+                I7xv.querySelector('.-ESZ ._1BDz .KKUC').innerText = value.querySelector('.KKUC').innerText;
+                dk1 = true;
+
+                input.item(0).querySelector('.category_id').value = value.querySelector('.id_category').innerText;
+
+                if(dk1 && dk2) {
+                    _3SdL.disabled = false;
+                }
+
+                checkCategory = true;
+            }
+        })
     },
     start: function(){
         this.handleEvents();
@@ -111,8 +162,9 @@ document.onclick = function(e){
             UzPn.classList.remove('_3Eyk');
             check2 = false;
         }
-        if(!choose.contains(e.target)){
+        if(!choose.contains(e.target) || checkCategory){
             choose.classList.remove('_2nzV');
+            checkCategory = false;
         }
     }else{
         if(addInverse.contains(e.target)){

@@ -305,8 +305,8 @@
                                                                                     border: 2px solid #bbcdd8;
                                                                                     border-right-width: 0;
                                                                                     border-top-width: 0;
-                                                                                    transform: rotate(
-                                                                                        -45deg);
+                                                                                    transform: rotate(-45deg);
+                                                                                    transition: all .2s ease-in-out;
                                                                                 }
                                                                             }
                                                                         }

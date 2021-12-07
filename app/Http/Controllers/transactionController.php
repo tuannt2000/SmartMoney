@@ -31,4 +31,25 @@ class transactionController extends Controller
         $wallet = Wallet::find($id);
         return view('wallet.overview',['transactions'=>$transactions,'income'=>$income,'outcome'=>$outcome,'wallet'=>$wallet]);
     }
+
+    public function createTransaction(Request $request,$id){
+        $transaction = new Transaction;
+
+        $transaction->wallet_id = $id;
+        $transaction->category_id = $request->category_id;
+        if($request->type == 'outcome'){
+            $transaction->amount = -1*($request->amount);
+        }else{
+            $transaction->amount = $request->amount;
+        }
+        $transaction->date = $request->date;
+
+        if($request->note != null){
+            $transaction->note = $request->note;
+        }
+
+        $transaction->save();
+
+        return redirect('wallet/'.$id.'/transactions');
+    }
 }

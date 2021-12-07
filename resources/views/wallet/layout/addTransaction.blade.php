@@ -55,7 +55,8 @@
                 <div class="_2Rgf _1TEN">
                     <div class="_31E1">
                         <div class="_207I _1TEN">
-                            <form action="">
+                            <form action="wallet/{{$wallet->id}}/transactions/create" method="post">
+                            {{csrf_field()}}
                                 <div class="_3wsj  _2ndI">
                                     <div class="_28Yu">
                                         <button type="button" class="egUi B8bm ">
@@ -101,7 +102,7 @@
                                                                             </span>
                                                                         </div>
                                                                         <div class="Select-menu-outer-wrapper">
-                                                                            <input type="radio" class="type" id="type1" name="type" checked="checked"> <label for="type1">Chi phí</label>
+                                                                            <input type="radio" class="type" id="type1" name="type" value="outcome" checked="checked"> <label for="type1">Chi phí</label>
                                                                             <div class="category">
                                                                                 @foreach ($outcome as $value)
                                                                                 <div class="childcategory">
@@ -109,10 +110,11 @@
                                                                                         <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                     </span>
                                                                                     <span class="KKUC">{{$value->title}}</span>
+                                                                                    <span class="id_category" style="display: none">{{$value->id}}</span>
                                                                                 </div>
                                                                                 @endforeach
                                                                             </div>
-                                                                            <input type="radio" class="type" id="type2" name="type"> <label for="type2">Thu thập</label>
+                                                                            <input type="radio" class="type" id="type2" name="type" value="income"> <label for="type2">Thu thập</label>
                                                                             <div class="category">
                                                                                 @foreach ($income as $value)
                                                                                 <div class="childcategory">
@@ -120,9 +122,11 @@
                                                                                         <img alt="{{$value->title}}" src="{{$value->icon}}">
                                                                                     </span>
                                                                                     <span class="KKUC">{{$value->title}}</span>
+                                                                                    <span class="id_category" style="display: none">{{$value->id}}</span>
                                                                                 </div>
                                                                                 @endforeach
                                                                             </div>
+                                                                            <input type="hidden" name="category_id" class="category_id" value="">
                                                                             <a href="wallet/{{$wallet->id}}/settings/categories">Sửa danh mục</a>
                                                                         </div>
                                                                     </div>
@@ -138,7 +142,7 @@
                                                             <div class="_3Iet IhHS">
                                                                 <div class="_2ieP">
                                                                     <div class="_5BHc">
-                                                                        <input class="_3cbb" type="date" value="{{ date('Y-m-d') }}">
+                                                                        <input class="_3cbb" type="date" name="date" value="{{ date('Y-m-d') }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -185,7 +189,7 @@
                                                             </div>
                                                             <div class="_3Iet IhHS">
                                                                 <div class="_2ieP">
-                                                                    <input class="_1mYU required iDbf hpDw" id="price" name="price" placeholder="-0.00" type="number" step="0.01" inputmode="decimal" value="">
+                                                                    <input class="_1mYU required iDbf hpDw" id="price" name="amount" placeholder="-0.00" type="number" step="0.01" inputmode="decimal" value="">
                                                                 </div>
                                                             </div>
                                                         </div>

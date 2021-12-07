@@ -33,6 +33,8 @@ Route::post('dashboard/createWallet/{id}','App\Http\Controllers\dashboardControl
 Route::group(['prefix'=>'wallet/{id}'],function(){
     Route::get('transactions', 'App\Http\Controllers\transactionController@transactionWallets');
 
+    Route::post('transactions/create', 'App\Http\Controllers\transactionController@createTransaction');
+
     Route::get('overview', 'App\Http\Controllers\transactionController@overViewWallets');
 
     Route::get('budgets', function ($id) {

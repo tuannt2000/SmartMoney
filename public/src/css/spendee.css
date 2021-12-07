@@ -273,6 +273,7 @@
   border-right-width: 0;
   border-top-width: 0;
   transform: rotate(-45deg);
+  transition: all 0.2s ease-in-out;
 }
 .UzPn._10vh ._2AsN .oTaE div ._2Rgf._1TEN ._31E1 ._207I._1TEN form ._3wsj._2ndI .oTaE._3kSa ._1m7C ._2UE8.disable .LB4I._2s9S ._3fS2.o-cw._3KvC._2NH_._5CwE._3BCe .iLEV.IhHS ._3Iet.IhHS ._2ieP .Select.has-value .Select-menu-outer-wrapper {
   display: none;
