@@ -162,7 +162,7 @@
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
                                                 <div class="_3fS2 o-cw _22vv _1V5z _37kk" style="padding: 0rem 0.5rem 0.5rem;">
                                                     <h1 class="_1aWI">Thu nhập theo kỳ</h1>
-                                                    <span class="_3zGV">Th10 01–31</span>
+                                                    <span class="_3zGV">Th10 01-31</span>
                                                 </div>
                                                 <div class="_3fS2 o-cw _22vv _19wA _1KKs" style="padding: 0.25rem 0.5rem 0.5rem;">
                                                 </div>

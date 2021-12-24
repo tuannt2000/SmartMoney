@@ -107,7 +107,9 @@
                                                     </div>
                                                 </div>
 
-                                                <form class="form">
+                                                <form class="form" action="wallet/{{$wallet->id}}/transactions/fix/{{$transaction->id}}" method="post">
+                                                {{csrf_field()}}
+                                                    <input type="hidden" name="id" class="id" value="{{$transaction->id}}">
                                                     <div class="_3wsj _3USu _2ndI">
                                                         <div class="_28Yu">
                                                             <button type="button" class="egUi B8bm ">
@@ -153,7 +155,10 @@
                                                                                             </span>
                                                                                         </div>
                                                                                         <div class="Select-menu-outer-wrapper">
-                                                                                            <input type="radio" class="type" id="type1" name="type" value="outcome" checked="checked"> <label for="type1">Chi phí</label>
+                                                                                            <input type="radio" class="type type1" id="type{{$transaction->category->id}}1" name="type" value="outcome" 
+                                                                                            @if ($transaction->amount < 0)
+                                                                                            checked="checked"
+                                                                                            @endif> <label for="type{{$transaction->category->id}}1">Chi phí</label>
                                                                                             <div class="category">
                                                                                                 @foreach ($outcome as $value)
                                                                                                 <div class="childcategory">
@@ -165,7 +170,10 @@
                                                                                                 </div>
                                                                                                 @endforeach
                                                                                             </div>
-                                                                                            <input type="radio" class="type" id="type2" name="type" value="income"> <label for="type2">Thu thập</label>
+                                                                                            <input type="radio" class="type type2" id="type{{$transaction->category->id}}2" name="type" value="income" 
+                                                                                            @if ($transaction->amount > 0)
+                                                                                            checked="checked"
+                                                                                            @endif> <label for="type{{$transaction->category->id}}2">Thu thập</label>
                                                                                             <div class="category">
                                                                                                 @foreach ($income as $value)
                                                                                                 <div class="childcategory">
@@ -193,7 +201,7 @@
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
                                                                                         <div class="_5BHc">
-                                                                                            <input class="_3cbb" type="date" placeholder="YYYY/MM/DD" value="{{$transaction->date}}">
+                                                                                            <input class="_3cbb" type="date" name="date" placeholder="YYYY/MM/DD" value="{{$transaction->date}}">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -245,9 +253,9 @@
                                                                                 <div class="_3Iet IhHS">
                                                                                     <div class="_2ieP">
                                                                                         @if ($transaction->amount > 0)
-                                                                                        <input class="_1mYU required iDbf hpDw" id="price" name="price" placeholder="0.00" type="number" step="0.01" inputmode="decimal" value="{{$transaction->amount}}" style="color:#12c48b;">
+                                                                                        <input class="_1mYU required iDbf hpDw" id="price" name="amount" placeholder="0.00" type="number" step="0.01" inputmode="decimal" value="{{$transaction->amount}}" style="color:#12c48b;">
                                                                                         @else
-                                                                                        <input class="_1mYU required iDbf hpDw" id="price" name="price" placeholder="-0.00" type="number" step="0.01" inputmode="decimal" value="{{$transaction->amount}}">   
+                                                                                        <input class="_1mYU required iDbf hpDw" id="price" name="amount" placeholder="-0.00" type="number" step="0.01" inputmode="decimal" value="{{$transaction->amount}}">   
                                                                                         @endif
                                                                                     </div>
                                                                                 </div>
@@ -287,7 +295,7 @@
                                                             <div class="LB4I _1Nfn JBC3" style="margin: 0px -0.25rem;">
                                                                 <div class="_3fS2 _2xmy" style="padding: 0.25rem;"></div>
                                                                 <div class="_3fS2 o-cw _2eVd _229f _2oRk _9tQt _3iL9" style="padding: 0.25rem;">
-                                                                    <button type="submit" class="_3SdL _2_oj vMKQ ">Lưu thay đổi</button>
+                                                                    <button type="submit" disabled class="_3SdL _2_oj vMKQ ">Lưu thay đổi</button>
                                                                     <div>
                                                                         <button type="button" class="_3SdL _1_Kr ">Xóa giao dịch</button>
                                                                     </div>
@@ -315,6 +323,43 @@
             <!--    End main    -->
         </div>
 
+    </div>
+
+    <div class="ReactModalPortal">
+        <div class="ReactModal__Overlay">
+            <div class="ReactModal__Content ReactModal__Content--after-open _2RxW" style="z-index: 1000;">
+                <div class="_3EUw">
+                <form action="wallet/{{$wallet->id}}/transactions/delete" method="post">
+                        {{csrf_field()}}
+                        <input type="hidden" name="id" class="id" value="">
+                        <article class="_2ZwS ">
+                            <div class="_13pY">
+                                <div class="_36Dk">
+                                    <button type="button" class="egUi B8bm ">
+                                        <span class="_2nf9">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="import-step-1" transform="translate(-1252.000000, -166.000000)" fill="currentColor"><g id="import-dialog" transform="translate(420.000000, 158.000000)"><g transform="translate(824.000000, 0.000000)"><path d="M13,13 L8.00684547,13 C7.44994876,13 7,13.4477153 7,14 C7,14.5561352 7.45078007,15 8.00684547,15 L13,15 L13,19.9931545 C13,20.5500512 13.4477153,21 14,21 C14.5561352,21 15,20.5492199 15,19.9931545 L15,15 L19.9931545,15 C20.5500512,15 21,14.5522847 21,14 C21,13.4438648 20.5492199,13 19.9931545,13 L15,13 L15,8.00684547 C15,7.44994876 14.5522847,7 14,7 C13.4438648,7 13,7.45078007 13,8.00684547 L13,13 Z" id="Combined-Shape" transform="translate(14.000000, 14.000000) rotate(45.000000) translate(-14.000000, -14.000000) "></path></g></g></g></g></svg>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="_2GnZ">
+                                    <div class="_2Fgh" style="background: #fb6666;width: 64px;height: 64px;display: flex;justify-content: center;align-items: center;border-radius: 100%;"><svg fill="white" width="24" height="32" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><g><path d="M1 14.222C1 15.2 1.75 16 2.667 16h6.666C10.25 16 11 15.2 11 14.222V3.556H1v10.666zM12 1H9l-.857-1H3.857L3 1H0v1.667h12V1z"></path></g></svg></div>
+                                </div>
+                                <h1 class="delete">Xóa 1 giao dịch</h1>
+                                <div class="j4fJ">
+                                    <p>
+                                        Bạn có thực sự muốn xóa giao dịch này
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="_2axu">
+                                <button type="submit" class="_3SdL _1_Kr ">Xóa giao dịch</button>
+                                <a class="_3WuR _1gOp ">Hủy</a>
+                            </div>
+                        </article>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     
 @endsection

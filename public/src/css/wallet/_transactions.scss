@@ -1889,7 +1889,7 @@
                                                                                     }
                                                                                 }
     
-                                                                                #type1{
+                                                                                .type1{
                                                                                     &+label{
                                                                                         position: absolute;
                                                                                         top: 5px;
@@ -1908,7 +1908,7 @@
                                                                                     }
                                                                                 }
     
-                                                                                #type2{
+                                                                                .type2{
                                                                                     &+label{
                                                                                         position: absolute;
                                                                                         top: 5px;
@@ -1941,6 +1941,25 @@
                                                                                         background-color: #e5ebee;
                                                                                     }
                                                                                 }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                ._3Iet.IhHS._2nzV{
+                                                                    ._2ieP{
+                                                                        .Select.has-value{
+                                                                            .Select-control{
+                                                                                .Select-arrow-zone{
+                                                                                    .Select-arrow{
+                                                                                        transform: rotate(135deg);
+                                                                                        border-color: #324c5b;
+                                                                                    }
+                                                                                }
+                                                                            }
+    
+                                                                            .Select-menu-outer-wrapper{
+                                                                                display: block;
                                                                             }
                                                                         }
                                                                     }
@@ -2447,6 +2466,11 @@
                                                     max-width: 50%; 
 
                                                     ._3SdL._2_oj.vMKQ {
+                                                        &:disabled{
+                                                            background-color: #e5ebee;
+                                                            color: #7b93a4;
+                                                        }
+                                                        
                                                         height: 38px;
                                                         width: 100%;
                                                         margin-left: 0;

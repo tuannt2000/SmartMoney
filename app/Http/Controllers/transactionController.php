@@ -37,11 +37,7 @@ class transactionController extends Controller
 
         $transaction->wallet_id = $id;
         $transaction->category_id = $request->category_id;
-        if($request->type == 'outcome'){
-            $transaction->amount = -1*($request->amount);
-        }else{
-            $transaction->amount = $request->amount;
-        }
+        $transaction->amount = $request->amount;
         $transaction->date = $request->date;
 
         if($request->note != null){
@@ -49,6 +45,32 @@ class transactionController extends Controller
         }
 
         $transaction->save();
+
+        return redirect('wallet/'.$id.'/transactions');
+    }
+
+    public function fixTransaction(Request $request,$id,$idTransaction){
+        $transaction = Transaction::find($idTransaction);
+
+        if($request->category_id != null){
+            $transaction->category_id = $request->category_id;
+        }
+
+        $transaction->amount = $request->amount;
+        $transaction->date = $request->date;
+        if($request->note != null){
+            $transaction->note = $request->note;
+        }
+
+        $transaction->save();
+
+        return redirect('wallet/'.$id.'/transactions');
+    }
+
+    public function deleteTransaction(Request $request,$id){
+        $transaction = Transaction::find($request->id);
+
+        $transaction->delete();
 
         return redirect('wallet/'.$id.'/transactions');
     }

@@ -116,6 +116,7 @@ document.onclick = function(e){
             uZrZ.classList.remove('_1z7D');
             _1zUK.classList.remove('_1z7D');
             _1WaF.classList.remove('_1z7D');
+            $('.UzPn._10vh').style.zIndex = 11;
             check = false;
         }
     }else{
@@ -124,6 +125,7 @@ document.onclick = function(e){
             uZrZ.classList.add('_1z7D');
             _1zUK.classList.add('_1z7D');
             _1WaF.classList.add('_1z7D');
+            $('.UzPn._10vh').style.zIndex = 9;
             check = true;
         }
     }

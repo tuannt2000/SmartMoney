@@ -35,12 +35,15 @@ Route::group(['prefix'=>'wallet/{id}'],function(){
 
     Route::post('transactions/create', 'App\Http\Controllers\transactionController@createTransaction');
 
+    Route::post('transactions/fix/{idTransaction}', 'App\Http\Controllers\transactionController@fixTransaction');
+
+    Route::post('transactions/delete', 'App\Http\Controllers\transactionController@deleteTransaction');
+
     Route::get('overview', 'App\Http\Controllers\transactionController@overViewWallets');
 
-    Route::get('budgets', function ($id) {
-        $wallet = Wallet::find($id);
-        return view('wallet.budgetsDetail',['wallet'=>$wallet]);
-    });
+    Route::get('budgets','App\Http\Controllers\budgetController@budgetWallets');
+
+    Route::get('budgetDetails','App\Http\Controllers\budgetController@budgetDetailWallets');
 
     Route::group(['prefix'=>'settings'],function(){
         Route::get('general','App\Http\Controllers\walletController@generalWallets');

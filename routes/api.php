@@ -2,9 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
-use App\Models\Category;
-use App\Models\Transaction;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,28 +17,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user', function (){
-    return User::all();
-});
+Route::get('wallet/{id}/myChart1','App\Http\Controllers\apiController@myChart1Api');
 
-Route::get('/user/{id}', function ($id){
-    return User::find($id);
-});
+Route::get('wallet/{id}/myChart2','App\Http\Controllers\apiController@myChart2Api');
 
-Route::post('/user', function (Request $request){
-    return User::create($request->all());
-});
+Route::get('wallet/{id}/myChart3','App\Http\Controllers\apiController@myChart3Api');
 
-Route::get('/category', function (){
-    $category = Category::where('type','income')->where('create_by',6)->get();
-    foreach($category as $c){
-        $transaction = $c->transaction->groupBy('wallet_id')->count();
-        // foreach($transaction as $t){
-        //     echo $t;
-        //     echo '<hr>';
-        // }
-
-        echo $transaction;
-        echo '<hr>';
-    }
-});
+Route::get('wallet/{id}/myChart4','App\Http\Controllers\apiController@myChart4Api');
