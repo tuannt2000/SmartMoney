@@ -30,6 +30,16 @@ Route::get('dashboard','App\Http\Controllers\dashboardController@getDashboard');
 
 Route::post('dashboard/createWallet/{id}','App\Http\Controllers\dashboardController@createWallet');
 
+Route::get('budgets', 'App\Http\Controllers\budgetController@budget');
+
+Route::post('budgets/create', 'App\Http\Controllers\budgetController@createBudget');
+
+Route::get('budgetsDetail/{id_budget}', 'App\Http\Controllers\budgetController@budgetsDetail');
+
+Route::post('budgetsDetail/fix/{id_budget}', 'App\Http\Controllers\budgetController@fixBudgetsDetail');
+
+Route::get('budgetsDetail/delete/{id_budget}', 'App\Http\Controllers\budgetController@deleteBudgetsDetail');
+
 Route::group(['prefix'=>'wallet/{id}'],function(){
     Route::get('transactions', 'App\Http\Controllers\transactionController@transactionWallets');
 
@@ -43,7 +53,13 @@ Route::group(['prefix'=>'wallet/{id}'],function(){
 
     Route::get('budgets','App\Http\Controllers\budgetController@budgetWallets');
 
-    Route::get('budgetDetails','App\Http\Controllers\budgetController@budgetDetailWallets');
+    Route::post('budgets/create','App\Http\Controllers\budgetController@createBudgetWallets');
+
+    Route::get('budgetsDetail/{id_budget}','App\Http\Controllers\budgetController@budgetDetailWallets');
+
+    Route::post('budgetsDetail/fix/{id_budget}','App\Http\Controllers\budgetController@fixBudgetDetailWallets');
+
+    Route::get('budgetsDetail/delete/{id_budget}','App\Http\Controllers\budgetController@deleteBudgetDetailWallets');
 
     Route::group(['prefix'=>'settings'],function(){
         Route::get('general','App\Http\Controllers\walletController@generalWallets');
@@ -60,10 +76,6 @@ Route::group(['prefix'=>'wallet/{id}'],function(){
     
         Route::post('categories/delete','App\Http\Controllers\categoryController@deleteCategories');
     });
-});
-
-Route::get('budgets', function () {
-    return view('budgetsDetail');
 });
 
 Route::group(['prefix'=>'settings'],function(){

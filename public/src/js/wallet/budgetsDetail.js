@@ -15,25 +15,103 @@ selected.forEach(function(value,index){
 const _2AsN = $$('._2AsN');
 const _3SdL = _2AsN.item(1).querySelector('._3SdL._3j13');
 const ReactModal__Overlay = $('.ReactModal__Overlay');
-let check2 = false;
 const _3EUw = ReactModal__Overlay.querySelector('._3EUw');
-const egUi = ReactModal__Overlay.querySelector('.egUi.B8bm');
-const _3qcS = ReactModal__Overlay.querySelector('._3WuR._3SdL._3qcS');
-const _2_oj = ReactModal__Overlay.querySelector('._3WuR._3SdL._2_oj')
-const _U5w = ReactModal__Overlay.querySelectorAll('._U5w');
+const _36Dk = ReactModal__Overlay.querySelector('._36Dk');
+const _2BJz = ReactModal__Overlay.querySelector('._2BJz');
+const _2wfn1 = _2BJz.querySelector('._2wfn:nth-child(2)');
+const _2wfn2 = _2BJz.querySelector('._2wfn:nth-child(3)');
+const _2wfn3 = _2BJz.querySelector('._2wfn:last-child');
+const _3fMh = _2wfn3.querySelector('._3fMh');
+const allCategory = _3fMh.querySelector('.allCategory');
+const childcategories = _3fMh.querySelectorAll('.Category');
+const _2axu = ReactModal__Overlay.querySelector('._2axu ._3WuR._3SdL._2_oj');
+const huyButton = ReactModal__Overlay.querySelector('._2axu ._3WuR._3SdL._3qcS');
+const _3q8K = _3fMh.querySelector('._3q8K span span');
+const _3UJt = _3fMh.querySelector('._3UJt span span');
+const num = _3q8K.innerText;
 
-_3EUw.onclick = function(e){
-    if(egUi.contains(e.target) || _3qcS.contains(e.target)){
-        ReactModal__Overlay.classList.remove('ReactModal__Overlay--after-open');
-        check2 = false;
+let checkbutton1 = true;
+let checkbutton2 = true;
+let checkbutton3 = true;
+
+function checkButton() {
+    if(checkbutton1 && checkbutton2 && checkbutton3){
+        _2axu.disabled = false;
+    }else{
+        _2axu.disabled = true;
     }
 }
 
-_U5w.forEach(function(item){
-    item.oninput = function(){
-        _2_oj.disabled = false;
+allCategory.onclick = function(){
+    if(allCategory.querySelector('input').checked){
+        childcategories.forEach(function(value) {
+            value.querySelector('input').checked = true;
+        })
+        _3q8K.innerText = num;
+        _3UJt.innerText = 'Tất cả các danh mục';
+        checkbutton3 = true;
+    }else{
+        childcategories.forEach(function(value) {
+            value.querySelector('input').checked = false;
+        })
+        _3q8K.innerText = '';
+        _3UJt.innerText = '';
+        checkbutton3 = false;
+    }
+
+    checkButton();
+}
+
+childcategories.forEach(function(value) {
+    value.onclick = function(){
+        if(_3fMh.querySelectorAll('.Category input:checked').length == _3fMh.querySelectorAll('.Category').length){
+            allCategory.querySelector('input').checked = true;
+            _3q8K.innerText = num;
+            _3UJt.innerText = 'Tất cả các danh mục';
+        }else{
+            allCategory.querySelector('input').checked = false;
+            _3q8K.innerText = _3fMh.querySelectorAll('.Category input:checked').length;
+            _3UJt.innerText = _3fMh.querySelectorAll('.Category input:checked').length + ' danh mục';
+        }
+
+        if(_3fMh.querySelectorAll('.Category input:checked').length != 0){
+            checkbutton3 = true;
+        }else{
+            checkbutton3 = false;
+        }
+
+        checkButton();
     }
 })
+
+_2wfn1.querySelector('input').oninput = function(){
+    if(_2wfn1.querySelector('input').value != ''){
+        checkbutton1 = true;
+    }else{
+        checkbutton1 = false;
+    }
+
+    checkButton();
+}
+
+_2wfn2.querySelector('input').oninput = function(){
+    if(_2wfn2.querySelector('input').value != '' && _2wfn2.querySelector('input').value > 0){
+        checkbutton2 = true;
+    }else{
+        checkbutton2 = false;
+    }
+
+    checkButton();
+}
+
+let check3 = false;
+
+let check2 = false;
+
+_3SdL.onclick = function(){
+    ReactModal__Overlay.classList.add('ReactModal__Overlay--after-open');
+    document.getElementsByTagName("BODY")[0].style.overflowY = 'hidden';
+}
 
 // Chỉnh sửa giao dich
 const _1BwG = $$('._1BwG._1tO1');
@@ -91,14 +169,26 @@ document.onclick = function(e){
     }
 
     if(check2){
-        if(!_3EUw.contains(e.target)){
+        if(!_3EUw.contains(e.target) || _36Dk.contains(e.target) || huyButton.contains(e.target)){
             ReactModal__Overlay.classList.remove('ReactModal__Overlay--after-open');
+            document.getElementsByTagName("BODY")[0].style.overflowY = 'initial';
             check2 = false;
         }
     }else{
         if(_3SdL.contains(e.target)){
-            ReactModal__Overlay.classList.add('ReactModal__Overlay--after-open');
             check2 = true;
+        }
+    }
+
+    if(check3){
+        if(!_3fMh.contains(e.target)){
+            _3fMh.classList.remove('is-open');
+            check3 = false;
+        }
+    }else{
+        if(_3fMh.contains(e.target)){
+            _3fMh.classList.add('is-open');
+            check3 = true;
         }
     }
 }

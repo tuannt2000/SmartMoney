@@ -10,7 +10,30 @@
 <div id="app">
         <div>
             <!--    Header     -->
-            @include('wallet.layout.header')
+            <div class="_2dTk _1prg">
+                <header class="_3KoQ">
+                    <!--   Logo   -->
+                    @include('layout.logo')
+                    <!--    End logo   -->
+
+                    <!--    Nav menu   -->
+                    <div class="_3C1k">
+                        <div class="_1e_t">
+                            <nav>
+                                <ul class="ZfY8">
+                                    <li><a href="dashboard" class="_3WuR _1gOp"><span>Bảng điều khiển</span></a></li>
+                                    <li><a href="budgetsDetail" class="_3WuR _1gOp"><span>Ngân sách</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--    End Nav menu -->
+
+                    <!--    Account   -->
+                    @include('layout.account')
+                    <!--    End Account -->
+                </header>
+            </div>
             <!--    End header  -->
             <!--    Main      -->
             @if (session('thongbao'))
@@ -30,7 +53,7 @@
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
                                                 @foreach ($budgets as $value)
                                                 <div class="_3fS2 o-cw _1ubS _1B3o" style="padding: 0.5rem;">
-                                                    <a href="wallet/{{$wallet->id}}/budgetsDetail/{{$value->id}}" class="_1MqG ">
+                                                    <a href="budgetsDetail/{{$value->id}}" class="_1MqG ">
                                                         <div draggable="true">
                                                             <article class="_2Ku2">
                                                                 <h3 class="_3ow9">{{$value->title}}</h3>
@@ -82,7 +105,7 @@
         <div class="ReactModal__Overlay">
             <div class="ReactModal__Content ReactModal__Content--after-open _2RxW otWy" style="z-index: 1000;">
                 <div class="_3EUw">
-                    <form action="wallet/{{$wallet->id}}/budgets/create" method="post">
+                    <form action="budgets/create" method="post">
                     {{csrf_field()}}
 
                         <article class="_2ZwS _3U03 _2VOV">
@@ -230,6 +253,6 @@
 
 @section("script")
 
-<script src="src/js/wallet/budgets.js"></script>
+<script src="src/js/budgets.js"></script>
 
 @endsection

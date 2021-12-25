@@ -21,7 +21,6 @@ class CreateCategoriesTable extends Migration
             $table->string('type');
             $table->text('color');
             $table->integer('create_by');
-            // $table->integer('budget_id')->unsigned();
         });
     }
 
