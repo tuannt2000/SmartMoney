@@ -110,26 +110,38 @@
                             <div class="LB4I _3BdS">
                                 <div class="_3fS2 _3cTs _3gPh _19wA _1B3o">
                                     <div class="_3wsj _1eTa">
-                                        <span class="_1zZy">Tổng Số dư</span>
-                                        <span class="_2Tip _39n0">0VND</span> 
+                                        <span class="_1zZy">Ngân sách ban đầu</span>
+                                        <span class="_2Tip _39n0">+{{$budget->amount}}VND</span> 
                                     </div>
                                 </div>
                                 <div class="_3fS2 _3cTs _3gPh _19wA _1B3o">
                                     <div class="_3wsj _1eTa">
-                                        <span class="_1zZy">Tổng Thay Đổi Theo Kì</span>
-                                        <span class="_2Tip _39n0" style="color:#f14c52;">0VND</span>
+                                        <span class="_1zZy">Chi tiêu gần đây</span>
+                                        @if ($sum == 0)
+                                        <span class="_2Tip _39n0" style="color:#12c48b;">{{number_format((float)$sum, 2, '.', '')}}VND</span>
+                                        @else
+                                        <span class="_2Tip _39n0" style="color:#f14c52;">{{number_format((float)$sum, 2, '.', '')}}VND</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="_3fS2 _3cTs _3gPh _19wA _1B3o">
                                     <div class="_3wsj _1eTa">
-                                        <span class="_1zZy">Tổng Chi Phí Theo Kì</span>
-                                        <span class="_2Tip _39n0" style="color:#f14c52;">0VND</span>
+                                        <span class="_1zZy">Số tiền còn lại</span>
+                                        @if ($budget->amount + $sum > 0)
+                                        <span class="_2Tip _39n0" style="color:#12c48b;">+{{number_format((float)($budget->amount + $sum), 2, '.', '')}}VND</span>
+                                        @else
+                                        <span class="_2Tip _39n0" style="color:#f14c52;">{{number_format((float)($budget->amount + $sum), 2, '.', '')}}VND</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="_3fS2 _3cTs _3gPh _19wA _1B3o">
                                     <div class="_3wsj _1eTa">
-                                        <span class="_1zZy">Tổng Thu Nhập Theo Kì</span>
-                                        <span class="_2Tip _39n0">0VND</span>
+                                        <span class="_1zZy">Bạn có thể chi tiêu</span>
+                                        @if ($budget->amount + $sum > 0)
+                                        <span class="_2Tip _39n0" style="color:#12c48b;">+{{number_format((float)($budget->amount + $sum), 2, '.', '')}}VND</span>
+                                        @else
+                                        <span class="_2Tip _39n0" style="color:#f14c52;">0.00VND</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -151,8 +163,12 @@
                                             </div>
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
                                                 <div class="_3fS2 o-cw" style="padding: 0.5rem;">
-                                                    <span class="_1Mfu">
-                                                        <span>Keep spending. You can spend <strong>445,000.00 VND</strong> each day for the rest of the period.</span>
+                                                    <span class="_1Mfu">                                                   
+                                                        @if ($budget->amount + $sum >= 0)
+                                                        <span>Keep spending. You can spend <strong> {{number_format((float)($budget->amount + $sum), 2, '.', '')}}VND  </strong> each day for the rest of the period.</span>
+                                                        @else
+                                                        <span>Đã vượt quá ngân sách <strong> {{number_format((float)($budget->amount + $sum), 2, '.', '')}}VND  </strong></span>
+                                                        @endif
                                                     </span>
                                                     <div class="_2Enb">
                                                         <div class="_3ezC">
@@ -162,14 +178,28 @@
                                                                 <div class="_3-3k"></div>
                                                             </div><div class="s0y4 tTT7">
                                                                 <div class="wW2c tTT7">
-                                                                    <div class="_3ugj" style="width: 11%;">
-                                                                        <span class="wD7J">11.0%</span>
+                                                                    @if (round(abs($sum)*100/$budget->amount,1) < 70)
+                                                                    <div class="_3ugj" style="width: {{round(abs($sum)*100/$budget->amount,1)}}%;">
+                                                                        <span class="wD7J">{{round(abs($sum)*100/$budget->amount,1)}}%</span>
                                                                     </div>
-                                                                    <span class="wD7J lz4G tTT7">11.0%</span>
+                                                                    @elseif(round(abs($sum)*100/$budget->amount,1) < 85)
+                                                                    <div class="_3ugj" style="width: {{round(abs($sum)*100/$budget->amount,1)}}%;background: #fac35f;">
+                                                                        <span class="wD7J">{{round(abs($sum)*100/$budget->amount,1)}}%</span>
+                                                                    </div>
+                                                                    @elseif(round(abs($sum)*100/$budget->amount,1) < 95)
+                                                                    <div class="_3ugj" style="width: {{round(abs($sum)*100/$budget->amount,1)}}%;background: #f9973f;">
+                                                                        <span class="wD7J">{{round(abs($sum)*100/$budget->amount,1)}}%</span>
+                                                                    </div>
+                                                                    @else
+                                                                    <div class="_3ugj" style="width: {{round(abs($sum)*100/$budget->amount,1)}}%;background: #fe6b5c;">
+                                                                        <span class="wD7J">{{round(abs($sum)*100/$budget->amount,1)}}%</span>
+                                                                    </div>
+                                                                    @endif
+                                                                    <!-- <span class="wD7J lz4G tTT7">0.0%</span> -->
                                                                 </div>
                                                                 <div class="nKyy">
-                                                                    <span>Th10 18, 2021</span>
-                                                                    <span>Th11 17, 2021</span>
+                                                                    <span>{{$budget->start_date}}</span>
+                                                                    <span>{{$budget->end_date}}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -183,46 +213,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="LB4I" style="margin: 0px -0.5rem;">
-                                <div class="_3fS2 o-cw _2oRk" style="padding: 0.5rem;">
-                                    <div class="_3wsj _3QBC">
-                                        <div class="oTaE">
-                                            <div class="LB4I" style="margin: 0px -0.5rem;">
-                                                <div class="_3fS2 o-cw _22vv _1V5z _37kk" style="padding: 0rem 0.5rem 0.5rem;">
-                                                    <h1 class="_1aWI">Thu nhập theo kỳ</h1>
-                                                    <span class="_3zGV">Th10 01-31</span>
-                                                </div>
-                                                <div class="_3fS2 o-cw _22vv _19wA _1KKs" style="padding: 0.25rem 0.5rem 0.5rem;">
-                                                </div>
-                                            </div>
-                                            <div class="LB4I">
-                                                <div class="_3fS2 o-cw2">
-                                                    <canvas id="myChart3"></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="_3fS2 o-cw _2oRk" style="padding: 0.5rem;">
-                                    <div class="_3wsj _3QBC">
-                                        <div class="oTaE">
-                                            <div class="LB4I" style="margin: 0px -0.5rem;">
-                                                <div class="_3fS2 o-cw _22vv _1V5z _37kk" style="padding: 0rem 0.5rem 0.5rem;">
-                                                    <h1 class="_1aWI">Chi phí theo kỳ</h1>
-                                                    <span class="_3zGV">Th10 01–31</span>
-                                                </div>
-                                                <div class="_3fS2 o-cw _22vv _19wA _1KKs" style="padding: 0.25rem 0.5rem 0.5rem;">
-                                                </div>
-                                            </div>
-                                            <div class="LB4I">
-                                                <div class="_3fS2 o-cw2">
-                                                    <canvas id="myChart4"></canvas>
                                                 </div>
                                             </div>
                                         </div>
@@ -824,57 +814,6 @@
 
 @section("script")
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="src/js/budgetsDetail.js"></script>
-    <script>
-        var ctx3 = document.getElementById("myChart3").getContext("2d");
-        var data3 = {
-        labels: [
-            'Salary',
-            'Business',
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [100000, 800000],
-            backgroundColor: [
-            'rgb(24, 178, 114)',
-            'rgb(255, 162, 0)',
-            ],
-            hoverOffset: 4
-        }]
-        };
-
-        const config3 = {
-            type: 'doughnut',
-            data: data3,
-        };
-
-        var myBarChart = new Chart(ctx3,config3);
-    </script>
-    <script>
-        var ctx4 = document.getElementById("myChart4").getContext("2d");
-        var data4 = {
-        labels: [
-            'Shopping',
-            'Transport',
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [7000000, 3000000],
-            backgroundColor: [
-            'rgb(227, 106, 239)',
-            'rgb(252, 206, 0)',
-            ],
-            hoverOffset: 4
-        }]
-        };
-
-        const config4 = {
-            type: 'doughnut',
-            data: data4,
-        };
-
-        var myBarChart = new Chart(ctx4,config4);
-    </script>
 
 @endsection

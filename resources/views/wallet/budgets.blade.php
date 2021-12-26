@@ -28,26 +28,50 @@
                                     <div class="_3fS2 o-cw" style="padding: 0.5rem;">
                                         <div class="oTaE">
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
-                                                @foreach ($budgets as $value)
+                                                @foreach ($budgets as $index=>$value)
                                                 <div class="_3fS2 o-cw _1ubS _1B3o" style="padding: 0.5rem;">
-                                                    <a href="wallet/{{$wallet->id}}/budgetsDetail/{{$value->id}}" class="_1MqG ">
+                                                    <a href="budgetsDetail/{{$value->id}}" class="_1MqG ">
                                                         <div draggable="true">
                                                             <article class="_2Ku2">
                                                                 <h3 class="_3ow9">{{$value->title}}</h3>
                                                                 <span class="vBKU">Tất cả các ví</span>
                                                                 <span class="_3JW3">
+                                                                    @if (number_format((float)($value->amount + $sums[$index]), 2, '.', '') >= 0)
                                                                     <span>
-                                                                        <span class="_2djs _2UNd">{{$value->amount}} VND</span> 
+                                                                        <span class="_2djs _2UNd">{{number_format((float)($value->amount + $sums[$index]), 2, '.', '')}} VND</span> 
                                                                         left
                                                                     </span>
+                                                                    @else
+                                                                    <span>
+                                                                        <span class="_2djs _2UNd" style="color: #fe6b5c;">{{abs(number_format((float)($value->amount + $sums[$index]), 2, '.', ''))}} VND</span> 
+                                                                        overspent
+                                                                    </span>
+                                                                    @endif
                                                                 </span>
                                                                 <span class="_2f--">From {{$value->amount}} VND</span>
                                                                 <div class="s0y4 _15eb">
                                                                     <div class="wW2c _15eb">
-                                                                        <div class="_3ugj" style="width: 0%;">
-                                                                            <span class="wD7J">0.0%</span>
+                                                                        @if (round(abs($sums[$index])*100/$value->amount,1) < 70)
+                                                                        <div class="_3ugj" style="width: {{round(abs($sums[$index])*100/$value->amount,1)}}%;">
+                                                                            <span class="wD7J">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
                                                                         </div>
-                                                                        <span class="wD7J lz4G _15eb">0.0%</span>
+                                                                        <span class="wD7J lz4G _15eb">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        @elseif(round(abs($sums[$index])*100/$value->amount,1) < 85)
+                                                                        <div class="_3ugj" style="width: {{round(abs($sums[$index])*100/$value->amount,1)}}%;background: #fac35f;">
+                                                                            <span class="wD7J">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        </div>
+                                                                        <span class="wD7J lz4G _15eb">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        @elseif(round(abs($sums[$index])*100/$value->amount,1) < 95)
+                                                                        <div class="_3ugj" style="width: {{round(abs($sums[$index])*100/$value->amount,1)}}%;background: #f9973f;">
+                                                                            <span class="wD7J">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        </div>
+                                                                        <span class="wD7J lz4G _15eb">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        @else
+                                                                        <div class="_3ugj" style="width: {{round(abs($sums[$index])*100/$value->amount,1)}}%;background: #fe6b5c;">
+                                                                            <span class="wD7J">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        </div>
+                                                                        <span class="wD7J lz4G _15eb">{{round(abs($sums[$index])*100/$value->amount,1)}}%</span>
+                                                                        @endif
                                                                     </div>
                                                                     <div class="nKyy">
                                                                         <span>{{$value->start_date}}</span>

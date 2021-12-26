@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Budget;    
+use App\Models\Transaction;    
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +26,16 @@ Route::get('wallet/{id}/myChart2','App\Http\Controllers\apiController@myChart2Ap
 Route::get('wallet/{id}/myChart3','App\Http\Controllers\apiController@myChart3Api');
 
 Route::get('wallet/{id}/myChart4','App\Http\Controllers\apiController@myChart4Api');
+
+Route::get('budget',function(){
+    $budget = Budget::where('id',1)->first();
+
+    foreach ($budget->budget_category as $value) {
+        if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+            foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                echo $v->amount."<hr>";
+            }
+        }
+    }
+
+});

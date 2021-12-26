@@ -16,7 +16,24 @@ class budgetController extends Controller
         $budgets = Budget::where('user_id',Auth::user()->id)->get();
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
 
-        return view('budgets',['budgets'=>$budgets,'outcome'=>$outcome]);
+        $sums = [];
+
+        foreach($budgets as $budget){
+            $sum = 0;
+
+            foreach ($budget->budget_category as $value) {
+                if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+                    foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                        $sum += $v->amount;
+                    }
+                }
+            }
+
+            array_push($sums,$sum);
+        }
+
+
+        return view('budgets',['budgets'=>$budgets,'outcome'=>$outcome,'sums'=>$sums]);
     }
 
     public function createBudget(Request $request){
@@ -46,10 +63,19 @@ class budgetController extends Controller
     public function budgetsDetail($id_budget){
         $budget = Budget::find($id_budget);
 
-        $income = Category::where('type','income')->where('create_by', Auth::user()->id)->get();
+        $sum = 0.00;
+
+        foreach ($budget->budget_category as $value) {
+            if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+                foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                    $sum += $v->amount;
+                }
+            }
+        }
+
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
 
-        return view('budgetsDetail',['budget'=>$budget,'income'=>$income,'outcome'=>$outcome]);
+        return view('budgetsDetail',['budget'=>$budget,'outcome'=>$outcome,'sum'=>$sum]);
     }
 
     public function fixBudgetsDetail($id_budget,Request $request){
@@ -96,20 +122,43 @@ class budgetController extends Controller
         $budgets = Budget::where('user_id',Auth::user()->id)->get();
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
 
-        return view('wallet.budgets',['wallet'=>$wallet,'budgets'=>$budgets,'outcome'=>$outcome]);
+        $sums = [];
+
+        foreach($budgets as $budget){
+            $sum = 0;
+
+            foreach ($budget->budget_category as $value) {
+                if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+                    foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                        $sum += $v->amount;
+                    }
+                }
+            }
+
+            array_push($sums,$sum);
+        }
+
+        return view('wallet.budgets',['wallet'=>$wallet,'budgets'=>$budgets,'outcome'=>$outcome,'sums'=>$sums]);
     }
 
     public function budgetDetailWallets($id,$id_budget){
         $budget = Budget::find($id_budget);
-        $transactions= Transaction::where('wallet_id',$id)->get();
-        $transactions = $transactions->reverse();
+       
+        $sum = 0.00;
 
-        $income = Category::where('type','income')->where('create_by', Auth::user()->id)->get();
+        foreach ($budget->budget_category as $value) {
+            if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+                foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                    $sum += $v->amount;
+                }
+            }
+        }
+
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
 
         $wallet = Wallet::find($id);
 
-        return view('wallet.budgetsDetail',['budget'=>$budget,'transactions'=>$transactions,'income'=>$income,'outcome'=>$outcome,'wallet'=>$wallet]);
+        return view('wallet.budgetsDetail',['budget'=>$budget,'sum'=>$sum,'outcome'=>$outcome,'wallet'=>$wallet]);
     }
 
     public function createBudgetWallets($id,Request $request){
