@@ -25,7 +25,7 @@ class apiController extends Controller
                 }
             }
 
-            array_unshift($datas,$data);
+            array_push($datas,$data);
         }
 
         return $datas;
