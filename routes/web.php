@@ -16,13 +16,13 @@ Route::group(['prefix'=>'auth'],function(){
     Route::get('login','App\Http\Controllers\userController@getdangnhap');
 
     Route::post('login','App\Http\Controllers\userController@postdangnhap');
-    
+
     Route::get('signup','App\Http\Controllers\userController@getdangky');
-    
+
     Route::post('signup','App\Http\Controllers\userController@postdangky');
-    
+
     Route::get('forgot-password','App\Http\Controllers\userController@getForgotPassword');
-    
+
     Route::post('forgot-password','App\Http\Controllers\userController@postForgotPassword');
 });
 
@@ -71,24 +71,24 @@ Route::group(['prefix'=>'wallet/{id}'],function(){
         Route::get('categories','App\Http\Controllers\categoryController@getCategories');
 
         Route::post('categories/create','App\Http\Controllers\categoryController@createCategories');
-    
+
         Route::post('categories/fix/{idCategory}','App\Http\Controllers\categoryController@fixCategories');
-    
+
         Route::post('categories/delete','App\Http\Controllers\categoryController@deleteCategories');
     });
 });
 
 Route::group(['prefix'=>'settings'],function(){
     Route::get('account','App\Http\Controllers\settingsController@getAccount');
-    
+
     Route::post('account/{id}','App\Http\Controllers\settingsController@postAccount');
 
     Route::get('account/delete/{id}','App\Http\Controllers\settingsController@deleteAccount');
-    
+
     Route::get('support', function () {
         return view('settings.support');
     });
-    
+
     Route::get('terms', function () {
         return view('settings.terms');
     });
@@ -102,3 +102,13 @@ Route::group(['prefix'=>'settings'],function(){
     Route::post('all-categories/delete','App\Http\Controllers\categoryController@deleteAllCategories');
 });
 
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::prefix('categories')->name('categories.')->group(function () {
+        Route::get('', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
+        Route::get('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('edit');
+        Route::put('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'update'])->name('edit.update');
+        Route::get('/create', [\App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
+        Route::post('/create', [\App\Http\Controllers\Admin\AdminController::class, 'store'])->name('store');
+        Route::delete('/delete',[\App\Http\Controllers\Admin\AdminController::class, 'destroy'])->name('delete');
+    });
+});
