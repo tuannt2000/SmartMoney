@@ -17,7 +17,7 @@ class CreateWalletsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string("name");
-            $table->decimal("initial_balance")->default('0.00');
+            $table->decimal("initial_balance",15)->default('0.00');
             $table->string("currency")->default("VND");
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

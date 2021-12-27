@@ -18,7 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->date("date");
             $table->text("note")->nullable();
             $table->text("label")->nullable();
-            $table->decimal("amount");
+            $table->decimal("amount",15);
             $table->string("currency")->default("VND");
             $table->integer('wallet_id')->unsigned();
             $table->integer('category_id')->unsigned();

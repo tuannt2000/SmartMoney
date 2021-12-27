@@ -17,7 +17,7 @@ class CreateBudgetsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string("title");
-            $table->decimal("amount");
+            $table->decimal("amount",15);
             $table->string("currency")->default("VND");
             $table->date("start_date");
             $table->string("reminder")->nullable();
