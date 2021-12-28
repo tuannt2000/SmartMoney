@@ -2,9 +2,9 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link<?php if('/admin/' == $_SERVER['REQUEST_URI']): ?> active<?php endif?>" aria-current="page" href="/admin">
+                <a class="nav-link" aria-current="page" href="#">
                     <span data-feather="home"></span>
-                    Dashboard
+                    Category
                 </a>
             </li>
             <li class="nav-item">
@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if('/admin/products/' == $_SERVER['REQUEST_URI']): ?> active<?php endif?>" href="/admin/products">
+                <a class="nav-link <?php if('/admin/products/' == $_SERVER['REQUEST_URI']): ?> active<?php endif?>" href="/admin/categories">
                     <span data-feather="shopping-cart"></span>
                     Products
                 </a>
