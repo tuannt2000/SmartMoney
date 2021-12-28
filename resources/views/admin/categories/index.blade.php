@@ -23,10 +23,10 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Icon</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Color</th>
-                    <th scope="col">Create By</th>
+                    <th scope="col">Create At</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,13 +34,15 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->title }}</td>
+                        <td>{{ $category->type }}</td>
                         <td>{{ $category->color }}</td>
-                        <td>{{ $category->create_by }}</td>
+                        <td>{{ $category->created_at }}</td>
+
 
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a class="btn btn-primary" href="{{ route('admin.categories.edit', $category->id) }}">Edit</a>
-                                <button type="button" class="btn btn-success">Pushlish</button>
+                                <button type="button" class="btn btn-success">Publish</button>
                                 <button type="button" class="delete btn btn-danger" data="{{ $category->id }}">Delete</button>
                             </div>
                         </td>
@@ -53,9 +55,9 @@
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-{{--                {{ $categories->links('vendor.pagination.bootstrap4') }}--}}
+                {{ $categories->links('vendor.pagination.bootstrap-4') }}
             </div>
-            <a class="btn btn-primary" href="{{ route('admin.categories.create', $category->id) }}">Create</a>
+
         </div>
     </main>
 @stop

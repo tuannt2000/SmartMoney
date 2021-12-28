@@ -41,6 +41,7 @@ class AdminController extends Controller
         $category = $this->categoryModel->find($id);
         if ($category)
         {
+            $category->icon = $request->input('icon');
             $category->title = $request->input('title');
             $category->type = $request->input('type');
             $category->color = $request->input('color');
@@ -51,44 +52,6 @@ class AdminController extends Controller
             ->with('success', __('Update category\'s success!'));
     }
 
-    public function create()
-    {
-        $category = $this->categoryModel;
-        return view('admin.categories.create', compact('category'));
-    }
-
-    public function store(Request $request)
-    {
-        $data = $request->except(['_token']);
-        //$data = array_filter($data, 'strlen');
-        $categoryData = [];
-
-
-
-        DB::beginTransaction();
-        try{
-            $category = $this->categoryModel->create($categoryData);
-            DB::commit();
-        }catch (\Throwable $e)
-        {
-            DB::rollBack();
-            die($e->getMessage());
-
-        }
-        if ($request->ajax())
-        {
-            return ['success' => 'done'];
-        }
-
-        if ($category)
-        {
-            return redirect(route('admin.categories.index'))
-                ->with('success', __('Create category\'s success!'));
-        }
-
-        return redirect(route('admin.categories.create'))
-            ->with('error', __('Has errors in create process!'));
-    }
 
     public function destroy(Request $request)
     {
