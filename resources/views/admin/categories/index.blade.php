@@ -23,23 +23,20 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Parent ID</th>
-                    <th scope="col">Photo</th>
-                    <th scope="col">-</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Create By</th>
                 </tr>
                 </thead>
                 <tbody>
                 @forelse($categories as $category)
                     <tr>
                         <td>{{ $category->id }}</td>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->parent_id }}</td>
-                        <td>
-                            @if ($category->photo)
-                                <img class="img-thumbnail" width="120px" src="{{ asset($category->photo) }}" alt="{{ $category->name }}" />
-                            @endif
-                        </td>
+                        <td>{{ $category->title }}</td>
+                        <td>{{ $category->color }}</td>
+                        <td>{{ $category->create_by }}</td>
+
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a class="btn btn-primary" href="{{ route('admin.categories.edit', $category->id) }}">Edit</a>
@@ -56,15 +53,13 @@
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-{{--                {{ $categories->links('vendor.pagination.bootstrap-4') }}--}}
+{{--                {{ $categories->links('vendor.pagination.bootstrap4') }}--}}
             </div>
-            <button class="btn btn-primary" id="create-category">Create</button>
+            <a class="btn btn-primary" href="{{ route('admin.categories.create', $category->id) }}">Create</a>
         </div>
     </main>
 @stop
-@section('css')
-    <link href="/css/admin/dashboard.css" rel="stylesheet">
-@stop
+
 
 @section('modal')
     <!-- Modal -->

@@ -102,13 +102,4 @@ Route::group(['prefix'=>'settings'],function(){
     Route::post('all-categories/delete','App\Http\Controllers\categoryController@deleteAllCategories');
 });
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::prefix('categories')->name('categories.')->group(function () {
-        Route::get('', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
-        Route::get('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('edit');
-        Route::put('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'update'])->name('edit.update');
-        Route::get('/create', [\App\Http\Controllers\Admin\AdminController::class, 'create'])->name('create');
-        Route::post('/create', [\App\Http\Controllers\Admin\AdminController::class, 'store'])->name('store');
-        Route::delete('/delete',[\App\Http\Controllers\Admin\AdminController::class, 'destroy'])->name('delete');
-    });
-});
+
