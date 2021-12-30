@@ -16,12 +16,12 @@
             <div class="_3fS2 _3cTs _3gPh _19wA _1B3o">
                 <div class="_3wsj _1eTa">
                     <span class="_1zZy">Tổng Thay Đổi Theo Kì</span>
-                    @if ($wallet->initial_balance == 0)
-                    <span class="_2Tip _39n0">{{$wallet->initial_balance}}VND</span> 
-                    @elseif ($wallet->initial_balance > 0)
-                    <span class="_2Tip _39n0">+{{$wallet->initial_balance}}VND</span>
+                    @if ($transactions->where('amount', '>',0)->sum('amount') + $transactions->where('amount', '<',0)->sum('amount') == 0)
+                    <span class="_2Tip _39n0">{{$transactions->where('amount', '>',0)->sum('amount') + $transactions->where('amount', '<',0)->sum('amount')}} VND</span> 
+                    @elseif ($transactions->where('amount', '>',0)->sum('amount') + $transactions->where('amount', '<',0)->sum('amount') > 0)
+                    <span class="_2Tip _39n0">+{{$transactions->where('amount', '>',0)->sum('amount') + $transactions->where('amount', '<',0)->sum('amount')}} VND</span>
                     @else
-                    <span class="_2Tip _39n0" style="color:#f14c52;">{{$wallet->initial_balance}}VND</span>
+                    <span class="_2Tip _39n0" style="color:#f14c52;">{{$transactions->where('amount', '>',0)->sum('amount') + $transactions->where('amount', '<',0)->sum('amount')}} VND</span>
                     @endif
                 </div>
             </div>

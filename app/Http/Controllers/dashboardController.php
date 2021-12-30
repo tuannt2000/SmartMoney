@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Transaction;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +10,13 @@ use Illuminate\Support\Facades\Auth;
 class dashboardController extends Controller
 {
     public function getDashboard(){
+        $sums = [];
         $wallet = Wallet::where('user_id',Auth::user()->id)->get();
+
+        foreach($wallet as $value){
+            $sum = Transaction::where('wallet_id',$value->id)->sum('amount');
+            array_push($sums,$sum);
+        }
 
         $outcome = 0;
         $income = 0;
@@ -22,7 +29,7 @@ class dashboardController extends Controller
             $income += $value->transaction->where('amount','>',0)->sum('amount');
         }
 
-        return view('dashboard',['wallet' => $wallet,'outcome' => $outcome,'income' => $income]);
+        return view('dashboard',['wallet' => $wallet,'sums'=>$sums,'outcome' => $outcome,'income' => $income]);
     }
 
     public function createWallet(Request $request,$id){
