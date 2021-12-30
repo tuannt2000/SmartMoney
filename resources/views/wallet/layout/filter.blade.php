@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="_3Iet IhHS">
                                         <div class="_2ieP">
-                                            <input class="_1mYU required" id="note" name="note" placeholder="Lọc theo từ khóa đặc trưng" type="text" value="">
+                                            <input class="_1mYU required" oninput="searchNote()" id="inputNote" name="note" placeholder="Lọc theo từ khóa đặc trưng" type="text" value="">
                                         </div>
                                     </div>
                                 </div>

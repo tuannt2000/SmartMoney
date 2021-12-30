@@ -219,6 +219,20 @@ const fixTransaction = {
 
 fixTransaction.start();
 
+function searchNote(){
+    const inputNote = $('#inputNote');
+
+    _1BwG.forEach(function(value,index){
+        const note = value.querySelector('.LB4I.YM-8 ._3fS2.pwUH._15HY ._1SwE').innerText;
+
+        if(note.indexOf(inputNote.value) !== -1){
+            value.style.display = 'block';
+        }else{
+            value.style.display = 'none';
+        }
+    })
+}
+
 //   Su li account
 const account = $('.dropdownWrap');
 const _2XTe = account.querySelector('._2XTe');
