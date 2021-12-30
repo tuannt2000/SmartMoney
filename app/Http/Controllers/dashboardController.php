@@ -10,19 +10,22 @@ class dashboardController extends Controller
 {
     public function getDashboard(){
         $wallet = Wallet::where('user_id',Auth::user()->id)->get();
-        return view('dashboard',['wallet' => $wallet]);
+
+        $outcome = 0;
+        $income = 0;
+
+        foreach($wallet as $value){
+            $outcome += $value->transaction->where('amount','<',0)->sum('amount');
+        }
+
+        foreach($wallet as $value){
+            $income += $value->transaction->where('amount','>',0)->sum('amount');
+        }
+
+        return view('dashboard',['wallet' => $wallet,'outcome' => $outcome,'income' => $income]);
     }
 
     public function createWallet(Request $request,$id){
-        // $this->validate($request,
-        //     [
-        //         'name' => "unique:wallets,name,$id,id",
-        //     ],
-        //     [
-        //         'name.unique' => 'Tên ví đã tồn tại',
-        //     ]
-        // );
-
         $wallet = new Wallet;
         $wallet->name = $request->name;
         $wallet->user_id = $id;

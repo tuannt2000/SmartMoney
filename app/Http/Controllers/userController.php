@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\AdminCategory;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +47,7 @@ class userController extends Controller
         $user->quyen = "user";
         $user->save();
 
-        Category::where('create_by', 0)->each(function ($oldRecord) {
+        AdminCategory::each(function ($oldRecord) {
             $newRecord = $oldRecord->replicate();
 
             $newRecord->setTable('categories');
