@@ -1,4 +1,8 @@
-<div class="_2AsN">
+<div class="_2AsN" @if ($count != 0)
+    style="display:block"
+    @else
+    style="display:none"
+@endif>
     <div class="oTaE">
         <div class="LB4I" style="margin: 0px -0.5rem;">
             <div class="_3fS2 o-cw _2oRk" style="padding: 0.5rem;">
@@ -75,7 +79,11 @@
             </div>
         </div>
         <div class="LB4I" style="margin: 0px -0.5rem;">
-            <div class="_3fS2 o-cw _2oRk" style="padding: 0.5rem;">
+            <div class="_3fS2 o-cw _2oRk" @if ($incomes != 0)
+            style="padding: 0.5rem;display: initial;"
+            @else
+            style="padding: 0.5rem;display: none;"
+            @endif>
                 <div class="_3wsj _3QBC">
                     <div class="oTaE">
                         <div class="LB4I" style="margin: 0px -0.5rem;">
@@ -94,7 +102,11 @@
                     </div>
                 </div>
             </div>
-            <div class="_3fS2 o-cw _2oRk" style="padding: 0.5rem;">
+            <div class="_3fS2 o-cw _2oRk" @if ($outcomes != 0)
+            style="padding: 0.5rem;display: initial;"
+            @else
+            style="padding: 0.5rem;display: none;"
+            @endif>
                 <div class="_3wsj _3QBC">
                     <div class="oTaE">
                         <div class="LB4I" style="margin: 0px -0.5rem;">

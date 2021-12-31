@@ -19,9 +19,7 @@
                 <!-- End thêm giao dịch -->
 
                 <!-- Bộ lọc -->
-                @if (count($transactions) > 0)
-                    @include('wallet.layout.filter')
-                @endif
+                @include('wallet.layout.filter')
                 <!-- End bộ lọc  -->
 
                 <!-- Tổng tiền -->

@@ -19,21 +19,17 @@
                 @include('wallet.layout.addTransaction')
                 <!-- End thêm giao dịch -->
 
-                @if (count($transactions) > 0)
                 <!-- Bộ lọc -->
                 @include('wallet.layout.filter')
                 <!-- End bộ lọc  -->
-                @endif
 
                 <!-- Tổng tiền -->
                 @include('wallet.layout.totalMoney')
                 <!-- End tổng tiền -->
 
-                @if (count($transactions) > 0)
                 <!-- Đồ thị -->
                 @include('layout.graph')
                 <!-- End đồ thị -->
-                @endif
                 
                 @if (count($transactions) == 0)
                 <!-- Chưa có giao dịch nào -->

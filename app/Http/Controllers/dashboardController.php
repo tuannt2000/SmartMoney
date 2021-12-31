@@ -18,6 +18,12 @@ class dashboardController extends Controller
             array_push($sums,$sum);
         }
 
+        $count = 0;
+
+        foreach($wallet as $value){
+            $count += count(Transaction::where('wallet_id',$value->id)->get());
+        }
+
         $outcome = 0;
         $income = 0;
 
@@ -29,7 +35,7 @@ class dashboardController extends Controller
             $income += $value->transaction->where('amount','>',0)->sum('amount');
         }
 
-        return view('dashboard',['wallet' => $wallet,'sums'=>$sums,'outcome' => $outcome,'income' => $income]);
+        return view('dashboard',['wallet' => $wallet,'sums'=>$sums,'count'=>$count,'outcomes' => $outcome,'incomes' => $income]);
     }
 
     public function createWallet(Request $request,$id){

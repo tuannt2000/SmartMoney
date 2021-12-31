@@ -23,13 +23,27 @@ class transactionController extends Controller
 
     public function overViewWallets($id){
         $transactions= Transaction::where('wallet_id',$id)->get();
+
+        $count = count($transactions);
+
         $transactions = $transactions->reverse();
+
+        $incomes = 0;
+        $outcomes = 0;
+
+        foreach($transactions as $transaction){
+            if($transaction->amount > 0){
+                $incomes += $transaction->amount;
+            }else{
+                $outcomes = $transaction->amount;
+            }
+        }
 
         $income = Category::where('type','income')->where('create_by', Auth::user()->id)->get();
         $outcome = Category::where('type','outcome')->where('create_by', Auth::user()->id)->get();
 
         $wallet = Wallet::find($id);
-        return view('wallet.overview',['transactions'=>$transactions,'income'=>$income,'outcome'=>$outcome,'wallet'=>$wallet]);
+        return view('wallet.overview',['transactions'=>$transactions,'count'=>$count,'income'=>$income,'outcome'=>$outcome,'wallet'=>$wallet,'incomes'=>$incomes,'outcomes'=>$outcomes]);
     }
 
     public function createTransaction(Request $request,$id){

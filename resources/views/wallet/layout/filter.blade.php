@@ -1,4 +1,8 @@
-<div class="_2AsN">
+<div class="_2AsN" @if (count($transactions) > 0)
+    style="display:block"
+@else
+    style="display:none"
+@endif>
     <div class="LB4I">
         <div class="_3fS2 o-cw">
             <form action="">
