@@ -107,7 +107,7 @@ class apiController extends Controller
             }
         }
 
-        $currentAmount = $wallet->sum('initial_balance');
+        $currentAmount = $wallets->sum('initial_balance');
         for($i = 1; $i <= 31 ; $i++){
             $data = array('date'=>'','amount'=> $currentAmount);
             $data['date'] = "T12 ".$i;
