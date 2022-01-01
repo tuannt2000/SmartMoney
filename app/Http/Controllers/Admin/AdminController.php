@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\AdminCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     private $categoryModel;
 
-    public function __construct(Category $category)
+    public function __construct(AdminCategory $category)
     {
         $this->categoryModel = $category;
     }
