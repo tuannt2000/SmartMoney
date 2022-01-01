@@ -108,39 +108,6 @@ _2pOY.onclick = function () {
     }
 }
 
-// Theo số tiền
-const rc_slider = $('.rc-slider');
-const rc_slider_track = $('.rc-slider-track.rc-slider-track-1');
-const rc_slider_handle1 = $('.rc-slider-handle.rc-slider-handle-1');
-const rc_slider_handle2 = $('.rc-slider-handle.rc-slider-handle-2');
-const _261b = $('._261b');
-const _3RqA = $('._3RqA');
-
-const _261bGia = _261b.innerText;
-
-
-rc_slider.addEventListener('click', function (e) {
-    // Get the target
-    const target = e.target;
-
-    // Get the bounding rectangle of target
-    const rect = target.getBoundingClientRect();
-
-    // Mouse position
-    const x = e.clientX - rect.left;
-    const offsetWidth = rc_slider.offsetWidth;
-    const pasent = (x/offsetWidth)*100;
-    rc_slider_track.style.left = pasent+"%";
-    rc_slider_track.style.width = (100-pasent)+"%";
-    rc_slider_handle1.style.left = pasent+"%";
-    const giaMax = _261bGia * -1;
-    const giaMin = _3RqA.innerText * -1;
-    let thaydoi = (giaMax - (giaMax-giaMin)/100*pasent);
-    thaydoi = parseInt(thaydoi);
-    thaydoi = thaydoi*-1;
-    _261b.innerText = thaydoi;
-});
-
 
 //  scroll
 const UzPn = $('.UzPn._10vh');
@@ -153,7 +120,3 @@ document.onscroll = function(){
         UzPn.classList.remove('zpcn');
     }
 }
-
-
-
-

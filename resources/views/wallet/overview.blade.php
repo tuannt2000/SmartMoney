@@ -19,10 +19,6 @@
                 @include('wallet.layout.addTransaction')
                 <!-- End thêm giao dịch -->
 
-                <!-- Bộ lọc -->
-                @include('wallet.layout.filter')
-                <!-- End bộ lọc  -->
-
                 <!-- Tổng tiền -->
                 @include('wallet.layout.totalMoney')
                 <!-- End tổng tiền -->
