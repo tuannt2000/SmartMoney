@@ -14,25 +14,25 @@ class dashboardController extends Controller
         $wallet = Wallet::where('user_id',Auth::user()->id)->get();
 
         foreach($wallet as $value){
-            $sum = Transaction::where('wallet_id',$value->id)->sum('amount');
+            $sum = Transaction::where('wallet_id',$value->id)->whereMonth('date',1)->sum('amount');
             array_push($sums,$sum);
         }
 
         $count = 0;
 
         foreach($wallet as $value){
-            $count += count(Transaction::where('wallet_id',$value->id)->get());
+            $count += count(Transaction::where('wallet_id',$value->id)->whereMonth('date',1)->get());
         }
 
         $outcome = 0;
         $income = 0;
 
         foreach($wallet as $value){
-            $outcome += $value->transaction->where('amount','<',0)->sum('amount');
+            $outcome += Transaction::where('wallet_id',$value->id)->whereMonth('date',1)->where('amount','<',0)->sum('amount');
         }
 
         foreach($wallet as $value){
-            $income += $value->transaction->where('amount','>',0)->sum('amount');
+            $income += Transaction::where('wallet_id',$value->id)->whereMonth('date',1)->where('amount','>',0)->sum('amount');
         }
 
         return view('dashboard',['wallet' => $wallet,'sums'=>$sums,'count'=>$count,'outcomes' => $outcome,'incomes' => $income]);

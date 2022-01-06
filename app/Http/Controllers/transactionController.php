@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class transactionController extends Controller
 {
     public function transactionWallets($id){
-        $transactions= Transaction::where('wallet_id',$id)->get();
+        $transactions= Transaction::where('wallet_id',$id)->whereMonth('date',1)->get();
         $transactions = $transactions->reverse();
 
         $income = Category::where('type','income')->where('create_by', Auth::user()->id)->get();
@@ -22,7 +22,7 @@ class transactionController extends Controller
     }
 
     public function overViewWallets($id){
-        $transactions= Transaction::where('wallet_id',$id)->get();
+        $transactions= Transaction::where('wallet_id',$id)->whereMonth('date',1)->get();
 
         $count = count($transactions);
 
