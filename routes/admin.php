@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::prefix('categories')->name('categories.')->group(function () {
         Route::get('', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
         Route::get('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'edit'])->name('edit');
