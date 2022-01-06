@@ -220,7 +220,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="LB4I">
+                        <!-- <div class="LB4I">
                             <div class="_3fS2 o-cw">
                                 <div>
                                     <div class="oTaE">
@@ -233,9 +233,9 @@
                                                     <div class="_3fS2 _1SIO _22vv _229f _1B3o" style="padding: 0.5rem;">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- Giao dịch -->
-                                            <div class="_1BwG _1tO1">
+                                            <!-- <div class="_1BwG _1tO1">
                                                 <div class="jcQj">
                                                     <div class="_262O">
                                                         <div class="XuJI">
@@ -633,15 +633,15 @@
                                                     </form>
                                                 </div>
                                                 <div class="_2XTe"></div>
-                                            </div>
+                                            </div> -->
                                             <!-- End giao dịch -->
-                                            <div class="_2Pnj"></div>
+                                            <!-- <div class="_2Pnj"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div>-->
+                    </div> 
             </div>
             <!--    End main    -->
         </div>

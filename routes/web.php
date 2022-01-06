@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Wallet;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +23,9 @@ Route::group(['prefix'=>'auth'],function(){
     Route::get('forgot-password','App\Http\Controllers\userController@getForgotPassword');
 
     Route::post('forgot-password','App\Http\Controllers\userController@postForgotPassword');
+
     Route::get('admin_login', [\App\Http\Controllers\Admin\LoginController::class, 'index'])->name('index');
+
     Route::post('admin_login', [\App\Http\Controllers\Admin\LoginController::class, 'authenticate'])->name('login.authenticate');
 });
 

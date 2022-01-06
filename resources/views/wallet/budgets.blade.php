@@ -30,7 +30,7 @@
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
                                                 @foreach ($budgets as $index=>$value)
                                                 <div class="_3fS2 o-cw _1ubS _1B3o" style="padding: 0.5rem;">
-                                                    <a href="budgetsDetail/{{$value->id}}" class="_1MqG ">
+                                                    <a href="wallet/{{$wallet->id}}/budgetsDetail/{{$value->id}}" class="_1MqG ">
                                                         <div draggable="true">
                                                             <article class="_2Ku2">
                                                                 <h3 class="_3ow9">{{$value->title}}</h3>
