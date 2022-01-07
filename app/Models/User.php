@@ -39,11 +39,6 @@ class User extends Authenticatable
      * @var array
      */
 
-    public function __construct($items = [])
-    {
-        $this->items = $items;
-    }
-
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
