@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaction;
 use App\Models\Category;
 use App\Models\Wallet;
-
+use App\Models\Budget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,7 +60,44 @@ class transactionController extends Controller
 
         $transaction->save();
 
-        return redirect('wallet/'.$id.'/transactions');
+        $budgets = Budget::where('user_id',Auth::user()->id)->get();
+
+        $sums = [];
+
+        $check = false;
+
+        foreach($budgets as $budget){
+            $sum = 0;
+
+            foreach ($budget->budget_category as $value) {
+                if($value->category_id == $request->category_id){
+                    $check = true;
+                }
+
+                if(count($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date)) != 0){
+                    foreach ($value->category->transaction->where('date','>=',$budget->start_date)->where('date','<=',$budget->end_date) as $v){
+                        $sum += $v->amount;
+                    }
+                }
+            }
+
+            array_push($sums,$sum);
+        }
+
+        $thongbao = '';
+
+        if($check){
+            foreach($budgets as $index=>$budget){
+                if(abs($sums[$index])*100/$budget->amount >= 80 && abs($sums[$index])*100/$budget->amount < 100){
+                    $thongbao = "Ngân sách sắp hết";
+                }else if(abs($sums[$index])*100/$budget->amount >= 100){
+                    $thongbao = "Ngân sách đã hết";
+                }
+            }
+        }
+
+
+        return redirect('wallet/'.$id.'/transactions')->with('thongbao',$thongbao);
     }
 
     public function fixTransaction(Request $request,$id,$idTransaction){

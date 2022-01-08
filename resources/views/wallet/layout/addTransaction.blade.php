@@ -1,5 +1,18 @@
 <div class="UzPn _10vh">
     <div class="_2AsN">
+        @if (session('thongbao'))
+            <div class="thongbao">
+                <div class="alert alert-danger">
+                    {{session('thongbao')}}
+                </div>  
+            </div>
+        @endif
+
+        <script>
+            setTimeout(function(){ if(document.querySelector('.thongbao') != null){
+                document.querySelector('.thongbao').innerHTML = '';
+            } }, 2000);
+        </script>
         <div class="oTaE">
             <div class="LB4I panel">
                 <div class="_3fS2 _1GHs">
