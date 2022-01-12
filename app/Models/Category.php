@@ -9,6 +9,21 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'color',
+        'icon',
+        'type',
+        'create_by',
+    ];
+
+    public function storeCategory($data)
+    {
+        $category = $this->create($data);
+
+        return $category;
+    }
+
     protected $table = "categories";
 
     public function transaction(){
