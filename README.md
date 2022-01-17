@@ -1,4 +1,5 @@
-<p Bước 1: Mở Terminal và thực hiện clone project và vào thư mục bằng câu lệnh sau:
+<p> 
+   Bước 1: Mở Terminal và thực hiện clone project và vào thư mục bằng câu lệnh sau:
 git clone https://github.com/tuannt2000/SmartMoney.git
 cd SmartMoney
 
