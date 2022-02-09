@@ -43,6 +43,8 @@ Route::post('budgetsDetail/fix/{id_budget}', 'App\Http\Controllers\budgetControl
 
 Route::get('budgetsDetail/delete/{id_budget}', 'App\Http\Controllers\budgetController@deleteBudgetsDetail');
 
+Route::get('dealsAllYear','App\Http\Controllers\dealsAllYearController@getdealsAllYear');
+
 Route::group(['prefix'=>'wallet/{id}'],function(){
     Route::get('transactions', 'App\Http\Controllers\transactionController@transactionWallets');
 

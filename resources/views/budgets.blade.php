@@ -23,6 +23,7 @@
                                 <ul class="ZfY8">
                                     <li><a href="dashboard" class="_3WuR _1gOp"><span>Bảng điều khiển</span></a></li>
                                     <li><a href="budgetsDetail" class="_3WuR _1gOp"><span>Ngân sách</span></a></li>
+                                    <li><a href="dealsAllYear" class="_3WuR _1gOp "><span>Giao dịch cả năm</span></a></li>
                                 </ul>
                             </nav>
                         </div>

@@ -37,5 +37,16 @@ class UserTableSeeder extends Seeder
                 'created_at' => new \DateTime(),
             ]
         );
+
+        \DB::table('users')->insert(
+            [
+                'firstname' => null,
+                'lastname' => null,
+                'email' => 'admin@gmail.com',
+                'quyen'=> 'admin',
+                'password' => bcrypt('123456'),
+                'created_at' => new \DateTime(),
+            ]
+        );
     }
 }

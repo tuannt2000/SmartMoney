@@ -10,12 +10,12 @@ class apiController extends Controller
     public function myChart1Api($id){
         $datas = [];
         $wallet = Wallet::find($id);
-        $transactions = Transaction::where('wallet_id',$id)->whereMonth('date',1)->get();
+        $transactions = Transaction::where('wallet_id',$id)->whereMonth('date',date('m'))->get();
 
         $currentAmount = $wallet->initial_balance;
-        for($i = 1; $i <= 31 ; $i++){
+        for($i = 1; $i <= 28 ; $i++){
             $data = array('date'=>'','amount'=> $currentAmount);
-            $data['date'] = "T1 ".$i;
+            $data['date'] = "T2 ".$i;
             foreach($transactions as $transaction){
                 if(explode("-",$transaction->date)[2] == $i){
                     $data['amount'] += $transaction->amount;
@@ -33,11 +33,11 @@ class apiController extends Controller
 
     public function myChart2Api($id){
         $datas = [];
-        $transactions = Transaction::where('wallet_id',$id)->whereMonth('date',1)->get();
+        $transactions = Transaction::where('wallet_id',$id)->whereMonth('date',date('m'))->get();
 
-        for($i = 1; $i <= 31 ; $i++){
+        for($i = 1; $i <= 28 ; $i++){
             $data = array('date'=>'','income'=> 0,'outcome'=> 0);
-            $data['date'] = "T1 ".$i;
+            $data['date'] = "T2 ".$i;
             foreach($transactions as $transaction){
                 if(explode("-",$transaction->date)[2] == $i){
                     if($transaction->amount > 0){
@@ -59,7 +59,7 @@ class apiController extends Controller
 
     public function myChart3Api($id){
         $datas = [];
-        $transactions = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$id)->whereMonth('date',1)->get();
+        $transactions = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$id)->whereMonth('date',date('m'))->get();
 
         foreach($transactions as $transaction){
             $data = array('category'=> '','color' => '','amount'=> 0);
@@ -77,7 +77,7 @@ class apiController extends Controller
 
     public function myChart4Api($id){
         $datas = [];
-        $transactions = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$id)->whereMonth('date',1)->get();
+        $transactions = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$id)->whereMonth('date',date('m'))->get();
 
         foreach($transactions as $transaction){
             $data = array('category'=> '','color' => '','amount'=> 0);
@@ -100,7 +100,7 @@ class apiController extends Controller
         $transactions = [];
 
         foreach($wallets as $wallet){
-            $values = Transaction::where('wallet_id',$wallet->id)->whereMonth('date',1)->get();
+            $values = Transaction::where('wallet_id',$wallet->id)->whereMonth('date',date('m'))->get();
 
             foreach($values as $value){
                 array_push($transactions,$value);
@@ -108,9 +108,9 @@ class apiController extends Controller
         }
 
         $currentAmount = $wallets->sum('initial_balance');
-        for($i = 1; $i <= 31 ; $i++){
+        for($i = 1; $i <= 28 ; $i++){
             $data = array('date'=>'','amount'=> $currentAmount);
-            $data['date'] = "T1 ".$i;
+            $data['date'] = "T2 ".$i;
             foreach($transactions as $transaction){
                 if(explode("-",$transaction->date)[2] == $i){
                     $data['amount'] += $transaction->amount;
@@ -134,16 +134,16 @@ class apiController extends Controller
         $transactions = [];
 
         foreach($wallets as $wallet){
-            $values = Transaction::where('wallet_id',$wallet->id)->whereMonth('date',1)->get();
+            $values = Transaction::where('wallet_id',$wallet->id)->whereMonth('date',date('m'))->get();
 
             foreach($values as $value){
                 array_push($transactions,$value);
             }
         }
 
-        for($i = 1; $i <= 31 ; $i++){
+        for($i = 1; $i <= 28 ; $i++){
             $data = array('date'=>'','income'=> 0,'outcome'=> 0);
-            $data['date'] = "T1 ".$i;
+            $data['date'] = "T2 ".$i;
             foreach($transactions as $transaction){
                 if(explode("-",$transaction->date)[2] == $i){
                     if($transaction->amount > 0){
@@ -171,7 +171,7 @@ class apiController extends Controller
         $transactions = [];
 
         foreach($wallets as $wallet){
-            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereMonth('date',1)->get();
+            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereMonth('date',date('m'))->get();
 
             foreach($values as $value){
                 array_push($transactions,$value);
@@ -200,7 +200,7 @@ class apiController extends Controller
         $transactions = [];
 
         foreach($wallets as $wallet){
-            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereMonth('date',1)->get();
+            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereMonth('date',date('m'))->get();
 
             foreach($values as $value){
                 array_push($transactions,$value);
