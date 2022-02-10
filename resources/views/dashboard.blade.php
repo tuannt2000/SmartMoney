@@ -319,7 +319,7 @@
 
     function getApi1(){
         const user_id = document.querySelector('#user_id').value;
-        fetch('http://localhost/laptrinhweb/public/api/dashboard/'+user_id+'/myChart1')
+        fetch('./api/dashboard/'+user_id+'/myChart1')
         .then(response => response.json())
         .then(data => myChart1(data));
     }
@@ -366,7 +366,7 @@
 
     function getApi2(){
         const user_id = document.querySelector('#user_id').value;
-        fetch('http://localhost/laptrinhweb/public/api/dashboard/'+user_id+'/myChart2')
+        fetch('./api/dashboard/'+user_id+'/myChart2')
         .then(response => response.json())
         .then(data => myChart2(data));
     }
@@ -404,7 +404,7 @@
 
     function getApi3(){
         const user_id = document.querySelector('#user_id').value;
-        fetch('http://localhost/laptrinhweb/public/api/dashboard/'+user_id+'/myChart3')
+        fetch('./api/dashboard/'+user_id+'/myChart3')
         .then(response => response.json())
         .then(data => myChart3(data));
     }
@@ -442,7 +442,7 @@
 
     function getApi4(){
         const user_id = document.querySelector('#user_id').value;
-        fetch('http://localhost/laptrinhweb/public/api/dashboard/'+user_id+'/myChart4')
+        fetch('./api/dashboard/'+user_id+'/myChart4')
         .then(response => response.json())
         .then(data => myChart4(data));
     }

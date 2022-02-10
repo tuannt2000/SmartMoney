@@ -93,7 +93,7 @@
 
     function getApi1(){
         const wallet_id = document.querySelector('#wallet').value;
-        fetch('http://localhost/laptrinhweb/public/api/wallet/'+wallet_id+'/myChart1')
+        fetch('./api/wallet/'+wallet_id+'/myChart1')
         .then(response => response.json())
         .then(data => myChart1(data));
     }
@@ -140,7 +140,7 @@
 
     function getApi2(){
         const wallet_id = document.querySelector('#wallet').value;
-        fetch('http://localhost/laptrinhweb/public/api/wallet/'+wallet_id+'/myChart2')
+        fetch('./api/wallet/'+wallet_id+'/myChart2')
         .then(response => response.json())
         .then(data => myChart2(data));
     }
@@ -178,7 +178,7 @@
 
     function getApi3(){
         const wallet_id = document.querySelector('#wallet').value;
-        fetch('http://localhost/laptrinhweb/public/api/wallet/'+wallet_id+'/myChart3')
+        fetch('./api/wallet/'+wallet_id+'/myChart3')
         .then(response => response.json())
         .then(data => myChart3(data));
     }
@@ -216,7 +216,7 @@
 
     function getApi4(){
         const wallet_id = document.querySelector('#wallet').value;
-        fetch('http://localhost/laptrinhweb/public/api/wallet/'+wallet_id+'/myChart4')
+        fetch('./api/wallet/'+wallet_id+'/myChart4')
         .then(response => response.json())
         .then(data => myChart4(data));
     }

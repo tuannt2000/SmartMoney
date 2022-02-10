@@ -214,7 +214,7 @@
 
         function getApi3(){
             const user_id = document.querySelector('#user_id').value;
-            fetch('http://localhost/laptrinhweb/public/api/dealsAllYear/'+user_id+'/myChart3')
+            fetch('./api/dealsAllYear/'+user_id+'/myChart3')
             .then(response => response.json())
             .then(data => myChart3(data));
             // .then(data => console.log(data));
@@ -253,7 +253,7 @@
 
         function getApi4(){
             const user_id = document.querySelector('#user_id').value;
-            fetch('http://localhost/laptrinhweb/public/api/dealsAllYear/'+user_id+'/myChart4')
+            fetch('./api/dealsAllYear/'+user_id+'/myChart4')
             .then(response => response.json())
             .then(data => myChart4(data));
         }
