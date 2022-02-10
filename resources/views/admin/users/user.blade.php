@@ -49,15 +49,10 @@
 
                                     @foreach ($users as $user)
                                         <tr>
-                                            <td>{{ $user->firstname }}</td>
+                                            <td>{{ $user->firstname }} {{ $user->lastname }}</td>
                                             <td> {{$user->email}} </td>
                                             <td>{{ $user->quyen  }}</td>
                                             <td>{{ $user->created_at  }}</td>
-
-                                            <td class="pt-2 pb-2">
-                                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-primary ">Edit</a>
-                                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="setFormDelete({{ $user->id }})">Delete</button>
-                                            </td>
                                         </tr>
                                     @endforeach
                                 </thead>
