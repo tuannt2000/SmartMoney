@@ -34,3 +34,7 @@ Route::get('dashboard/{id}/myChart2','App\Http\Controllers\apiController@myChart
 Route::get('dashboard/{id}/myChart3','App\Http\Controllers\apiController@myChart3Doashboard');
 
 Route::get('dashboard/{id}/myChart4','App\Http\Controllers\apiController@myChart4Doashboard');
+
+Route::get('dealsAllYear/{id}/myChart3','App\Http\Controllers\apiController@myChart3DealsAllYear');
+
+Route::get('dealsAllYear/{id}/myChart4','App\Http\Controllers\apiController@myChart4DealsAllYear');

@@ -220,4 +220,62 @@ class apiController extends Controller
 
         return $datas; 
     }
+
+    public function myChart3DealsAllYear($id){
+        $datas = [];
+
+        $wallets = Wallet::where('user_id',$id)->get();
+
+        $transactions = [];
+
+        foreach($wallets as $wallet){
+            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereYear('date',date('Y'))->get();
+
+            foreach($values as $value){
+                array_push($transactions,$value);
+            }
+        }
+
+        foreach($transactions as $transaction){
+            $data = array('category'=> '','color' => '','amount'=> 0);
+            if($transaction->total > 0){
+                $data['category'] = $transaction->category->title;
+                $data['color'] = $transaction->category->color;
+                $data['amount'] = $transaction->total;
+
+                array_push($datas,$data);
+            }
+        }
+
+        return $datas;
+    }
+
+    public function myChart4DealsAllYear($id){
+        $datas = [];
+
+        $wallets = Wallet::where('user_id',$id)->get();
+
+        $transactions = [];
+
+        foreach($wallets as $wallet){
+            $values = Transaction::groupBy('category_id')->selectRaw('category_id,sum(amount) as total')->where('wallet_id',$wallet->id)->whereYear('date',date('Y'))->get();
+
+            foreach($values as $value){
+                array_push($transactions,$value);
+            }
+        }
+
+        foreach($transactions as $transaction){
+            $data = array('category'=> '','color' => '','amount'=> 0);
+            if($transaction->total < 0){
+                $data['category'] = $transaction->category->title;
+                $data['color'] = $transaction->category->color;
+                $data['amount'] = $transaction->total;
+
+                array_push($datas,$data);
+            }
+        }
+
+        return $datas;
+    }
 }

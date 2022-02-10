@@ -49,7 +49,7 @@
                                         <div class="_289Q">
                                             <div class="LB4I" style="margin: 0px -0.5rem;">
                                                 <div class="_3fS2 _1SIO _22vv _3Qdf _3wdJ" style="padding: 0.5rem;">
-                                                    <span class="_1kYs">Th2 01-28, 2022</span>
+                                                    <span class="_1kYs">Th<?php echo date('m') ?> 01-<?php echo date('t') ?>, <?php echo date('Y') ?></span>
                                                 </div>
                                                 <div class="_3fS2 _1SIO _22vv _229f _1B3o" style="padding: 0.5rem;">
                                                     <div class="_1SEH">{{$transactions->sum('amount')}} VND</div>

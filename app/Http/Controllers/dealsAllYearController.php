@@ -10,31 +10,20 @@ use Illuminate\Support\Facades\Auth;
 class dealsAllYearController extends Controller
 {
     public function getdealsAllYear(){
-        $sums = [];
-        $wallet = Wallet::where('user_id',Auth::user()->id)->get();
-
-        foreach($wallet as $value){
-            $sum = Transaction::where('wallet_id',$value->id)->whereMonth('date',date('m'))->sum('amount');
-            array_push($sums,$sum);
-        }
+        $wallets = Wallet::where('user_id',Auth::user()->id)->get();
 
         $count = 0;
 
-        foreach($wallet as $value){
-            $count += count(Transaction::where('wallet_id',$value->id)->whereMonth('date',date('m'))->get());
+        $id_wallets = [];
+
+        foreach($wallets as $value){
+            array_push($id_wallets,$value->id);
+            $count += count(Transaction::where('wallet_id',$value->id)->whereYear('date',date('Y'))->get());
         }
 
-        $outcome = 0;
-        $income = 0;
 
-        foreach($wallet as $value){
-            $outcome += Transaction::where('wallet_id',$value->id)->whereMonth('date',date('m'))->where('amount','<',0)->sum('amount');
-        }
+        $transactions = Transaction::whereIn('wallet_id',$id_wallets)->whereYear('date',date('Y'))->get();
 
-        foreach($wallet as $value){
-            $income += Transaction::where('wallet_id',$value->id)->whereMonth('date',date('m'))->where('amount','>',0)->sum('amount');
-        }
-
-        return view('dealsAllYear',['wallet' => $wallet,'sums'=>$sums,'count'=>$count,'outcomes' => $outcome,'incomes' => $income]);
+        return view('dealsAllYear',['count'=>$count,'transactions'=>$transactions]);
     }
 }
